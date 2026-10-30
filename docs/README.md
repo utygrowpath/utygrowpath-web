@@ -53,6 +53,7 @@ Pintu masuk semua dokumentasi. Baca sesuai peran Anda.
 | 0002 | [ESLint 9.39.5 meski sudah EOL](./adr/0002-eslint-9-sampai-next-mendukung-10.md) | Diterima |
 | 0003 | [Konten hardcode tapi terpusat di `src/data`](./adr/0003-konten-hardcode-terpusat.md) | Diterima |
 | 0004 | [Form pendaftaran: Server Action + database](./adr/0004-form-pendaftaran-server-action-database.md) | Diusulkan |
+| 0005 | [TypeScript ditahan di 5.x](./adr/0005-typescript-ditahan-di-5x.md) | Diterima |
 
 ---
 

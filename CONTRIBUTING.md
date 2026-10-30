@@ -140,6 +140,10 @@ Lalu:
 
 > Untuk upgrade ESLint, baca dulu ADR 0002 — jangan naikkan ke v10 sebelum
 > `eslint-config-next` mendukungnya.
+>
+> Untuk upgrade TypeScript, baca ADR 0005 — jangan naikkan ke v7 sebelum
+> `typescript-eslint` mendukungnya. `@types/node` juga harus mengikuti versi
+> runtime Node di `.nvmrc`, bukan melompat major.
 
 ---
 

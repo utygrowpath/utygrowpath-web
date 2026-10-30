@@ -45,6 +45,7 @@ NNNN-judul-singkat.md
 | [0002](./0002-eslint-9-sampai-next-mendukung-10.md) | ESLint 9.39.5 meski sudah EOL | Diterima |
 | [0003](./0003-konten-hardcode-terpusat.md) | Konten hardcode tapi terpusat di `src/data` | Diterima |
 | [0004](./0004-form-pendaftaran-server-action-database.md) | Form pendaftaran: Server Action + database | Diusulkan |
+| [0005](./0005-typescript-ditahan-di-5x.md) | TypeScript ditahan di 5.x | Diterima |
 
 ADR yang sudah tidak berlaku **jangan dihapus** — ubah statusnya dan tautkan
 penggantinya.
