@@ -1,0 +1,21 @@
+# CODEOWNERS
+
+# Pemilik default seluruh repo. Setiap PR akan otomatis meminta review dari
+# pemilik file yang berubah (bila "Require review from Code Owners" diaktifkan
+# pada ruleset).
+#
+# Ganti dengan team organization bila sudah dibuat, contoh:
+#   *       @utygrowpath/web-dev
+#
+# Format: <pola-path> <@user-atau-@org/team> [owner lain...]
+
+*                                   @utygrowpath/web-dev
+
+# Dokumentasi serah terima sebaiknya direview pengurus inti.
+/docs/09-handover.md                @utygrowpath/web-dev
+/docs/adr/                          @utygrowpath/web-dev
+
+# Konfigurasi dependency & keamanan
+/package.json                       @utygrowpath/web-dev
+/package-lock.json                  @utygrowpath/web-dev
+/.github/                           @utygrowpath/web-dev

@@ -47,10 +47,10 @@ npm run dev        # http://localhost:3000
 | `npm run dev` | Development server (hot reload) |
 | `npm run build` | Build produksi |
 | `npm run start` | Jalankan hasil build |
-| `npm run lint` | ESLint |
-| `npx tsc --noEmit` | Type check (script `typecheck` menyusul di CI) |
+| `npm run lint` | ESLint (gagal bila ada warning) |
+| `npm run typecheck` | Type check (`tsc --noEmit`) |
 
-Sebelum membuka Pull Request, minimal jalankan `npm run lint` dan `npx tsc --noEmit`.
+Sebelum membuka Pull Request, minimal jalankan `npm run lint` dan `npm run typecheck`.
 
 ---
 

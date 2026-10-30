@@ -105,7 +105,7 @@ Aturan praktis:
 Sebelum minta review, pastikan:
 
 - [ ] `npm run lint` bersih
-- [ ] `npx tsc --noEmit` bersih
+- [ ] `npm run typecheck` bersih
 - [ ] `npm run build` sukses
 - [ ] Sudah dicek di layar kecil (mobile) dan besar
 - [ ] Tidak ada `console.log` / kode mati yang tertinggal

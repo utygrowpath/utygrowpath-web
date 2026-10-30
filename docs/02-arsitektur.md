@@ -171,7 +171,7 @@ deploy produksi, kalau tidak URL absolut (OG image, canonical) akan salah.
 |---|---|---|
 | `/dokumentasi` masih menulis array di dalam file halaman | Tidak konsisten dengan aturan `src/data` | Pindahkan ke `src/data/dokumentasi.ts` |
 | Belum ada halaman admin | Data pendaftar belum bisa dibaca panitia | Ikut PR database |
-| Belum ada CI | PR tidak tervalidasi otomatis | PR berikutnya |
+| Belum ada test otomatis | Regresi hanya terdeteksi manual | Rendah |
 | ESLint 9 sudah EOL | Tidak ada patch keamanan | Tunggu dukungan `eslint-config-next` (ADR 0002) |
 
 Daftar lengkap ada di [09 — Handover](./09-handover.md).

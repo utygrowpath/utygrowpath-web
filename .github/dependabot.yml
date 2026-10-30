@@ -1,0 +1,46 @@
+version: 2
+
+updates:
+  # Dependency JavaScript
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "07:00"
+      timezone: Asia/Jakarta
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      # Gabungkan update minor & patch jadi satu PR agar tidak berisik.
+      minor-and-patch:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
+    ignore:
+      # ESLint 10 belum didukung plugin bawaan eslint-config-next.
+      # Lihat docs/adr/0002-eslint-9-sampai-next-mendukung-10.md
+      # Hapus aturan ini setelah ekosistem Next mendukung ESLint 10.
+      - dependency-name: eslint
+        versions:
+          - ">= 10.0.0 < 11.0.0"
+      # Major update React/Next harus direncanakan manual, bukan otomatis.
+      - dependency-name: next
+        update-types:
+          - version-update:semver-major
+      - dependency-name: react
+        update-types:
+          - version-update:semver-major
+      - dependency-name: react-dom
+        update-types:
+          - version-update:semver-major
+
+  # Action yang dipakai di .github/workflows
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "chore(ci)"

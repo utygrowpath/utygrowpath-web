@@ -1,0 +1,77 @@
+name: Laporan Bug
+description: Laporkan sesuatu yang tidak berjalan semestinya
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Terima kasih sudah melaporkan. **Jangan sertakan data pribadi pendaftar**
+        (nama, email, nomor HP, berkas) di Issue publik ini.
+
+  - type: textarea
+    id: ringkasan
+    attributes:
+      label: Ringkasan
+      description: Apa yang salah, dalam satu atau dua kalimat.
+      placeholder: Navbar menutupi judul halaman di layar kecil.
+    validations:
+      required: true
+
+  - type: textarea
+    id: langkah
+    attributes:
+      label: Langkah reproduksi
+      description: Bagaimana cara mereproduksi masalah ini?
+      placeholder: |
+        1. Buka /info-tenant
+        2. Perkecil lebar browser ke 375px
+        3. Perhatikan judul tertutup navbar
+    validations:
+      required: true
+
+  - type: textarea
+    id: harapan
+    attributes:
+      label: Yang diharapkan
+      placeholder: Judul tetap terlihat di bawah navbar.
+    validations:
+      required: true
+
+  - type: textarea
+    id: aktual
+    attributes:
+      label: Yang terjadi
+      placeholder: Judul tertutup dan tidak terbaca.
+    validations:
+      required: true
+
+  - type: input
+    id: lingkungan
+    attributes:
+      label: Perangkat & browser
+      placeholder: Android 14 / Chrome 128, atau Windows 11 / Edge 130
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Bagian yang terdampak
+      options:
+        - Halaman publik
+        - Pendaftaran
+        - Navigasi / layout
+        - Konten / data
+        - Build / CI
+        - Lainnya
+    validations:
+      required: true
+
+  - type: textarea
+    id: tambahan
+    attributes:
+      label: Konteks tambahan
+      description: Screenshot, pesan error, atau catatan lain.
+    validations:
+      required: false

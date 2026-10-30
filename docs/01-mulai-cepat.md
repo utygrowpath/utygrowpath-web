@@ -53,7 +53,7 @@ Buka <http://localhost:3000>.
 ```bash
 npm run dev            # dev server + hot reload
 npm run lint           # ESLint
-npx tsc --noEmit       # type check
+npm run typecheck      # type check
 npm run build          # build produksi
 npm run start          # jalankan hasil build
 ```
@@ -61,7 +61,7 @@ npm run start          # jalankan hasil build
 Urutan yang disarankan sebelum membuka PR:
 
 ```bash
-npm run lint && npx tsc --noEmit && npm run build
+npm run lint && npm run typecheck && npm run build
 ```
 
 ---
@@ -101,7 +101,7 @@ Tipe route belum/gagal di-generate (mis. setelah menghapus/memindahkan `page.tsx
 
 ```bash
 npx next typegen
-npx tsc --noEmit
+npm run typecheck
 ```
 
 Kalau masih gagal, hapus cache lalu ulangi:

@@ -58,7 +58,7 @@ Tetap memakai **ESLint 9.39.5**, dikunci persis (bukan `^9`), dengan:
    ```bash
    npm install -D eslint@^10
    npm run lint
-   npx tsc --noEmit
+   npm run typecheck
    npm run build
    ```
 3. Jika hijau, merge dan perbarui ADR ini dengan status

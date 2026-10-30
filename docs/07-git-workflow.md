@@ -112,7 +112,7 @@ Repo ini memakai Ruleset `protect-main`:
 | Wajib lewat Pull Request | ✅ |
 | Blokir force push | ✅ |
 | Blokir penghapusan branch | ✅ |
-| Wajib status check CI | ✅ (setelah CI ada) |
+| Wajib status check CI | ✅ (`verify`) |
 | Jumlah approval | 0–1 (sesuai jumlah reviewer aktif) |
 
 > Catatan: pada plan **GitHub Free**, proteksi branch hanya tersedia untuk repo
@@ -126,7 +126,7 @@ Repo ini memakai Ruleset `protect-main`:
 2. Jalankan perintah yang sama di lokal:
    ```bash
    npm run lint
-   npx next typegen && npx tsc --noEmit
+   npx next typegen && npm run typecheck
    npm run build
    ```
 3. Perbaiki, commit, push — CI jalan ulang otomatis.
