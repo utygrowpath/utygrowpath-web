@@ -8,7 +8,7 @@ Tujuan: **tidak ada keraguan** saat menaruh file baru.
 
 ```
 utygrowpath-web/
-├─ .github/                     # (menyusul) CI, template PR/issue
+├─ .github/                     # CI, CODEOWNERS, template PR/issue, Dependabot
 ├─ docs/                        # dokumentasi (file yang sedang Anda baca)
 │  └─ adr/                      # catatan keputusan arsitektur
 ├─ public/                      # aset statis, diakses lewat URL /...

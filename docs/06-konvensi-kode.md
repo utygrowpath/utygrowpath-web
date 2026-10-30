@@ -208,6 +208,6 @@ Halaman dinamis memakai `generateMetadata` (lihat `tenant/[slug]/page.tsx`).
 
 ```bash
 npm run lint
-npx tsc --noEmit
+npm run typecheck
 npm run build
 ```

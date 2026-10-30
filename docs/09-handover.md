@@ -109,7 +109,7 @@ Per kondisi terakhir:
 |---|---|---|
 | `/dokumentasi` masih menulis array di dalam file halaman | Tidak konsisten dengan aturan `src/data` | Rendah |
 | Halaman admin belum ada | Data pendaftar belum bisa dibaca panitia | Tinggi (saat DB) |
-| CI belum ada | PR tidak tervalidasi otomatis | Tinggi |
+| Status check CI belum diwajibkan di ruleset | PR bisa di-merge meski CI merah | Tinggi |
 | ESLint 9 sudah EOL sejak 2026-08-06 | Tidak ada patch keamanan | Sedang |
 | Belum ada test otomatis | Regresi hanya terdeteksi manual | Rendah |
 | `siteConfig.url` masih placeholder | OG/canonical salah sebelum diganti | Tinggi (saat deploy) |

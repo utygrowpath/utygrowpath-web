@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Dokumentasi proyek
+    url: https://github.com/utygrowpath/utygrowpath-web/blob/main/docs/README.md
+    about: Baca dulu sebelum membuka Issue — mungkin sudah dijawab di sana.
+  - name: Panduan kontribusi
+    url: https://github.com/utygrowpath/utygrowpath-web/blob/main/CONTRIBUTING.md
+    about: Alur branch, commit, dan Pull Request.

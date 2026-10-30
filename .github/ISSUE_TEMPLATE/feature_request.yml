@@ -1,0 +1,54 @@
+name: Usulan Fitur
+description: Usulkan halaman, fitur, atau perbaikan
+title: "[Fitur]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: masalah
+    attributes:
+      label: Masalah yang ingin diselesaikan
+      description: Mulai dari masalahnya, bukan dari solusinya.
+      placeholder: Panitia tidak punya cara melihat rekap pendaftar tanpa buka database.
+    validations:
+      required: true
+
+  - type: textarea
+    id: usulan
+    attributes:
+      label: Usulan solusi
+      placeholder: Halaman admin dengan tabel pendaftar dan tombol export CSV.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatif
+    attributes:
+      label: Alternatif yang sudah dipertimbangkan
+      placeholder: Export manual lewat GUI database (rapuh saat pergantian panitia).
+    validations:
+      required: false
+
+  - type: dropdown
+    id: prioritas
+    attributes:
+      label: Prioritas
+      options:
+        - Penting sebelum acara
+        - Bisa setelah acara
+        - Nice to have
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: dampak
+    attributes:
+      label: Dampak
+      options:
+        - label: Menambah dependency baru
+          required: false
+        - label: Mengubah struktur folder / routing
+          required: false
+        - label: Membutuhkan keputusan arsitektur (perlu ADR)
+          required: false
+        - label: Menyentuh data pribadi pengguna
+          required: false
