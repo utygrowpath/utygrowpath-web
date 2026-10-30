@@ -9,13 +9,13 @@
 #
 # Format: <pola-path> <@user-atau-@org/team> [owner lain...]
 
-*                                   @nichoarie
+*                                   @utygrowpath/web-dev
 
 # Dokumentasi serah terima sebaiknya direview pengurus inti.
-/docs/09-handover.md                @nichoarie
-/docs/adr/                          @nichoarie
+/docs/09-handover.md                @utygrowpath/web-dev
+/docs/adr/                          @utygrowpath/web-dev
 
 # Konfigurasi dependency & keamanan
-/package.json                       @nichoarie
-/package-lock.json                  @nichoarie
-/.github/                           @nichoarie
+/package.json                       @utygrowpath/web-dev
+/package-lock.json                  @utygrowpath/web-dev
+/.github/                           @utygrowpath/web-dev
