@@ -135,12 +135,11 @@ konsekuensinya, jangan diam-diam mengganti.
 
 ## 8. Kontak darurat
 
-| Peran | Nama | Kontak |
-|---|---|---|
-| Penanggung jawab web | | |
-| Owner GitHub cadangan | | |
-| Pembina / dosen | | |
-| Vendor domain | | |
+| Peran | Nama | 
+|---|---|
+| Chief Executive | Syamil Ahmad Mudzakkir |  |
+| Head Web Development | Nicho Arie Setiawan | |
+| GitHub Backup | Yohanes | |
 
 Minimal **dua** orang yang bisa deploy dan mengakses repo saat acara berlangsung.
 
