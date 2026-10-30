@@ -127,6 +127,7 @@ alasan ESLint belum dinaikkan.
 | ESLint 9.39.5 | Ekosistem Next belum mendukung v10 | 0002 |
 | Konten hardcode terpusat di `src/data` | Tanpa CMS, tapi tetap rapi | 0003 |
 | Form → Server Action + database | Data milik sendiri, fleksibel | 0004 |
+| TypeScript 5.9.3 | `typescript-eslint` belum mendukung TS 7 | 0005 |
 
 Kalau ingin mengubah salah satunya: buat ADR baru yang menjelaskan konteks dan
 konsekuensinya, jangan diam-diam mengganti.

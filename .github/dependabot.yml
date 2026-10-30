@@ -26,6 +26,15 @@ updates:
       - dependency-name: eslint
         versions:
           - ">= 10.0.0 < 11.0.0"
+      # TypeScript 7 belum didukung typescript-eslint (peer: >=4.8.4 <6.1.0).
+      # Lihat docs/adr/0005-typescript-ditahan-di-5x.md
+      - dependency-name: typescript
+        versions:
+          - ">= 7.0.0"
+      # @types/node wajib mengikuti versi runtime Node (.nvmrc), bukan melompat major.
+      - dependency-name: "@types/node"
+        update-types:
+          - version-update:semver-major
       # Major update React/Next harus direncanakan manual, bukan otomatis.
       - dependency-name: next
         update-types:
