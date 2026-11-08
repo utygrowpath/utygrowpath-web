@@ -1,14 +1,12 @@
-import type { ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
-export function Container({
-  children,
-  className = "",
-}: {
+type ContainerProps = ComponentPropsWithoutRef<"div"> & {
   children: ReactNode;
-  className?: string;
-}) {
+};
+
+export function Container({ children, className = "", ...props }: ContainerProps) {
   return (
-    <div className={`mx-auto w-full max-w-6xl px-6 ${className}`}>
+    <div className={`mx-auto w-full max-w-6xl px-6 ${className}`} {...props}>
       {children}
     </div>
   );
