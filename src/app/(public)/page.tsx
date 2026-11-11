@@ -82,7 +82,7 @@ export default function HomePage() {
           className="pointer-events-none absolute inset-0 opacity-[0.06]"
           style={{ backgroundImage: `url('${season4}/motif/motif2.png')`, backgroundSize: "150px" }}
         />
-        <Container data-reveal-stagger className="relative grid min-h-[590px] items-center gap-8 py-16 md:grid-cols-2 md:py-20">
+        <Container data-reveal-stagger className="relative grid min-h-[590px] items-center gap-8 py-16 pb-24 md:grid-cols-2 md:py-20 md:pb-28">
           <div data-reveal-item="left" className="max-w-xl">
             <div className="mb-7 flex items-center gap-4">
               <Image src={`${season4}/logo/logointernal.png`} width={240} height={60} alt="Identitas Universitas Teknologi Yogyakarta" className="h-10 w-auto object-contain" priority />
@@ -105,12 +105,13 @@ export default function HomePage() {
             </div>
           </div>
         </Container>
-        <div className="flex min-h-16 items-center justify-center bg-[#f7cb4d] px-5 py-3">
-          <Image src={`${season4}/motif/banner.png`} width={600} height={100} alt="Growpath Season 4" className="h-auto w-full max-w-[440px] object-contain" />
-        </div>
       </section>
 
-      <section aria-labelledby="video-heading" className="py-16 sm:py-20">
+      <div className="relative z-10 h-0">
+        <Image src={`${season4}/motif/banner.svg`} width={929} height={142} alt="Growpath Season 4" className="absolute left-[calc(50%+6px)] top-0 h-auto w-[calc(100%-2.5rem)] max-w-[680px] -translate-x-1/2 -translate-y-1/2 object-contain" />
+      </div>
+
+      <section aria-labelledby="video-heading" className="pt-24 pb-16 sm:pt-28 sm:pb-20">
         <Container data-reveal-stagger>
           <div data-reveal-item="up" className="mx-auto mb-8 max-w-2xl text-center">
             <p className="mb-2 text-sm font-semibold text-[#ed8b36]">Kenali suasananya</p>
