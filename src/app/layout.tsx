@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.name} ${siteConfig.year}`,
-    template: `%s · ${siteConfig.name} ${siteConfig.year}`,
+    default: "utygrowpathS4",
+    template: `%s · utygrowpathS4`,
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),

@@ -8,7 +8,9 @@ export function SectionAnimations() {
     if (!root) return;
 
     const sections = Array.from(root.querySelectorAll<HTMLElement>(":scope > section"));
-    if (!sections.length) return;
+    const revealOnView = Array.from(root.querySelectorAll<HTMLElement>("[data-reveal-on-view]"));
+    const targets = [...sections, ...revealOnView];
+    if (!targets.length) return;
 
     // Beri indeks ke setiap anak grup agar CSS bisa menghitung delay stagger.
     root.querySelectorAll<HTMLElement>("[data-reveal-stagger]").forEach((group) => {
@@ -20,7 +22,7 @@ export function SectionAnimations() {
     });
 
     if (!("IntersectionObserver" in window)) {
-      sections.forEach((section) => section.classList.add("section-reveal-visible"));
+      targets.forEach((target) => target.classList.add("section-reveal-visible"));
       return;
     }
 
@@ -36,9 +38,9 @@ export function SectionAnimations() {
       { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
     );
 
-    sections.forEach((section) => {
-      section.classList.add("section-reveal");
-      observer.observe(section);
+    targets.forEach((target) => {
+      target.classList.add("section-reveal");
+      observer.observe(target);
     });
 
     return () => observer.disconnect();
