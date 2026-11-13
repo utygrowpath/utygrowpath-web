@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const tenantLinks = [
   { href: "/info-tenant", label: "Informasi tenant" },
-  { href: "/submission", label: "Pendaftaran tenant" },
+  { href: "/pendaftaran/umum", label: "Pendaftaran umum" },
 ];
 
 export function TenantDropdown() {

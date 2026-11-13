@@ -44,3 +44,20 @@ export type CommitteeMember = {
   isCore?: boolean;
   image?: string;
 };
+
+export type Pendaftaran = {
+  /** Paragraf pembuka. Elemen pertama ditampilkan sebagai lead. */
+  intro: string[];
+  categories: string[];
+  requirements: string[];
+  /** `date` berupa teks tampilan (boleh berupa rentang, mis. "12 – 13 Desember 2024"). */
+  timeline: { date: string; label: string }[];
+  /** Harga tiket masuk tenant, contoh: "50k/day". */
+  htm: string;
+  contactPersons: { name: string; phone: string }[];
+  website: string;
+  /** Ditampilkan apa adanya; tidak harus alamat email valid. */
+  email: string;
+  /** Username Instagram tanpa "@". */
+  instagram: string;
+};

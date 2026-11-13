@@ -20,6 +20,7 @@ Gunakan tabel ini saat ingin **mengubah** halaman tertentu.
 | `/dokumentasi` | `src/app/(public)/dokumentasi/page.tsx` | Static | array di dalam file ⚠️ |
 | `/info` | `src/app/(public)/info/page.tsx` | Static | `src/data/info.ts` |
 | `/info/<slug>` | `src/app/(public)/info/[slug]/page.tsx` | Static (dari `generateStaticParams`) | `src/data/info.ts` |
+| `/pendaftaran/umum` | `src/app/(public)/pendaftaran/umum/page.tsx` | Static | `src/data/pendaftaran-umum.ts` |
 | `/submission` | `src/app/(pendaftaran)/submission/page.tsx` | Static | placeholder (form belum aktif) |
 | `/404` | `src/app/not-found.tsx` | Static | — |
 
