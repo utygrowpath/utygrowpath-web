@@ -7,7 +7,9 @@ export function SectionAnimations() {
     const root = document.querySelector<HTMLElement>("[data-section-animations]");
     if (!root) return;
 
-    const sections = Array.from(root.querySelectorAll<HTMLElement>(":scope > section"));
+    const sections = Array.from(
+      root.querySelectorAll<HTMLElement>(":scope > section:not([data-no-reveal])"),
+    );
     const revealOnView = Array.from(root.querySelectorAll<HTMLElement>("[data-reveal-on-view]"));
     const targets = [...sections, ...revealOnView];
     if (!targets.length) return;
@@ -38,12 +40,22 @@ export function SectionAnimations() {
       { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
     );
 
-    targets.forEach((target) => {
-      target.classList.add("section-reveal");
-      observer.observe(target);
+    targets.forEach((target) => target.classList.add("section-reveal"));
+
+    // Beri browser kesempatan menerapkan state awal (opacity/transform) sebelum
+    // mengamati elemen yang mungkin sudah berada di viewport saat halaman dibuka.
+    let secondFrame = 0;
+    const firstFrame = requestAnimationFrame(() => {
+      secondFrame = requestAnimationFrame(() => {
+        targets.forEach((target) => observer.observe(target));
+      });
     });
 
-    return () => observer.disconnect();
+    return () => {
+      cancelAnimationFrame(firstFrame);
+      cancelAnimationFrame(secondFrame);
+      observer.disconnect();
+    };
   }, []);
 
   return null;

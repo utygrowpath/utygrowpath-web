@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { siteConfig } from "@/config/site";
 import { TenantDropdown } from "@/components/layout/tenant-dropdown";
 
 const primaryLinks = [
@@ -41,7 +40,7 @@ export function SiteHeader() {
           {primaryLinks.map((item) => (
             <Link key={item.href} href={item.href} className={linkClass}>{item.label}</Link>
           ))}
-          <a href={`mailto:${siteConfig.email}`} className={linkClass}>Kontak</a>
+          <Link href="/kontak" className={linkClass}>Kontak</Link>
         </nav>
 
         <details className="group relative lg:hidden">
@@ -54,7 +53,7 @@ export function SiteHeader() {
             {primaryLinks.map((item) => (
               <Link key={item.href} href={item.href} className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">{item.label}</Link>
             ))}
-            <a href={`mailto:${siteConfig.email}`} className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Kontak</a>
+            <Link href="/kontak" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Kontak</Link>
           </nav>
         </details>
       </div>
