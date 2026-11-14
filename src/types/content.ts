@@ -25,6 +25,8 @@ export type InspirationPost = {
   date: string;
   /** Satu elemen = satu paragraf. */
   body: string[];
+  category?: string;
+  image?: string;
 };
 
 export type InfoPost = {
@@ -34,6 +36,9 @@ export type InfoPost = {
   /** Format ISO: "2026-08-17" */
   date: string;
   body: string[];
+  category?: string;
+  image?: string;
+  link?: string;
 };
 
 export type CommitteeMember = {
@@ -43,4 +48,6 @@ export type CommitteeMember = {
   /** true untuk pengurus inti (ditampilkan di halaman Tim Kami). */
   isCore?: boolean;
   image?: string;
+  instagram?: string;
+  linkedin?: string;
 };
