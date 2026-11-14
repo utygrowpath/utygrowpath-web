@@ -71,7 +71,7 @@ export default function TentangKamiPage() {
           height={500}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -left-20 top-1/2 z-0 w-64 -translate-y-1/2 opacity-[0.16] sm:-left-12 sm:w-80 lg:left-0 lg:w-[26rem] animate-float-slow"
+          className="pointer-events-none absolute -left-32 top-1/2 z-0 w-52 -translate-y-1/2 opacity-[0.14] sm:-left-12 sm:w-80 lg:left-0 lg:w-[26rem] animate-float-slow"
         />
         <Image
           src="/images/2026/season4/motif/motif3.png"
@@ -79,7 +79,7 @@ export default function TentangKamiPage() {
           height={500}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -right-20 top-1/2 z-0 w-64 -translate-y-1/2 rotate-12 opacity-[0.14] sm:-right-12 sm:w-80 lg:right-0 lg:w-[26rem] animate-float-reverse"
+          className="pointer-events-none absolute -right-32 top-1/2 z-0 w-52 -translate-y-1/2 rotate-12 opacity-[0.12] sm:-right-12 sm:w-80 lg:right-0 lg:w-[26rem] animate-float-reverse"
         />
         <Container className="relative z-10 flex min-h-[420px] items-center justify-center py-12 sm:min-h-[480px] sm:py-16">
           <div className="flex w-full max-w-3xl flex-col items-center gap-6 py-8 text-center">
@@ -112,23 +112,23 @@ export default function TentangKamiPage() {
             backgroundRepeat: "repeat",
           }}
         />
-        <Container className="relative z-10 grid gap-10 md:grid-cols-[0.7fr_1.3fr] md:gap-16">
+        <Container className="relative z-10 grid gap-6 md:grid-cols-[0.7fr_1.3fr] md:gap-16">
           <div data-reveal-on-view data-reveal="left" className="md:sticky md:top-28 md:self-start">
-            <p className="mb-4 text-sm font-semibold tracking-[0.18em] text-[#ed8b36] uppercase">
+            <p className="mb-2 text-sm font-semibold tracking-[0.18em] text-[#ed8b36] uppercase sm:mb-4">
               Cerita kami
             </p>
-            <h2 className="max-w-sm text-4xl leading-tight font-bold sm:text-5xl">
+            <h2 className="max-w-sm text-3xl leading-tight font-bold sm:text-5xl">
               Awal mula
             </h2>
           </div>
-          <div className="relative space-y-0 border-l border-[#8d493a]/25 pl-6 sm:pl-8">
+          <div className="relative space-y-0 border-l border-[#8d493a]/25 pl-5 sm:pl-8">
             <article
               data-reveal-on-view
               data-reveal="right"
-              className="relative pb-8 sm:pb-10"
+              className="relative pb-7 sm:pb-10"
             >
-              <span aria-hidden="true" className="absolute -left-[calc(1.5rem+5px)] top-2 h-2.5 w-2.5 rounded-full bg-[#e0b83e] ring-4 ring-[#e0b83e]/20 sm:-left-[calc(2rem+5px)]" />
-              <p className="text-justify text-base leading-7 text-[#625b54] sm:text-lg sm:leading-8">
+              <span aria-hidden="true" className="absolute -left-[calc(1.25rem+5px)] top-2 h-2.5 w-2.5 rounded-full bg-[#e0b83e] ring-4 ring-[#e0b83e]/20 sm:-left-[calc(2rem+5px)]" />
+              <p className="text-left text-base leading-relaxed text-[#625b54] sm:text-justify sm:text-lg sm:leading-8">
                 Growpath berangkat dari semangat untuk menghadirkan pengalaman
                 kewirausahaan yang dekat dengan kehidupan mahasiswa. Bukan hanya
                 tempat memamerkan produk, Growpath juga menjadi kesempatan untuk
@@ -139,10 +139,10 @@ export default function TentangKamiPage() {
             <article
               data-reveal-on-view
               data-reveal="right"
-              className="relative border-t border-[#8d493a]/15 py-8 sm:py-10"
+              className="relative border-t border-[#8d493a]/15 py-7 sm:py-10"
             >
-              <span aria-hidden="true" className="absolute -left-[calc(1.5rem+5px)] top-10 h-2.5 w-2.5 rounded-full bg-[#ed8b36] ring-4 ring-[#ed8b36]/20 sm:-left-[calc(2rem+5px)] sm:top-12" />
-              <p className="text-justify text-base leading-7 text-[#625b54] sm:text-lg sm:leading-8">
+              <span aria-hidden="true" className="absolute -left-[calc(1.25rem+5px)] top-9 h-2.5 w-2.5 rounded-full bg-[#ed8b36] ring-4 ring-[#ed8b36]/20 sm:-left-[calc(2rem+5px)] sm:top-12" />
+              <p className="text-left text-base leading-relaxed text-[#625b54] sm:text-justify sm:text-lg sm:leading-8">
                 Setiap penyelenggaraan mempertemukan beragam potensi dalam satu
                 ruang: mahasiswa, komunitas, pengunjung, dan pelaku usaha. Dari
                 pertemuan itu lahir percakapan, kolaborasi, serta inspirasi yang
@@ -152,10 +152,10 @@ export default function TentangKamiPage() {
             <article
               data-reveal-on-view
               data-reveal="right"
-              className="relative border-t border-[#8d493a]/15 pt-8 sm:pt-10"
+              className="relative border-t border-[#8d493a]/15 pt-7 sm:pt-10"
             >
-              <span aria-hidden="true" className="absolute -left-[calc(1.5rem+5px)] top-10 h-2.5 w-2.5 rounded-full bg-[#e13b43] ring-4 ring-[#e13b43]/20 sm:-left-[calc(2rem+5px)] sm:top-12" />
-              <p className="text-justify text-base leading-7 text-[#625b54] sm:text-lg sm:leading-8">
+              <span aria-hidden="true" className="absolute -left-[calc(1.25rem+5px)] top-9 h-2.5 w-2.5 rounded-full bg-[#e13b43] ring-4 ring-[#e13b43]/20 sm:-left-[calc(2rem+5px)] sm:top-12" />
+              <p className="text-left text-base leading-relaxed text-[#625b54] sm:text-justify sm:text-lg sm:leading-8">
                 Perjalanan dari season ke season membawa semangat yang sama
                 sekaligus membuka cara baru untuk bertumbuh. UTY Growpath Expo
                 terus berupaya menjadi ruang yang inklusif, kreatif, dan relevan
@@ -189,74 +189,135 @@ export default function TentangKamiPage() {
           </div>
 
           <div className="relative z-10">
+            {/* Vertical timeline line - desktop center, mobile left */}
             <div
               aria-hidden="true"
-              className="absolute bottom-8 left-3 top-8 w-[2px] -translate-x-1/2 bg-gradient-to-b from-[#ed8b36] via-[#e0b83e] to-[#e13b43] opacity-65 md:left-1/2"
+              className="absolute bottom-8 left-3.5 top-6 w-[2px] -translate-x-1/2 bg-gradient-to-b from-[#ed8b36] via-[#e0b83e] to-[#e13b43] opacity-65 md:left-1/2"
             />
 
-            <div className="space-y-12 sm:space-y-16">
+            <div className="space-y-10 sm:space-y-16">
               {seasonStories.map((story, index) => {
                 const textOnLeft = index % 2 === 0;
-                const textCard = (
-                  <div
-                    data-season-reveal={textOnLeft ? "left" : "right"}
-                    className={`relative rounded-2xl border border-[#eadbbd] bg-white p-6 shadow-[0_16px_40px_-24px_rgba(77,55,28,0.35)] transition-shadow duration-300 hover:shadow-[0_22px_45px_-24px_rgba(77,55,28,0.45)] sm:p-7 ${
-                      textOnLeft
-                        ? "md:col-start-1 md:row-start-1 md:after:absolute md:after:right-[-2rem] md:after:top-1/2 md:after:h-px md:after:w-8 md:after:bg-[#d4ad54]"
-                        : "md:col-start-3 md:row-start-1 md:before:absolute md:before:left-[-2rem] md:before:top-1/2 md:before:h-px md:before:w-8 md:before:bg-[#d4ad54]"
-                    }`}
-                  >
-                    <div className="mb-4">
-                      <span className="inline-flex rounded-full bg-[#a95742] px-3.5 py-1 text-xs font-bold tracking-wider text-white uppercase shadow-xs">
-                        {story.season}
-                      </span>
-                    </div>
-
-                    <h3 className="text-lg font-bold leading-snug tracking-tight text-[#2b4869] sm:text-xl">
-                      “{story.theme}”
-                    </h3>
-
-                    {/* Narasi deskripsi dengan format rata kanan-kiri (justify) */}
-                    <div className="mt-4 space-y-3 text-[#625b54]">
-                      {story.description.map((paragraph) => (
-                        <p key={paragraph} className="text-justify text-sm leading-relaxed text-[#625b54] sm:text-base sm:leading-7">
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                );
-                const photoCard = (
-                  <div
-                    data-season-reveal={textOnLeft ? "right" : "left"}
-                    className={`relative aspect-[4/3] overflow-hidden rounded-2xl border-[6px] border-white bg-white shadow-[0_20px_45px_-24px_rgba(43,72,105,0.42)] ${
-                      textOnLeft ? "md:col-start-3 md:row-start-1" : "md:col-start-1 md:row-start-1"
-                    }`}
-                  >
-                    <Image
-                      src={story.image}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 42vw"
-                      alt={story.alt}
-                      className="object-cover transition-transform duration-500 hover:scale-[1.04]"
-                    />
-                  </div>
-                );
 
                 return (
                   <article
                     key={story.season}
                     data-reveal-on-view
-                    className="season-story-reveal relative grid items-center gap-5 pl-12 md:grid-cols-[minmax(0,1fr)_88px_minmax(0,1fr)] md:gap-0 md:pl-0"
+                    className="season-story-reveal relative pl-9 sm:pl-12 md:pl-0"
                   >
-                    <div className="absolute left-3 top-6 flex -translate-x-1/2 flex-col items-center md:static md:col-start-2 md:row-start-1 md:translate-x-0">
-                      <span aria-hidden="true" className="h-5 w-5 rounded-full border-[5px] border-white bg-[#d4ad54] shadow-[0_0_0_3px_rgba(212,173,84,0.25)] md:h-6 md:w-6" />
-                      <span className="mt-2 rounded-full border border-[#eadbbd] bg-white px-2.5 py-1 text-xs font-bold tracking-wide text-[#6f5630] shadow-md md:px-3 md:text-sm">
-                        {story.year}
-                      </span>
+                    {/* Timeline Node & Year Badge */}
+                    {/* Mobile: Pin point on the left timeline */}
+                    <div className="absolute left-3.5 top-6 flex -translate-x-1/2 flex-col items-center md:hidden">
+                      <span
+                        aria-hidden="true"
+                        className="h-4 w-4 rounded-full border-[3px] border-white bg-[#d4ad54] shadow-[0_0_0_3px_rgba(212,173,84,0.3)]"
+                      />
                     </div>
-                    {textCard}
-                    {photoCard}
+
+                    {/* Mobile View: Unified Card (Cover Photo + Story Content in one clean container) */}
+                    <div className="md:hidden">
+                      <div className="overflow-hidden rounded-2xl border border-[#eadbbd] bg-white shadow-[0_12px_32px_-18px_rgba(77,55,28,0.25)]">
+                        {/* Image Cover */}
+                        <div className="relative aspect-[16/10] w-full overflow-hidden">
+                          <Image
+                            src={story.image}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 42vw"
+                            alt={story.alt}
+                            className="object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                          <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                            <span className="inline-flex rounded-full bg-[#a95742] px-3 py-0.5 text-xs font-bold tracking-wider text-white uppercase shadow-sm">
+                              {story.season}
+                            </span>
+                            <span className="rounded-full bg-white/90 px-2.5 py-0.5 text-xs font-bold text-[#6f5630] backdrop-blur-xs shadow-xs">
+                              {story.year}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Story Content */}
+                        <div className="p-5">
+                          <h3 className="text-base font-bold leading-snug tracking-tight text-[#2b4869]">
+                            “{story.theme}”
+                          </h3>
+                          <div className="mt-3 space-y-2.5">
+                            {story.description.map((paragraph) => (
+                              <p
+                                key={paragraph}
+                                className="text-sm leading-relaxed text-[#625b54]"
+                              >
+                                {paragraph}
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Desktop View: Zig-zag 3-column timeline layout */}
+                    <div className="hidden md:grid md:grid-cols-[minmax(0,1fr)_88px_minmax(0,1fr)] md:items-center">
+                      {/* Center Node on desktop */}
+                      <div className="col-start-2 row-start-1 flex flex-col items-center">
+                        <span
+                          aria-hidden="true"
+                          className="h-6 w-6 rounded-full border-[5px] border-white bg-[#d4ad54] shadow-[0_0_0_3px_rgba(212,173,84,0.25)]"
+                        />
+                        <span className="mt-2 rounded-full border border-[#eadbbd] bg-white px-3 py-1 text-sm font-bold tracking-wide text-[#6f5630] shadow-md">
+                          {story.year}
+                        </span>
+                      </div>
+
+                      {/* Desktop Text Card */}
+                      <div
+                        data-season-reveal={textOnLeft ? "left" : "right"}
+                        className={`relative rounded-2xl border border-[#eadbbd] bg-white p-7 shadow-[0_16px_40px_-24px_rgba(77,55,28,0.35)] transition-shadow duration-300 hover:shadow-[0_22px_45px_-24px_rgba(77,55,28,0.45)] ${
+                          textOnLeft
+                            ? "col-start-1 row-start-1 after:absolute after:right-[-2rem] after:top-1/2 after:h-px after:w-8 after:bg-[#d4ad54]"
+                            : "col-start-3 row-start-1 before:absolute before:left-[-2rem] before:top-1/2 before:h-px before:w-8 before:bg-[#d4ad54]"
+                        }`}
+                      >
+                        <div className="mb-4">
+                          <span className="inline-flex rounded-full bg-[#a95742] px-3.5 py-1 text-xs font-bold tracking-wider text-white uppercase shadow-xs">
+                            {story.season}
+                          </span>
+                        </div>
+
+                        <h3 className="text-xl font-bold leading-snug tracking-tight text-[#2b4869]">
+                          “{story.theme}”
+                        </h3>
+
+                        <div className="mt-4 space-y-3 text-[#625b54]">
+                          {story.description.map((paragraph) => (
+                            <p
+                              key={paragraph}
+                              className="text-justify text-base leading-7 text-[#625b54]"
+                            >
+                              {paragraph}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Desktop Photo Card */}
+                      <div
+                        data-season-reveal={textOnLeft ? "right" : "left"}
+                        className={`relative aspect-[4/3] overflow-hidden rounded-2xl border-[6px] border-white bg-white shadow-[0_20px_45px_-24px_rgba(43,72,105,0.42)] ${
+                          textOnLeft
+                            ? "col-start-3 row-start-1"
+                            : "col-start-1 row-start-1"
+                        }`}
+                      >
+                        <Image
+                          src={story.image}
+                          fill
+                          sizes="42vw"
+                          alt={story.alt}
+                          className="object-cover transition-transform duration-500 hover:scale-[1.04]"
+                        />
+                      </div>
+                    </div>
                   </article>
                 );
               })}

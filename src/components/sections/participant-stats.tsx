@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const statistics = [
-  { value: 2198, label: "Audience" },
-  { value: 185, label: "UMKM" },
-  { value: 185, label: "Produk" },
+  { value: 3500, label: "Audience" },
+  { value: 240, label: "UMKM" },
+  { value: 240, label: "Produk" },
 ];
 
 export function ParticipantStats() {
@@ -70,7 +70,7 @@ export function ParticipantStats() {
       <Image src="/images/2026/season4/motif/motif3.png" width={200} height={200} alt="" className="pointer-events-none absolute -right-5 top-1/2 w-28 -translate-y-1/2 opacity-[0.14] sm:right-8 sm:w-36" />
       <div data-reveal-stagger className="relative mx-auto max-w-6xl px-6">
         <h2 id="participant-stats-heading" data-reveal-item="up" className="text-center text-2xl font-bold sm:text-3xl">
-          Partisipan UTY Growpath #1
+          Partisipan UTY Growpath #3
         </h2>
         <dl data-reveal-item="zoom" className="mx-auto mt-10 grid max-w-4xl gap-8 sm:grid-cols-3 sm:gap-5">
           {statistics.map(({ value, label }, index) => (
