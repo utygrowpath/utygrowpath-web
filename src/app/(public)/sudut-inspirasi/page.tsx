@@ -1,43 +1,118 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
-import { PageHero } from "@/components/sections/page-hero";
+import { SectionAnimations } from "@/components/sections/section-animations";
+import { SudutInspirasiListView } from "@/components/sections/sudut-inspirasi-list-view";
 import { inspirationPosts } from "@/data/sudut-inspirasi";
-import { formatDate } from "@/lib/format-date";
 
 export const metadata: Metadata = {
   title: "Sudut Inspirasi",
-  description: "Cerita dan tulisan dari komunitas UtyGrowPath.",
+  description:
+    "Kumpulan cerita perjalanan bisnis, inovasi, dan kisah inspiratif tenant UTY Growpath Expo Season 4.",
 };
 
 export default function SudutInspirasiPage() {
   return (
-    <>
-      <PageHero
-        eyebrow="Sudut Inspirasi"
-        title="Cerita yang menginspirasi"
-        description="Kumpulan tulisan dan kisah dari tenant, peserta, dan panitia."
-      />
+    <div data-section-animations className="overflow-hidden bg-[#fff9f0] text-[#30302f]">
+      <SectionAnimations />
 
-      <Container className="py-16">
-        <ul className="space-y-4">
-          {inspirationPosts.map((post) => (
-            <li key={post.slug}>
-              <Link
-                href={`/sudut-inspirasi/${post.slug}`}
-                className="block rounded-2xl border border-foreground/10 p-6 transition hover:border-foreground/30"
-              >
-                <p className="text-sm text-foreground/50">
-                  {formatDate(post.date)} · {post.author}
-                </p>
-                <p className="mt-2 text-xl font-medium">{post.title}</p>
-                <p className="mt-2 text-foreground/60">{post.excerpt}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Container>
-    </>
+      {/* Hero Section */}
+      <section
+        data-no-reveal
+        className="relative isolate overflow-hidden border-b border-[#e9dcc3] bg-[radial-gradient(ellipse_at_center,_#fffdf8_0%,_#fff5df_58%,_#f8e9c9_100%)]"
+      >
+        {/* Floating Motifs */}
+        <Image
+          src="/images/2026/season4/motif/motif1.png"
+          width={500}
+          height={500}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-20 top-1/2 z-0 w-64 -translate-y-1/2 opacity-[0.16] sm:-left-12 sm:w-80 lg:left-0 lg:w-[26rem] animate-float-slow"
+        />
+        <Image
+          src="/images/2026/season4/motif/motif3.png"
+          width={500}
+          height={500}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-20 top-1/2 z-0 w-64 -translate-y-1/2 rotate-12 opacity-[0.14] sm:-right-12 sm:w-80 lg:right-0 lg:w-[26rem] animate-float-reverse"
+        />
+
+        {/* Ambient subtle documentation blend on the right side */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-0 top-0 bottom-0 z-0 w-1/2 opacity-[0.12] [mask-image:linear-gradient(to_left,rgba(0,0,0,1)_0%,transparent_100%)]"
+        >
+          <Image
+            src="/images/2026/season4/dokumentasi/docum2.png"
+            fill
+            alt=""
+            className="object-cover"
+          />
+        </div>
+
+        <Container className="relative z-10 flex min-h-[420px] items-center justify-center py-12 sm:min-h-[480px] sm:py-16">
+          <div className="flex w-full max-w-3xl flex-col items-center gap-6 py-6 text-center">
+            {/* Logo Badge */}
+            <div className="relative flex h-36 w-36 shrink-0 items-center justify-center rounded-full border border-[#e0b83e]/70 bg-white/70 shadow-[0_16px_36px_-16px_rgba(224,184,62,0.4)] ring-8 ring-[#e0b83e]/10 backdrop-blur-xs sm:h-44 sm:w-44 animate-hero-zoom">
+              <Image
+                src="/images/2026/season4/logo/gowpaths4.png"
+                width={410}
+                height={500}
+                alt="Logo UTY Growpath Expo"
+                priority
+                className="h-28 w-24 object-contain transition-transform duration-500 hover:scale-105 sm:h-36 sm:w-32"
+              />
+            </div>
+
+            {/* Title & Description */}
+            <div className="animate-hero-fade-delayed space-y-4">
+              <h1 className="text-3xl font-bold tracking-tight text-[#2b4869] sm:text-4xl md:text-5xl">
+                Sudut Inspiratif
+              </h1>
+              <p className="mx-auto max-w-2xl text-justify text-sm leading-relaxed text-[#625b54] sm:text-center sm:text-base sm:leading-7">
+                Di sini, kamu bisa menemukan berbagai inspirasi yang lahir dari
+                semangat dan kreativitas para inovator UTY Growpath Expo. Mulai
+                dari cerita perjalanan sukses hingga tips menghadapi tantangan,
+                Sudut Inspiratif adalah tempat di mana ide segar dan pengalaman
+                berharga dibagikan. Ayo jelajahi dunia penuh inspirasi ini, dan
+                siapa tahu, ide berikutnya bisa datang dari sini! Bergabunglah
+                dan temukan inspirasimu bersama kami.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Decorative Batik Ribbon Strip */}
+      <div className="relative z-20 h-3.5 w-full overflow-hidden bg-[#2b4869] shadow-sm sm:h-4">
+        <Image
+          src="/images/2026/season4/motif/line-batik - 2.svg"
+          alt=""
+          fill
+          aria-hidden="true"
+          className="object-cover opacity-90"
+        />
+      </div>
+
+      {/* Content Section */}
+      <section className="relative isolate overflow-hidden bg-[#fff9f0] py-14 sm:py-20">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-0 opacity-[0.045]"
+          style={{
+            backgroundImage: "url('/images/2026/season4/motif/motif2.png')",
+            backgroundSize: "160px",
+            backgroundRepeat: "repeat",
+          }}
+        />
+
+        <Container className="relative z-10 max-w-5xl">
+          <SudutInspirasiListView posts={inspirationPosts} />
+        </Container>
+      </section>
+    </div>
   );
 }
