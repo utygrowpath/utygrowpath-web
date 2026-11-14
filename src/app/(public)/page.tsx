@@ -87,7 +87,6 @@ export default function HomePage() {
             <div className="mb-7 flex items-center gap-4">
               <Image src={`${season4}/logo/logointernal.png`} width={240} height={60} alt="Identitas Universitas Teknologi Yogyakarta" className="h-10 w-auto object-contain" priority />
             </div>
-            <p className="mb-4 text-sm font-semibold text-[#ed8b36]">UTY Growpath Expo</p>
             <h1 className="text-5xl leading-[1.05] font-bold tracking-tight sm:text-6xl">Vistara <span className="text-[#e13b43]">Navakarya</span></h1>
             <p className="mt-6 max-w-lg text-lg leading-8 text-[#59534d]">
               Where Ideas Take Shape. Ruang bertemunya ide, kreativitas, dan kolaborasi untuk menumbuhkan karya baru.
@@ -98,10 +97,10 @@ export default function HomePage() {
             </div>
           </div>
           <div data-reveal-item="right" className="relative mx-auto flex w-full max-w-[470px] items-center justify-center py-8">
-            <Image src={`${season4}/motif/motif1.png`} width={500} height={500} alt="" className="absolute left-0 top-4 w-24 opacity-70 sm:w-32" />
+            <Image src={`${season4}/motif/motif1.png`} width={500} height={500} alt="" className="absolute left-0 top-4 w-24 opacity-70 animate-float-slow sm:w-32" />
             <div className="relative flex min-h-[390px] w-[90%] items-center justify-center rounded-[48%] bg-[#f6ebd5] sm:min-h-[450px]">
               <Image src={`${season4}/logo/gowpaths4.png`} width={410} height={500} alt="Logo UTY Growpath Expo Season 4" priority className="relative z-10 w-[62%]" />
-              <Image src={`${season4}/motif/motif3.png`} width={100} height={100} alt="" className="absolute bottom-8 right-4 w-16 sm:w-20" />
+              <Image src={`${season4}/motif/motif3.png`} width={100} height={100} alt="" className="absolute bottom-8 right-4 w-16 animate-float-reverse sm:w-20" />
             </div>
           </div>
         </Container>
@@ -111,13 +110,19 @@ export default function HomePage() {
         <Image src={`${season4}/motif/banner.svg`} width={929} height={142} alt="Growpath Season 4" className="absolute left-[calc(50%+6px)] top-0 h-auto w-[calc(100%-2.5rem)] max-w-[680px] -translate-x-1/2 -translate-y-1/2 object-contain" />
       </div>
 
-      <section aria-labelledby="video-heading" className="pt-24 pb-16 sm:pt-28 sm:pb-20">
+      <section aria-labelledby="video-heading" className="pt-24 pb-16 sm:pt-28 sm:pb-24">
+
         <Container data-reveal-stagger>
-          <div data-reveal-item="up" className="mx-auto mb-8 max-w-2xl text-center">
-            <p className="mb-2 text-sm font-semibold text-[#ed8b36]">Kenali suasananya</p>
-            <h2 id="video-heading" className="text-3xl font-bold sm:text-4xl">Cerita Growpath dalam video</h2>
+          <div data-reveal-item="up" className="mx-auto mb-10 max-w-2xl text-center">
+            <h2 id="video-heading" className="mt-3 text-3xl font-bold tracking-tight text-[#2b4869] sm:text-4xl">
+              Cerita Growpath dalam video
+            </h2>
           </div>
-          <div data-reveal-item="zoom" className="mx-auto aspect-video w-full max-w-5xl overflow-hidden rounded-xl bg-[#30302f]">
+
+          <div
+            data-reveal-item="zoom"
+            className="group relative mx-auto aspect-video w-full max-w-5xl overflow-hidden rounded-2xl border-4 border-white bg-[#23201d] shadow-[0_28px_70px_-24px_rgba(43,72,105,0.35)] ring-1 ring-[#eadbbd]/70 sm:rounded-3xl"
+          >
             {youtubeVideoId ? (
               <iframe
                 className="h-full w-full"
@@ -127,9 +132,35 @@ export default function HomePage() {
                 allowFullScreen
               />
             ) : (
-              <div className="relative flex h-full items-center justify-center">
-                <Image src={`${season4}/dokumentasi/docum2.png`} width={373} height={250} alt="Dokumentasi kegiatan Growpath" className="absolute inset-0 h-full w-full object-cover opacity-45" />
-                <p className="relative rounded-md bg-[#30302f]/80 px-5 py-3 text-sm font-medium text-white">Video Growpath akan segera hadir</p>
+              <div className="relative flex h-full w-full items-center justify-center">
+                {/* Gambar backdrop dokumentasi */}
+                <Image
+                  src={`${season4}/dokumentasi/docum2.png`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  alt="Dokumentasi kegiatan Growpath"
+                  className="object-cover opacity-60 transition-transform duration-700 group-hover:scale-105"
+                />
+
+                {/* Overlay gradasi cinematic */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1714]/90 via-[#1a1714]/40 to-[#1a1714]/30" />
+
+                {/* Tombol Play Teaser */}
+                <div className="relative z-10 flex flex-col items-center justify-center gap-4 px-4 text-center">
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-[#e13b43] text-white shadow-lg transition-transform duration-300 group-hover:scale-105 sm:h-20 sm:w-20">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="relative ml-1 h-7 w-7 sm:h-9 sm:w-9">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="inline-block rounded-full bg-white/20 px-3.5 py-1 text-xs font-semibold text-white backdrop-blur-md">
+                      Teaser Video
+                    </span>
+                    <p className="mt-2 text-base font-semibold text-white sm:text-lg">
+                      Video Growpath Season 4 segera hadir!
+                    </p>
+                  </div>
+                </div>
               </div>
             )}
           </div>
@@ -146,12 +177,23 @@ export default function HomePage() {
             </div>
           </div>
           <div data-reveal-item="right" className="max-w-xl md:order-1">
-            <p className="mb-3 text-sm font-semibold text-[#ed8b36]">Tentang Growpath Expo</p>
-            <h2 className="text-3xl leading-tight font-bold sm:text-4xl">Satu ruang untuk banyak kemungkinan.</h2>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#ed8b36]/30 bg-[#ed8b36]/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-[#b85e17] uppercase">
+              Tentang Growpath Expo
+            </div>
+            <h2 className="text-3xl leading-tight font-bold tracking-tight text-[#2b4869] sm:text-4xl">
+              Satu ruang untuk banyak kemungkinan.
+            </h2>
             <p className="mt-5 leading-7 text-[#625b54]">
               UTY Growpath Expo mempertemukan mahasiswa, komunitas, dan pelaku usaha dalam suasana yang merayakan ide serta karya. Season 4 membawa semangat baru: berakar pada keberagaman Nusantara, terbuka pada kolaborasi, dan berani membentuk masa depan.
             </p>
-            <Link href="/tentang-kami" className="mt-6 inline-block text-sm font-semibold text-[#e13b43] underline underline-offset-4">Kenali Growpath</Link>
+            <div className="mt-7">
+              <Link
+                href="/tentang-kami"
+                className="group inline-flex items-center gap-2.5 rounded-xl bg-[#e13b43] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[#e13b43] hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span>Kenali Growpath</span>
+              </Link>
+            </div>
           </div>
         </Container>
       </section>

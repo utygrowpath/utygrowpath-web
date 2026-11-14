@@ -12,11 +12,19 @@ export const siteConfig = {
   description:
     "UtyGrowPath adalah event tahunan yang mempertemukan tenant, komunitas, dan panitia untuk tumbuh bersama.",
   url: "https://utygrowpath.example.com",
-  email: "halo@utygrowpath.example.com",
+  email: "growpathexpo.4@gmail.com",
+  address:
+    "Jl. Siliwangi Jl. Jombor Lor, Mlati Krajan, Sendangadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55284 (UTY Kampus 1)",
+  phones: [
+    { number: "+62 812-7466-5794", contact: "Caya", tel: "+6281274665794" },
+    { number: "+62 823-2562-8623", contact: "Pak Puji", tel: "+6282325628623" },
+  ],
   socials: {
-    instagram: "",
-    tiktok: "",
+    instagram: "https://www.instagram.com/utygrowpath.expo?xtok=eXQ2dzlnY2wxYmNh",
+    tiktok: "https://www.tiktok.com/@utygrowpath.expo?_r=1&_t=ZS-9BLTj3wHrBH",
     youtube: "",
+    website: "",
+    linkedin: "https://www.linkedin.com/company/utygrowpath/",
   },
   navigation: [
     { label: "Home", href: "/" },
@@ -26,6 +34,7 @@ export const siteConfig = {
     { label: "Tim Kami", href: "/tim-kami" },
     { label: "Dokumentasi", href: "/dokumentasi" },
     { label: "Info", href: "/info" },
+    { label: "Kontak", href: "/kontak" },
   ],
 } as const;
 
