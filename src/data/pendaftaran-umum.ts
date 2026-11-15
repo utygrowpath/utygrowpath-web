@@ -4,7 +4,10 @@ import type { Pendaftaran } from "@/types/content";
  * Konten halaman pendaftaran tenant umum.
  *
  * TODO(handover): konten masih mengikuti materi Season 2 (2024) sebagai
- * contoh awal. Perbarui tanggal, syarat, dan kontak mengikuti season berjalan.
+ * contoh awal. Perbarui tanggal dan syarat mengikuti season berjalan.
+ *
+ * Kontak (telepon, email, media sosial) TIDAK disimpan di sini — semuanya
+ * diambil dari `src/config/site.ts` supaya tidak ada dua sumber yang beda.
  */
 export const pendaftaranUmum: Pendaftaran = {
   intro: [
@@ -30,11 +33,4 @@ export const pendaftaranUmum: Pendaftaran = {
     { date: "12 – 13 Desember 2026", label: "Selling on Stage" },
   ],
   htm: "50k/day",
-  contactPersons: [
-    { name: "Hamdan", phone: "085171121468" },
-    { name: "Putri Isnu", phone: "085641960764" },
-  ],
-  website: "utygrowpath.com",
-  email: "utygrowpath",
-  instagram: "utygrowpath.expo",
 };

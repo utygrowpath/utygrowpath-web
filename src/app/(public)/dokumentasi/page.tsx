@@ -6,14 +6,14 @@ import { Container } from "@/components/layout/container";
 import { SectionAnimationsGsap } from "@/components/sections/section-animations-gsap";
 import { GalleryGrid } from "@/components/sections/gallery-grid";
 import { SEASONS, getItemsBySeason } from "@/data/dokumentasi";
+import { siteConfig } from "@/config/site";
 import type { DocumentationItem, DocumentationSeason } from "@/types/content";
 
-const season4 = "/images/2026/season4";
+const season4 = `/images/${siteConfig.year}/season4`;
 
 export const metadata: Metadata = {
   title: "Dokumentasi",
-  description:
-    "Kumpulan foto dan video kegiatan UTY Growpath Expo dari tiap season.",
+  description: `Kumpulan foto dan video kegiatan ${siteConfig.name} dari tiap season.`,
 };
 
 export default function DokumentasiPage() {

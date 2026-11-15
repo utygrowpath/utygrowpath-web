@@ -71,12 +71,6 @@ export type Pendaftaran = {
   timeline: { date: string; label: string }[];
   /** Harga tiket masuk tenant, contoh: "50k/day". */
   htm: string;
-  contactPersons: { name: string; phone: string }[];
-  website: string;
-  /** Ditampilkan apa adanya; tidak harus alamat email valid. */
-  email: string;
-  /** Username Instagram tanpa "@". */
-  instagram: string;
 };
 
 export type DocumentationSeason =

@@ -23,7 +23,7 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/utygrowpath.expo?xtok=eXQ2dzlnY2wxYmNh",
     tiktok: "https://www.tiktok.com/@utygrowpath.expo?_r=1&_t=ZS-9BLTj3wHrBH",
     youtube: "",
-    website: "",
+    website: "utygrowpath.com",
     linkedin: "https://www.linkedin.com/company/utygrowpath/",
   },
 } as const;

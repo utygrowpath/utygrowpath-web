@@ -5,18 +5,21 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { SectionAnimationsGsap } from "@/components/sections/section-animations-gsap";
 import { pendaftaranUmum } from "@/data/pendaftaran-umum";
+import { siteConfig } from "@/config/site";
 
-const season4 = "/images/2026/season4";
+const season4 = `/images/${siteConfig.year}/season4`;
+
+/** Username Instagram diambil dari URL di `siteConfig` (tanpa "@"). */
+const instagramHandle =
+  siteConfig.socials.instagram.split("/").filter(Boolean).pop()?.split("?")[0] ?? "";
 
 export const metadata: Metadata = {
   title: "Pendaftaran Tenant Umum",
-  description:
-    "Pendaftaran tenant umum UTY Growpath Expo: kategori, syarat, timeline, HTM, dan kontak panitia.",
+  description: `Pendaftaran tenant umum ${siteConfig.name}: kategori, syarat, timeline, HTM, dan kontak panitia.`,
 };
 
 export default function PendaftaranUmumPage() {
-  const { intro, categories, requirements, timeline, htm, contactPersons, website, email, instagram } =
-    pendaftaranUmum;
+  const { intro, categories, requirements, timeline, htm } = pendaftaranUmum;
 
   return (
     <div
@@ -320,18 +323,18 @@ export default function PendaftaranUmumPage() {
           </div>
 
           <ul data-reveal-stagger className="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">
-            {contactPersons.map((person) => (
+            {siteConfig.phones.map((phone) => (
               <li
-                key={person.name}
+                key={phone.number}
                 data-reveal-item="up"
                 className="rounded-xl border border-white/10 bg-white/5 p-6 text-center"
               >
-                <p className="text-lg font-semibold">{person.name}</p>
+                <p className="text-lg font-semibold">{phone.contact}</p>
                 <a
-                  href={`tel:${person.phone}`}
+                  href={`tel:${phone.tel}`}
                   className="mt-1 block text-white/70 transition-colors hover:text-white"
                 >
-                  {person.phone}
+                  {phone.number}
                 </a>
               </li>
             ))}
@@ -342,24 +345,28 @@ export default function PendaftaranUmumPage() {
             className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm"
           >
             <a
-              href={`https://${website}`}
+              href={`https://${siteConfig.socials.website}`}
               target="_blank"
               rel="noreferrer"
               className="text-white/70 transition-colors hover:text-white"
             >
-              Website: <span className="font-medium text-[#f7cb4d]">{website}</span>
+              Website:{" "}
+              <span className="font-medium text-[#f7cb4d]">
+                {siteConfig.socials.website}
+              </span>
             </a>
             <span className="text-white/70">
-              Email: <span className="font-medium text-[#f7cb4d]">{email}</span>
+              Email:{" "}
+              <span className="font-medium text-[#f7cb4d]">{siteConfig.email}</span>
             </span>
             <a
-              href={`https://instagram.com/${instagram}`}
+              href={siteConfig.socials.instagram}
               target="_blank"
               rel="noreferrer"
               className="text-white/70 transition-colors hover:text-white"
             >
               Instagram:{" "}
-              <span className="font-medium text-[#f7cb4d]">@{instagram}</span>
+              <span className="font-medium text-[#f7cb4d]">@{instagramHandle}</span>
             </a>
           </div>
         </Container>

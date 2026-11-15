@@ -30,7 +30,7 @@ Untuk **panitia yang mengubah teks, foto, atau daftar** — tanpa perlu paham ko
 |---|---|
 | Nama event, tahun, tagline, deskripsi singkat | `src/config/site.ts` |
 | Menu di navbar | `src/components/layout/site-header.tsx` → `primaryLinks` |
-| Email & media sosial | `src/config/site.ts` → `email`, `socials` |
+| Email, nomor telepon & media sosial | `src/config/site.ts` → `email`, `phones`, `socials` (dipakai juga di halaman pendaftaran) |
 | Teks halaman Tentang Kami | `src/app/(public)/tentang-kami/page.tsx` |
 | Daftar tenant | `src/data/tenant.ts` |
 | Artikel Sudut Inspirasi | `src/data/sudut-inspirasi.ts` |

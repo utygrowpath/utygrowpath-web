@@ -4,7 +4,10 @@ import type { Pendaftaran } from "@/types/content";
  * Konten halaman pendaftaran tenant mahasiswa (KWU).
  *
  * TODO(handover): konten diambil dari materi Season 2 sebagai contoh awal.
- * Perbarui tanggal, syarat, dan kontak mengikuti season berjalan.
+ * Perbarui tanggal dan syarat mengikuti season berjalan.
+ *
+ * Kontak (telepon, email, media sosial) TIDAK disimpan di sini — semuanya
+ * diambil dari `src/config/site.ts` supaya tidak ada dua sumber yang beda.
  */
 export const pendaftaranMahasiswa: Pendaftaran = {
   intro: [
@@ -29,11 +32,4 @@ export const pendaftaranMahasiswa: Pendaftaran = {
     { date: "12 – 13 Desember 2026", label: "Selling on Stage" },
   ],
   htm: "FREE!",
-  contactPersons: [
-    { name: "Hamdan", phone: "085171121468" },
-    { name: "Putri Isnu", phone: "085641960764" },
-  ],
-  website: "utygrowpath.com",
-  email: "utygrowpath",
-  instagram: "utygrowpath.expo",
 };
