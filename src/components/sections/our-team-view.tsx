@@ -37,24 +37,46 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
 
   return (
     <div className="space-y-16 sm:space-y-24">
-      {/* Category / Division Filter Tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-        {divisions.map((tab) => {
-          const isActive = activeTab === tab;
-          return (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all sm:text-sm ${
-                isActive
-                  ? "bg-[#2b4869] text-white shadow-md shadow-[#2b4869]/20"
-                  : "border border-[#eadbbd] bg-white text-[#625b54] hover:border-[#2b4869]/40 hover:bg-[#fff9f0]"
-              }`}
-            >
-              {tab}
-            </button>
-          );
-        })}
+      {/* Category / Division Filter Tabs - 2 Baris Simetris & Terstruktur */}
+      <div className="mx-auto flex max-w-4xl flex-col items-center justify-center gap-2.5 px-4 sm:gap-3">
+        {/* Baris 1: 4 Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+          {divisions.slice(0, 4).map((tab) => {
+            const isActive = activeTab === tab;
+            return (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all sm:text-sm ${
+                  isActive
+                    ? "bg-[#2b4869] text-white shadow-md shadow-[#2b4869]/20"
+                    : "border border-[#eadbbd] bg-white text-[#625b54] hover:border-[#2b4869]/40 hover:bg-[#fff9f0]"
+                }`}
+              >
+                {tab}
+              </button>
+            );
+          })}
+        </div>
+        {/* Baris 2: 3 Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+          {divisions.slice(4).map((tab) => {
+            const isActive = activeTab === tab;
+            return (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all sm:text-sm ${
+                  isActive
+                    ? "bg-[#2b4869] text-white shadow-md shadow-[#2b4869]/20"
+                    : "border border-[#eadbbd] bg-white text-[#625b54] hover:border-[#2b4869]/40 hover:bg-[#fff9f0]"
+                }`}
+              >
+                {tab}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Division Sections */}

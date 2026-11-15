@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 import { Container } from "@/components/layout/container";
 import {
   getInspirationPostBySlug,
   inspirationPosts,
 } from "@/data/sudut-inspirasi";
-import { formatDate } from "@/lib/format-date";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -31,7 +31,21 @@ export async function generateMetadata({
   return { title: post.title, description: post.excerpt };
 }
 
-export default async function SudutInspirasiDetailPage({ params }: PageProps) {
+export default function SudutInspirasiDetailPage({ params }: PageProps) {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-[60vh] items-center justify-center bg-[#fff9f0] px-6 text-center text-[#625b54]" role="status">
+          Memuat cerita inspirasi...
+        </div>
+      }
+    >
+      <SudutInspirasiDetailContent params={params} />
+    </Suspense>
+  );
+}
+
+async function SudutInspirasiDetailContent({ params }: PageProps) {
   const { slug } = await params;
   const post = getInspirationPostBySlug(slug);
 
@@ -39,26 +53,16 @@ export default async function SudutInspirasiDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const currentPostIndex = inspirationPosts.findIndex((item) => item.slug === post.slug);
+  const relatedPosts = Array.from(
+    { length: Math.min(3, inspirationPosts.length - 1) },
+    (_, index) => inspirationPosts[(currentPostIndex + index + 1) % inspirationPosts.length],
+  );
+
   return (
     <div className="min-h-screen bg-[#fff9f0] text-[#30302f]">
       {/* Header Banner */}
       <section className="relative isolate overflow-hidden border-b border-[#e9dcc3] bg-[radial-gradient(ellipse_at_center,_#fffdf8_0%,_#fff5df_58%,_#f8e9c9_100%)] py-12 sm:py-16">
-        <Image
-          src="/images/2026/season4/motif/motif1.png"
-          width={400}
-          height={400}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-16 top-1/2 z-0 w-60 -translate-y-1/2 opacity-[0.14] animate-float-slow"
-        />
-        <Image
-          src="/images/2026/season4/motif/motif3.png"
-          width={400}
-          height={400}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-16 top-1/2 z-0 w-60 -translate-y-1/2 opacity-[0.12] animate-float-reverse"
-        />
 
         <Container className="relative z-10 max-w-4xl">
           <Link
@@ -81,10 +85,6 @@ export default async function SudutInspirasiDetailPage({ params }: PageProps) {
                 {post.category}
               </span>
             )}
-            <span>•</span>
-            <span className="font-medium text-[#2b4869]">By {post.author}</span>
-            <span>•</span>
-            <time dateTime={post.date}>{formatDate(post.date)}</time>
           </div>
 
           <h1 className="mt-4 text-2xl font-bold leading-tight tracking-tight text-[#2b4869] sm:text-3xl md:text-4xl">
@@ -120,41 +120,192 @@ export default async function SudutInspirasiDetailPage({ params }: PageProps) {
           }}
         />
 
-        <Container className="relative z-10 max-w-4xl space-y-10">
-          {post.image && (
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border-4 border-white shadow-[0_20px_45px_-24px_rgba(43,72,105,0.4)]">
+        <Container className="relative z-10 max-w-3xl space-y-8">
+          {/* Multiple Product Images (Kanan-Kiri 2 Kolom) */}
+          {post.productImages && post.productImages.length > 0 ? (
+            <div
+              className={`mx-auto grid w-full grid-cols-2 gap-3.5 sm:gap-5 ${
+                post.slug === "nawasena-kriya-kerajinan-ramah-lingkungan"
+                  ? "max-w-2xl"
+                  : ""
+              }`}
+            >
+              {post.productImages.map((imgSrc, idx) => (
+                <div
+                  key={idx}
+                  className={`relative w-full overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_16px_36px_-20px_rgba(43,72,105,0.35)] ${
+                    post.slug === "nawasena-kriya-kerajinan-ramah-lingkungan"
+                      ? "aspect-[2/3]"
+                      : "aspect-square"
+                  }`}
+                >
+                  <Image
+                    src={imgSrc}
+                    fill
+                    priority={idx === 0}
+                    sizes="(max-width: 768px) 50vw, 384px"
+                    alt={`${post.title} - Foto Produk ${idx + 1}`}
+                    className={`object-contain ${
+                      post.slug === "nawasena-kriya-kerajinan-ramah-lingkungan"
+                        ? "p-1"
+                        : "p-2"
+                    }`}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (post.productImage || post.image) ? (
+            /* Single Product Image */
+            <div
+              className={`relative mx-auto w-full overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_16px_36px_-20px_rgba(43,72,105,0.35)] ${
+                post.slug === "vkeyyy-pertualangan-kreatif-naufal-visual-kreatif" ||
+                post.slug === "hampers-handmade-kebahagiaan-setiap-genggaman" ||
+                post.slug === "soto-mbro-citarasa-resep-keluarga"
+                  ? "aspect-[3/4] max-w-[380px]"
+                  : post.slug === "meraih-peluang-meramu-rasa-perjalanan-world-tea"
+                    ? "aspect-square max-w-[480px]"
+                  : "aspect-[16/10] sm:aspect-[16/9]"
+              }`}
+            >
               <Image
-                src={post.image}
+                src={post.productImage || post.image!}
                 fill
                 priority
-                sizes="(max-width: 768px) 100vw, 800px"
+                sizes="(max-width: 768px) 100vw, 768px"
                 alt={post.title}
-                className="object-cover"
+                className="object-contain p-2"
               />
             </div>
-          )}
+          ) : null}
 
-          <div className="rounded-3xl border border-[#eadbbd] bg-white p-8 shadow-[0_20px_45px_-24px_rgba(77,55,28,0.25)] sm:p-12">
-            <div className="space-y-6 text-justify text-base leading-8 text-[#544d47] sm:text-lg sm:leading-9">
+          <div className="rounded-3xl border border-[#eadbbd] bg-white p-6 shadow-[0_16px_40px_-20px_rgba(77,55,28,0.2)] sm:p-8 md:p-12">
+            {/* Body paragraphs (Welcome) */}
+            <div className="space-y-4 text-left text-sm leading-relaxed text-[#544d47] sm:text-justify sm:text-base sm:leading-7">
               {post.body.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p key={index} className="whitespace-pre-line font-medium text-[#403a35]">
+                  {paragraph}
+                </p>
               ))}
             </div>
 
-            <div className="mt-12 border-t border-[#eadbbd] pt-8">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-xs font-semibold tracking-wider uppercase text-[#8a8580]">Dipublikasikan oleh</p>
-                  <p className="text-base font-bold text-[#2b4869]">{post.author} · UTY Growpath Expo</p>
-                </div>
-                <Link
-                  href="/sudut-inspirasi"
-                  className="inline-flex items-center gap-2 rounded-lg bg-[#2b4869] px-5 py-2.5 text-xs font-semibold text-white shadow-xs transition hover:bg-[#1e344c] sm:text-sm"
-                >
-                  Jelajahi Inspirasi Lainnya
-                </Link>
+            {/* Subsections: Editorial Style with Highlighted Headings & Clean Pill/Cards */}
+            {post.subsections && post.subsections.length > 0 && (
+              <div className="mt-8 space-y-6 sm:space-y-8">
+                {post.subsections.map((sub, idx) => (
+                  <div
+                    key={idx}
+                    className="rounded-2xl border border-[#eadbbd]/60 bg-[#fffdfa] p-5 sm:p-7 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.03)]"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-lg bg-[#2b4869] text-xs sm:text-sm font-bold text-white shadow-sm">
+                        {idx + 1}
+                      </span>
+                      <h2 className="text-base font-bold text-[#2b4869] sm:text-lg">
+                        {sub.heading}
+                      </h2>
+                    </div>
+
+                    {sub.content && (
+                      <p className="mt-3.5 text-left text-sm leading-relaxed text-[#625b54] whitespace-pre-line sm:text-justify sm:text-base sm:leading-7">
+                        {sub.content}
+                      </p>
+                    )}
+
+                    {sub.list && sub.list.length > 0 && (
+                      <div className="mt-4 grid gap-2.5 sm:grid-cols-1 md:grid-cols-1">
+                        {sub.list.map((item, itemIdx) => {
+                          const [boldPart, ...restParts] = item.split(":");
+                          return (
+                            <div
+                              key={itemIdx}
+                              className="flex items-start gap-3 rounded-xl border border-[#eadbbd]/70 bg-white p-3.5 shadow-sm text-sm sm:text-base leading-relaxed text-[#625b54]"
+                            >
+                              <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#ed8b36]/20 text-[#ed8b36]">
+                                <span className="h-1.5 w-1.5 rounded-full bg-[#ed8b36]" />
+                              </span>
+                              <div className="flex-1">
+                                {restParts.length > 0 ? (
+                                  <>
+                                    <strong className="font-semibold text-[#2b4869]">
+                                      {boldPart.trim()}:
+                                    </strong>{" "}
+                                    <span>{restParts.join(":").trim()}</span>
+                                  </>
+                                ) : (
+                                  <span>{item}</span>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="mt-10 border-t border-[#eadbbd] pt-6 sm:mt-12">
+              <div>
+                <p className="text-xs font-semibold tracking-wider uppercase text-[#8a8580]">Dipublikasikan oleh</p>
+                <p className="text-base font-bold text-[#2b4869]">UTY Growpath Expo</p>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section aria-labelledby="related-stories-heading" className="border-t border-[#eadbbd]/80 bg-[#fffbf2] py-14 sm:py-20">
+        <Container className="max-w-5xl">
+          <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <h2 id="related-stories-heading" className="mt-2 text-2xl font-bold tracking-tight text-[#2b4869] sm:text-3xl">
+                Jelajahi Cerita Inspiratif
+              </h2>
+              <p className="mt-1 text-lg text-[#7a746e]">
+                Temukan kisah perjalanan usaha dan inovasi seru lainnya.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedPosts.map((relatedPost) => (
+              <Link
+                key={relatedPost.slug}
+                href={`/sudut-inspirasi/${relatedPost.slug}`}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-[#eadbbd] bg-white shadow-[0_4px_16px_-4px_rgba(43,72,105,0.08)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#2b4869]/30 hover:shadow-[0_16px_32px_-12px_rgba(43,72,105,0.18)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2b4869]"
+              >
+                {/* Image Container with native poster aspect ratio */}
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#fbf6ed]">
+                  <Image
+                    src={relatedPost.image || "/images/2026/season4/dokumentasi/docum1.png"}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
+                    alt={relatedPost.title}
+                    className="object-contain p-2.5 transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
+                  {/* Subtle inner top-edge vignette */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                </div>
+
+                {/* Card Content */}
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="line-clamp-2 text-base font-bold leading-snug text-[#2b4869] transition-colors group-hover:text-[#8d493a]">
+                    {relatedPost.title}
+                  </h3>
+
+                  <p className="mt-2.5 line-clamp-2 flex-1 text-xs sm:text-sm leading-relaxed text-[#625b54]">
+                    {relatedPost.excerpt}
+                  </p>
+
+                  <div className="mt-4 flex items-center justify-between border-t border-[#eadbbd]/60 pt-3">
+                    <span className="text-sm font-bold text-[#2b4869] transition-colors group-hover:text-[#ed8b36]">
+                      Baca Selengkapnya
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>
