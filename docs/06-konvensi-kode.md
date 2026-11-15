@@ -44,7 +44,11 @@ Aturan penempatan:
 | Di komponen daun (`components/forms/...`) | Di `page.tsx` seluruh halaman |
 | Hanya file yang benar-benar butuh | Menambahkan ke semua file "supaya aman" |
 
-Saat ini **tidak ada** file dengan `"use client"`. Jaga agar tetap minimal.
+Saat ini `"use client"` hanya ada di komponen daun:
+`layout/tenant-dropdown.tsx` (menu), `sections/section-animations.tsx` (reveal
+berbasis CSS + IntersectionObserver) dan `sections/section-animations-gsap.tsx`
+(animasi GSAP untuk halaman pendaftaran). Jangan menambah `"use client"` pada
+`page.tsx`.
 
 ---
 

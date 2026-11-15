@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
-import { SectionAnimations } from "@/components/sections/section-animations";
+import { SectionAnimationsGsap } from "@/components/sections/section-animations-gsap";
 import { pendaftaranUmum } from "@/data/pendaftaran-umum";
 
 const season4 = "/images/2026/season4";
@@ -23,7 +23,7 @@ export default function PendaftaranUmumPage() {
       data-section-animations
       className="overflow-hidden bg-[#fff9f0] text-[#30302f]"
     >
-      <SectionAnimations />
+      <SectionAnimationsGsap />
 
       {/* Hero */}
       <section className="relative isolate overflow-hidden border-b border-[#e9dcc3] bg-[radial-gradient(ellipse_at_center,_#fffdf8_0%,_#fff5df_58%,_#f8e9c9_100%)]">
@@ -115,7 +115,7 @@ export default function PendaftaranUmumPage() {
               Pastikan produk atau jasmu masuk ke salah satu kategori berikut.
             </p>
           </div>
-          <ul data-reveal-stagger className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul data-reveal-stagger data-sequence className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((category, index) => (
               <li
                 key={category}
@@ -186,6 +186,7 @@ export default function PendaftaranUmumPage() {
               alt=""
               aria-hidden="true"
               className="pointer-events-none absolute -right-4 -top-6 z-10 w-24 opacity-90"
+              data-parallax="14"
             />
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[#e9dfca]">
               <Image
@@ -203,6 +204,7 @@ export default function PendaftaranUmumPage() {
               alt=""
               aria-hidden="true"
               className="pointer-events-none absolute -bottom-5 -left-5 z-10 w-24 opacity-90"
+              data-parallax="14"
             />
           </div>
         </Container>
@@ -223,12 +225,13 @@ export default function PendaftaranUmumPage() {
             </p>
           </div>
           <div
-            data-reveal-item="right"
+            data-sequence="rise"
             className="relative space-y-0 border-l border-[#8d493a]/25 pl-6 sm:pl-8"
           >
             {timeline.map((item, index) => (
               <article
                 key={item.label}
+                data-reveal-item="up"
                 className={
                   index === 0
                     ? "relative pb-8"

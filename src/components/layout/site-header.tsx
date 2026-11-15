@@ -75,7 +75,8 @@ export function SiteHeader() {
             <Link href="/" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Home</Link>
             <p className="px-3 pt-3 pb-1 text-[11px] font-medium text-[#8a8580]">Tenant</p>
             <Link href="/info-tenant" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Informasi tenant</Link>
-            <Link href="/pendaftaran/umum" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Pendaftaran umum</Link>
+            <Link href="/pendaftaran/umum" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Pendaftaran Tenant Umum</Link>
+            <Link href="/pendaftaran/mahasiswa" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Pendaftaran Tenant KWU/Mahasiswa</Link>
             {primaryLinks.map((item) => (
               <Link key={item.href} href={item.href} className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">{item.label}</Link>
             ))}
