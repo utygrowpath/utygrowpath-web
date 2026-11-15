@@ -61,3 +61,44 @@ export type CommitteeMember = {
   instagram?: string;
   linkedin?: string;
 };
+
+export type Pendaftaran = {
+  /** Paragraf pembuka. Elemen pertama ditampilkan sebagai lead. */
+  intro: string[];
+  categories: string[];
+  requirements: string[];
+  /** `date` berupa teks tampilan (boleh berupa rentang, mis. "12 – 13 Desember 2024"). */
+  timeline: { date: string; label: string }[];
+  /** Harga tiket masuk tenant, contoh: "50k/day". */
+  htm: string;
+};
+
+export type DocumentationSeason =
+  | "season-1"
+  | "season-2"
+  | "season-3"
+  | "season-4";
+
+export type DocumentationItem = {
+  /**
+   * Kunci stabil: dipakai sebagai React key, nilai `?item=` di URL, dan nama
+   * berkas. Huruf kecil, tanpa spasi. Jangan diubah setelah tayang.
+   */
+  slug: string;
+  title: string;
+  kind: "photo" | "video";
+  /** Foto: path di /public. Video: thumbnail, bila tidak memakai `youtubeId`. */
+  src?: string;
+  /** Foto ukuran besar untuk lightbox. Kosong = pakai `src`. */
+  fullSrc?: string;
+  /** Video YouTube: id dari URL share. Pakai salah satu: `youtubeId` atau `videoSrc`. */
+  youtubeId?: string;
+  /** Video file: path .mp4 di /public/media/. */
+  videoSrc?: string;
+  /** Poster untuk `videoSrc`; wajib bila memakai video file. */
+  poster?: string;
+  /** Deskripsi visual untuk screen reader. Wajib untuk semua tipe. */
+  alt: string;
+  season: DocumentationSeason;
+  caption?: string;
+};

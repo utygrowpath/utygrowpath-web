@@ -17,14 +17,13 @@ Gunakan tabel ini saat ingin **mengubah** halaman tertentu.
 | `/tenant/<slug>` | `src/app/(public)/tenant/[slug]/page.tsx` | Static (dari `generateStaticParams`) | `src/data/tenant.ts` |
 | `/tim-kami` | `src/app/(public)/tim-kami/page.tsx` | Static | `src/data/panitia.ts` (`isCore`) |
 | `/panitia` | `src/app/(public)/panitia/page.tsx` | Static | `src/data/panitia.ts` (semua) |
-| `/dokumentasi` | `src/app/(public)/dokumentasi/page.tsx` | Static | array di dalam file ⚠️ |
+| `/dokumentasi` | `src/app/(public)/dokumentasi/page.tsx` | Static | `src/data/dokumentasi.ts` |
 | `/info` | `src/app/(public)/info/page.tsx` | Static | `src/data/info.ts` |
 | `/info/<slug>` | `src/app/(public)/info/[slug]/page.tsx` | Static (dari `generateStaticParams`) | `src/data/info.ts` |
+| `/pendaftaran/umum` | `src/app/(public)/pendaftaran/umum/page.tsx` | Static | `src/data/pendaftaran-umum.ts` |
+| `/pendaftaran/mahasiswa` | `src/app/(public)/pendaftaran/mahasiswa/page.tsx` | Static | `src/data/pendaftaran-mahasiswa.ts` |
 | `/submission` | `src/app/(pendaftaran)/submission/page.tsx` | Static | placeholder (form belum aktif) |
 | `/404` | `src/app/not-found.tsx` | Static | — |
-
-⚠️ `/dokumentasi` masih menulis data di dalam file halaman. Ini utang teknis —
-lihat [09 — Handover](./09-handover.md).
 
 ---
 
@@ -44,7 +43,7 @@ src/app/layout.tsx                  <html>, font, metadata global
 ```
 
 `layout.tsx` membungkus semua halaman di bawahnya. Menambah item navigasi
-dilakukan di `src/config/site.ts` (`navigation`), bukan di `SiteHeader`.
+dilakukan di `primaryLinks` pada `src/components/layout/site-header.tsx`.
 
 ---
 
@@ -91,7 +90,7 @@ Contoh: halaman **FAQ** di `/faq`.
      );
    }
    ```
-3. Tambahkan ke navigasi di `src/config/site.ts` (kalau perlu muncul di navbar).
+3. Tambahkan ke `primaryLinks` di `src/components/layout/site-header.tsx` (kalau perlu muncul di navbar).
 4. Verifikasi:
    ```bash
    npm run dev     # buka /faq
@@ -130,8 +129,8 @@ Aturan `slug`:
 ## Menghapus halaman
 
 1. Hapus foldernya.
-2. Hapus juga entri di `src/config/site.ts` (`navigation`) dan link di
-   `SiteFooter` bila ada.
+2. Hapus juga entri di `primaryLinks` (`src/components/layout/site-header.tsx`)
+   dan link di `SiteFooter` bila ada.
 3. Cari referensi yang tersisa:
    ```bash
    git grep "nama-halaman"

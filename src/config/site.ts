@@ -23,19 +23,9 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/utygrowpath.expo?xtok=eXQ2dzlnY2wxYmNh",
     tiktok: "https://www.tiktok.com/@utygrowpath.expo?_r=1&_t=ZS-9BLTj3wHrBH",
     youtube: "",
-    website: "",
+    website: "utygrowpath.com",
     linkedin: "https://www.linkedin.com/company/utygrowpath/",
   },
-  navigation: [
-    { label: "Home", href: "/" },
-    { label: "Tentang Kami", href: "/tentang-kami" },
-    { label: "Sudut Inspirasi", href: "/sudut-inspirasi" },
-    { label: "Info Tenant", href: "/info-tenant" },
-    { label: "Tim Kami", href: "/tim-kami" },
-    { label: "Dokumentasi", href: "/dokumentasi" },
-    { label: "Info", href: "/info" },
-    { label: "Kontak", href: "/kontak" },
-  ],
 } as const;
 
 export type SiteConfig = typeof siteConfig;

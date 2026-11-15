@@ -29,14 +29,14 @@ Untuk **panitia yang mengubah teks, foto, atau daftar** — tanpa perlu paham ko
 | Yang ingin diubah | File |
 |---|---|
 | Nama event, tahun, tagline, deskripsi singkat | `src/config/site.ts` |
-| Menu di navbar | `src/config/site.ts` → `navigation` |
-| Email & media sosial | `src/config/site.ts` → `email`, `socials` |
+| Menu di navbar | `src/components/layout/site-header.tsx` → `primaryLinks` |
+| Email, nomor telepon & media sosial | `src/config/site.ts` → `email`, `phones`, `socials` (dipakai juga di halaman pendaftaran) |
 | Teks halaman Tentang Kami | `src/app/(public)/tentang-kami/page.tsx` |
 | Daftar tenant | `src/data/tenant.ts` |
 | Artikel Sudut Inspirasi | `src/data/sudut-inspirasi.ts` |
 | Pengumuman / Info | `src/data/info.ts` |
 | Susunan panitia | `src/data/panitia.ts` |
-| Galeri dokumentasi | `src/app/(public)/dokumentasi/page.tsx` |
+| Galeri dokumentasi | `src/data/dokumentasi.ts` |
 
 ---
 
@@ -156,6 +156,7 @@ Buka `src/data/panitia.ts`:
    ```
    public/images/2026/tenant/
    public/images/2026/dokumentasi/
+   public/media/season-4/        # foto besar untuk lightbox galeri dokumentasi
    ```
 3. Rujuk dari data dengan path yang diawali `/`:
    ```ts
@@ -168,16 +169,57 @@ Buka `src/data/panitia.ts`:
 
 ## 7. Menambah menu di navbar
 
-Buka `src/config/site.ts`:
+Buka `src/components/layout/site-header.tsx`, tambahkan satu baris ke
+`primaryLinks`:
 
 ```ts
-navigation: [
-  { label: "Home", href: "/" },
-  { label: "FAQ", href: "/faq" },     // ← tambahan
-],
+const primaryLinks = [
+  { href: "/sudut-inspirasi", label: "Sudut inspirasi" },
+  { href: "/faq", label: "FAQ" },     // ← tambahan
+];
 ```
 
-Pastikan halamannya sudah ada, kalau tidak akan jadi link mati.
+Menu itu otomatis muncul di navbar desktop dan di menu ponsel. Pastikan
+halamannya sudah ada, kalau tidak akan jadi link mati.
+
+---
+
+## 8. Menambah foto / video galeri dokumentasi
+
+Buka `src/data/dokumentasi.ts`, tambahkan satu blok di dalam array
+`documentationItems`:
+
+```ts
+{
+  slug: "lomba-band",
+  title: "Lomba Band",
+  kind: "photo",
+  src: "/images/2026/season4/dokumentasi/lomba-band.jpg",
+  fullSrc: "/media/season-4/lomba-band.jpg",   // opsional, versi besar untuk lightbox
+  alt: "Grup band tampil di panggung UTY Growpath Expo",
+  season: "season-4",
+  caption: "Babak final lomba band.",
+},
+```
+
+| Kolom | Aturan |
+|---|---|
+| `slug` | huruf kecil, tanpa spasi, **unik**, jangan diubah setelah tayang (jadi link `?item=`) |
+| `title` | Judul yang tampil di kartu dan popup |
+| `kind` | `"photo"` atau `"video"` |
+| `src` | Foto: path gambarnya. Video: thumbnail, kalau tidak pakai YouTube |
+| `youtubeId` | **Untuk video YouTube:** isi kolom ini dengan id dari URL `youtu.be/ID` atau `watch?v=ID` |
+| `videoSrc` + `poster` | Untuk video file (`.mp4` di `public/media/...`) — pakai salah satu: `youtubeId` **atau** `videoSrc` |
+| `alt` | Wajib. Tulis deskripsi isinya untuk pembaca layar |
+| `season` | `"season-1"` … `"season-4"`. Menentukan tab tempat item muncul |
+| `caption` | Opsional, satu-dua baris di bawah judul |
+
+⚠️ **Jangan simpan video dengan `youtubeId` kosong** — kartunya akan
+menampilkan gambar rusak. Kalau id-nya belum ada, jangan tambahkan itemnya
+dulu.
+
+Musim yang belum punya item tetap muncul sebagai tab dan menampilkan tulisan
+"Dokumentasi Season X belum tersedia".
 
 ---
 

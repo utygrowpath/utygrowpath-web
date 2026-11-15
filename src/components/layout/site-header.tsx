@@ -8,6 +8,7 @@ const primaryLinks = [
   { href: "/info", label: "Informasi" },
   { href: "/tentang-kami", label: "Tentang" },
   { href: "/tim-kami", label: "Tim" },
+  { href: "/dokumentasi", label: "Dokumentasi" },
 ];
 
 const linkClass = "whitespace-nowrap py-2 text-[13px] font-normal tracking-[0.01em] text-[#4e5660] transition-colors hover:text-[#e13b43] xl:text-sm";
@@ -75,7 +76,8 @@ export function SiteHeader() {
             <Link href="/" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Home</Link>
             <p className="px-3 pt-3 pb-1 text-[11px] font-medium text-[#8a8580]">Tenant</p>
             <Link href="/info-tenant" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Informasi tenant</Link>
-            <Link href="/submission" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Pendaftaran tenant</Link>
+            <Link href="/pendaftaran/umum" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Pendaftaran Tenant Umum</Link>
+            <Link href="/pendaftaran/mahasiswa" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Pendaftaran Tenant KWU/Mahasiswa</Link>
             {primaryLinks.map((item) => (
               <Link key={item.href} href={item.href} className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">{item.label}</Link>
             ))}

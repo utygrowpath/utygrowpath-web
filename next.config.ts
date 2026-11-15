@@ -5,6 +5,13 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   cacheComponents: true,
   partialPrefetching: true,
+  images: {
+    // Thumbnail video YouTube (lihat src/data/dokumentasi.ts).
+    remotePatterns: [
+      { protocol: "https", hostname: "i.ytimg.com" },
+      { protocol: "https", hostname: "img.youtube.com" },
+    ],
+  },
   turbopack: {
     rules: {
       "*.css": {
