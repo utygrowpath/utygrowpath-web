@@ -156,7 +156,7 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                     <div className="relative aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-2xl border-2 border-[#e6d5b7] bg-gradient-to-b from-[#2b4869] to-[#122030] shadow-[0_16px_36px_-16px_rgba(43,72,105,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-[#e0b83e] hover:shadow-[0_24px_50px_-16px_rgba(224,184,62,0.4)]">
                       {/* Member photo / placeholder */}
                       <Image
-                        src={member.image || "/images/2026/season4/dokumentasi/docum1.png"}
+                        src={member.image || "/images/2026/season4/dokumentasi/docum1.jpg"}
                         fill
                         sizes="(max-width: 768px) 280px, 260px"
                         alt={member.name}

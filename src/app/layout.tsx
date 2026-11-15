@@ -29,9 +29,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="id"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full bg-[#fff9f0] antialiased overscroll-y-none`}
     >
-      <body className="flex min-h-full flex-col bg-[#fff9f0] overscroll-y-none">{children}</body>
+      <body suppressHydrationWarning className="flex min-h-full flex-col bg-[#fff9f0] overscroll-y-none">{children}</body>
     </html>
   );
 }
