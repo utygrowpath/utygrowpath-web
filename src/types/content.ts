@@ -27,6 +27,16 @@ export type InspirationPost = {
   body: string[];
   category?: string;
   image?: string;
+  /** Gambar produk/detail khusus untuk halaman isi artikel */
+  productImage?: string;
+  /** Daftar gambar produk jika ada lebih dari satu (layout kanan-kiri) */
+  productImages?: string[];
+  /** Sub-section atau bullet list opsional */
+  subsections?: {
+    heading: string;
+    content?: string;
+    list?: string[];
+  }[];
 };
 
 export type InfoPost = {
