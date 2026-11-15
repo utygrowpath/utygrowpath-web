@@ -274,8 +274,8 @@ export default function TentangKamiPage() {
                         data-season-reveal={textOnLeft ? "left" : "right"}
                         className={`relative rounded-2xl border border-[#eadbbd] bg-white p-7 shadow-[0_16px_40px_-24px_rgba(77,55,28,0.35)] transition-shadow duration-300 hover:shadow-[0_22px_45px_-24px_rgba(77,55,28,0.45)] ${
                           textOnLeft
-                            ? "col-start-1 row-start-1 after:absolute after:right-[-2rem] after:top-1/2 after:h-px after:w-8 after:bg-[#d4ad54]"
-                            : "col-start-3 row-start-1 before:absolute before:left-[-2rem] before:top-1/2 before:h-px before:w-8 before:bg-[#d4ad54]"
+                            ? "col-start-1 row-start-1 after:absolute after:right-[-2rem] after:top-[calc(50%-1.125rem)] after:h-px after:w-8 after:bg-[#d4ad54]"
+                            : "col-start-3 row-start-1 before:absolute before:left-[-2rem] before:top-[calc(50%-1.125rem)] before:h-px before:w-8 before:bg-[#d4ad54]"
                         }`}
                       >
                         <div className="mb-4">
