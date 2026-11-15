@@ -10,25 +10,39 @@ interface OurTeamViewProps {
 }
 
 export function OurTeamView({ committee }: OurTeamViewProps) {
-  const divisions = [
-    "Semua",
-    "Chief Executive",
+  // Ambil urutan divisi dinamis dari data, pertahankan urutan kemunculan pertama
+  const divisionOrder = [
+    "Formatur",
+    "Creative Event",
+    "Equipment & Logistic Operations",
+    "Finance Administrations",
+    "Community Relations",
     "Story Hunter",
-    "Community Relation",
-    "Creative & Media",
-    "Logistics & Operational",
-    "Sponsorship & Partnership",
+    "Social Media Development",
+    "Photographer & Videographer",
+    "Website Development",
+    "Graphic Designer",
   ];
+
+  // Fallback: tangkap divisi yang ada di data tapi belum di-list di atas
+  const extraDivisions = Array.from(
+    new Set(committee.map((m) => m.division))
+  ).filter((d) => !divisionOrder.includes(d));
+
+  const allDivisions = [...divisionOrder, ...extraDivisions];
+  const divisions = ["Semua", ...allDivisions];
 
   const [activeTab, setActiveTab] = useState<string>("Semua");
 
   // Group members by division
-  const groupedCommittee = divisions
-    .filter((d) => d !== "Semua")
-    .reduce<Record<string, CommitteeMember[]>>((acc, div) => {
-      acc[div] = committee.filter((m) => m.division === div);
+  const groupedCommittee = allDivisions.reduce<Record<string, CommitteeMember[]>>(
+    (acc, div) => {
+      const members = committee.filter((m) => m.division === div);
+      if (members.length > 0) acc[div] = members;
       return acc;
-    }, {});
+    },
+    {}
+  );
 
   const displayedDivisions =
     activeTab === "Semua"
@@ -37,30 +51,12 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
 
   return (
     <div className="space-y-16 sm:space-y-24">
-      {/* Category / Division Filter Tabs - 2 Baris Simetris & Terstruktur */}
-      <div className="mx-auto flex max-w-4xl flex-col items-center justify-center gap-2.5 px-4 sm:gap-3">
-        {/* Baris 1: 4 Tabs */}
+      {/* Category / Division Filter Tabs – dinamis sesuai data */}
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-2.5 px-4 sm:gap-3">
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
-          {divisions.slice(0, 4).map((tab) => {
-            const isActive = activeTab === tab;
-            return (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all sm:text-sm ${
-                  isActive
-                    ? "bg-[#2b4869] text-white shadow-md shadow-[#2b4869]/20"
-                    : "border border-[#eadbbd] bg-white text-[#625b54] hover:border-[#2b4869]/40 hover:bg-[#fff9f0]"
-                }`}
-              >
-                {tab}
-              </button>
-            );
-          })}
-        </div>
-        {/* Baris 2: 3 Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
-          {divisions.slice(4).map((tab) => {
+          {divisions
+            .filter((tab) => tab === "Semua" || groupedCommittee[tab])
+            .map((tab) => {
             const isActive = activeTab === tab;
             return (
               <button
