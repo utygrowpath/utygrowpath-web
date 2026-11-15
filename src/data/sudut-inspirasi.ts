@@ -581,6 +581,58 @@ export const inspirationPosts: InspirationPost[] = [
       },
     ],
   },
+  /* S2 – artikel Season 2 Sudut Inspirasi */
+  {
+    slug: "pinarak-bisnis-nongkrong-hobby-motor-klasik",
+    title: "Pinarak: Bisnis, Nongkrong dan Hobby Bersua Di Atas Motor Klasik",
+    author: "utygrowpath",
+    category: "Food & Beverage",
+    date: "2024-09-13",
+    // TODO: ganti dengan gambar Pinarak yang sebenarnya
+    image: "/images/2026/sudut-inspirasi/s2/pinarak.jpg",
+    excerpt:
+      "Adi Roadi dan Erick Kurniawan, mahasiswa Psikologi UTY angkatan 2022, merintis Pinarak – kedai kopi dan bakaran unik di atas motor klasik yang hadir sebagai wadah nongkrong, berdiskusi, dan menyalurkan hobi.",
+    body: [
+      "Adi Roadi dan Erick Kurniawan Mahasiswa Universitas Teknologi Yogyakarta, prodi Psikologi angkatan 2022 merintis usaha bersama.\n\nBermula dari keresahan Adi dan Erik dalam menjalani perkuliahan yang monoton. Mereka menciptakan Pinarak sebagai wadah untuk nongkrong dan berdiskusi dengan orang-orang baru serta memperluas relasi dengan tujuan mendapatkan insight dari banyak sudut pandang dan juga sebagai sarana untuk menyalurkan hobby melalui bisnis.",
+    ],
+    subsections: [
+      {
+        heading: "Pinarak",
+        content:
+          "Dalam bahasa jawa, Pinarak berarti mampir. Berkecimpung di bidang FnB yang menjual kopi-kopi dengan harga yang terjangkau di kalangan mahasiswa. Memiliki konsep unik kedai kopi dan bakaran di atas motor klasik. Mereka juga menyediakan permainan catur, kartu dan gitar untuk menambah nuansa kental \"Nongkrong di pinggir jalan\". Pinarak mulai buka sore pukul 16.29–18.14 WIB setiap hari (Jalan Banturan Raya) dan malam minggu pukul 19.00 – sengantuknya. Untuk sistem delivery, minimal Rp15.000 akan diantar sampai depan kos + free ongkir.",
+      },
+      {
+        heading: "Awal Mula Merintis",
+        content:
+          "Diawali ketika Adi berkunjung ke rumah Erik di Semarang, mereka duduk, mengobrol dan bercerita tentang rutinitas perkuliahan mereka yang kurang produktif seperti nongkrong, bermain game, dan media sosial. Kemudian mereka memiliki ide untuk mendirikan sebuah bisnis, namun belum memastikan ingin membuka bisnis di bidang tertentu. Adi pun mengusulkan untuk berjualan kopi di atas motornya agar tidak perlu mengeluarkan banyak biaya untuk menyewa lapak.",
+      },
+      {
+        heading: "Motivasi",
+        content:
+          "Dari keresahan rutinitas perkuliahan mereka yang kurang produktif, memotivasi Adi dan Erik untuk membuat Pinarak. Mereka menarget pasar mahasiswa dengan melihat peluang di mana kebiasaan mahasiswa adalah menghabiskan waktu untuk nongkrong. Dengan target market yang tepat, harga yang terjangkau, serta suasana yang asik dan menarik, bisnis mereka semakin berkembang.",
+      },
+      {
+        heading: "Konsistensi dan Tantangan",
+        content:
+          "Adi dan Erik membuka lapak Pinarak setiap hari. Bahkan dalam wawancaranya mereka mengatakan \"Tutup se-ngantuknya khusus di malam minggu.\" Di tengah jadwal perkuliahan yang padat, dengan kegigihan dan konsistensinya mereka mampu bertahan dalam menjalani bisnis dan perkuliahan yang padat secara bersamaan.\n\nSelain itu mereka juga tidak memiliki lapak tetap dan terkendala dengan perizinan di tiap lokasi, namun Pinarak tetap menghormati setiap perizinan membuka lapak.",
+      },
+      {
+        heading: "Motor Klasik",
+        content:
+          "Pinarak menggunakan motor klasik yang identik dengan usianya yang sudah tua dan perjalanan jauh yang sudah ditempuh, mencerminkan kesederhanaan dan pengalaman serta memiliki keunikan tersendiri sehingga mampu menarik target pasar Pinarak. Dengan memadukan konsep kopi tempo dulu di atas motor klasik, mereka berdua menyajikan kopi dan menu-menu bakaran yang terjangkau di kantong mahasiswa.",
+      },
+      {
+        heading: "Momen Berkesan",
+        content:
+          "Mereka membagikan momen berkesan dalam menjalani bisnis Pinarak, yaitu ketika mereka mengambil box kopi di Wonogiri: \"Kita sempat nyasar muter-muter nggak tahu jalan, masuk-masuk sawah, naik-naik gunung. Eh ternyata lokasinya dekat perbatasan antara Wonogiri dan Jawa Timur. Pulang kemaleman bawa box gede berdua, semua itu demi mendapatkan box dengan harga yang paling murah.\"",
+      },
+      {
+        heading: "Tips & Pesan dari Adi dan Erik",
+        content:
+          "\"Pertama niat, dan ketika sudah niat maka lakukan. Jangan takut gagal karena lebih baik mencoba tapi gagal daripada tidak mencoba sama sekali. Kalau tips dari Mas Adi: ketika sudah niat harus dibarengin dengan ide yang sesuai dengan passion masing-masing, seperti Pinarak yang tercipta karena ownernya suka nongkrong dan ngopi sehingga menjalani usaha dengan happy. Tentukan target pasar, jangan sampai hanya berbisnis untuk mengisi waktu luang. Yang paling penting buat mahasiswa: ketika punya ide langsung segera eksekusi, jangan nanti-nanti. Ketika punya niat langsung gas aja ngengg... untuk evaluasinya nanti sambil jalan.\"",
+      },
+    ],
+  },
 ];
 
 export function getInspirationPostBySlug(
