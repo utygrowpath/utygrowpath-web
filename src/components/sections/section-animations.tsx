@@ -1,10 +1,15 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export function SectionAnimations() {
+  const anchor = useRef<HTMLSpanElement>(null);
+
   useEffect(() => {
-    const root = document.querySelector<HTMLElement>("[data-section-animations]");
+    // Root milik halaman ini, bukan query global: Next menyimpan halaman yang
+    // pernah dibuka tetap ter-mount sehingga `document.querySelector` bisa
+    // menunjuk halaman lain dan menyembunyikan section-nya.
+    const root = anchor.current?.closest<HTMLElement>("[data-section-animations]");
     if (!root) return;
 
     const sections = Array.from(
@@ -58,5 +63,5 @@ export function SectionAnimations() {
     };
   }, []);
 
-  return null;
+  return <span ref={anchor} hidden aria-hidden="true" />;
 }

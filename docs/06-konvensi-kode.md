@@ -46,8 +46,9 @@ Aturan penempatan:
 
 Saat ini `"use client"` hanya ada di komponen daun:
 `layout/tenant-dropdown.tsx` (menu), `sections/section-animations.tsx` (reveal
-berbasis CSS + IntersectionObserver) dan `sections/section-animations-gsap.tsx`
-(animasi GSAP untuk halaman pendaftaran). Jangan menambah `"use client"` pada
+berbasis CSS + IntersectionObserver), `sections/section-animations-gsap.tsx` +
+`sections/gallery-grid.tsx` + `sections/lightbox.tsx` (animasi GSAP & galeri), dan
+`sections/info-list-view.tsx` (filter/paginasi). Jangan menambah `"use client"` pada
 `page.tsx`.
 
 ---

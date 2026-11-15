@@ -54,7 +54,7 @@ untuk setiap baris.
 | Artikel inspirasi | `src/data/sudut-inspirasi.ts` | arsipkan yang lama |
 | Pengumuman | `src/data/info.ts` | — |
 | Susunan panitia | `src/data/panitia.ts` | — |
-| Galeri | `src/app/(public)/dokumentasi/page.tsx` + `public/images/<tahun>/` | — |
+| Galeri | `src/data/dokumentasi.ts` + `public/images/<tahun>/` + `public/media/<season>/` | — |
 | Foto tenant | `public/images/<tahun>/tenant/` | buat folder tahun baru |
 
 ### Prosedur ganti tahun (aman)
@@ -107,7 +107,6 @@ Per kondisi terakhir:
 
 | Item | Dampak | Prioritas |
 |---|---|---|
-| `/dokumentasi` masih menulis array di dalam file halaman | Tidak konsisten dengan aturan `src/data` | Rendah |
 | Halaman admin belum ada | Data pendaftar belum bisa dibaca panitia | Tinggi (saat DB) |
 | Status check CI belum diwajibkan di ruleset | PR bisa di-merge meski CI merah | Tinggi |
 | ESLint 9 sudah EOL sejak 2026-08-06 | Tidak ada patch keamanan | Sedang |

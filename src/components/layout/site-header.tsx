@@ -8,6 +8,7 @@ const primaryLinks = [
   { href: "/info", label: "Informasi" },
   { href: "/tentang-kami", label: "Tentang" },
   { href: "/tim-kami", label: "Tim" },
+  { href: "/dokumentasi", label: "Dokumentasi" },
 ];
 
 const linkClass = "whitespace-nowrap py-2 text-[13px] font-normal tracking-[0.01em] text-[#4e5660] transition-colors hover:text-[#e13b43] xl:text-sm";
