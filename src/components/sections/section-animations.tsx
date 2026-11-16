@@ -42,7 +42,7 @@ export function SectionAnimations() {
           observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+      { threshold: 0, rootMargin: "0px 0px 50px 0px" },
     );
 
     targets.forEach((target) => target.classList.add("section-reveal"));

@@ -65,7 +65,10 @@ export default function TimKamiPage() {
       </section>
 
       {/* Content Section */}
-      <section className="relative isolate overflow-hidden bg-[#fff9f0] py-16 sm:py-24">
+      <section
+        data-no-reveal
+        className="relative isolate overflow-hidden bg-[#fff9f0] py-16 sm:py-24"
+      >
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0 opacity-[0.045]"

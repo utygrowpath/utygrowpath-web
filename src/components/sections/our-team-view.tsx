@@ -51,24 +51,34 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
 
   return (
     <div className="space-y-16 sm:space-y-24">
-      {/* Category / Division Filter Tabs – dinamis sesuai data */}
+      {/* Category / Division Filter Tabs – dinamis sesuai data dengan jumlah anggota */}
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-2.5 px-4 sm:gap-3">
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
           {divisions
             .filter((tab) => tab === "Semua" || groupedCommittee[tab])
             .map((tab) => {
             const isActive = activeTab === tab;
+            const count = tab === "Semua" ? committee.length : (groupedCommittee[tab]?.length || 0);
             return (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all sm:text-sm ${
+                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all sm:text-sm ${
                   isActive
                     ? "bg-[#2b4869] text-white shadow-md shadow-[#2b4869]/20"
                     : "border border-[#eadbbd] bg-white text-[#625b54] hover:border-[#2b4869]/40 hover:bg-[#fff9f0]"
                 }`}
               >
-                {tab}
+                <span>{tab}</span>
+                <span
+                  className={`inline-flex items-center justify-center rounded-full px-1.5 py-0.5 text-[10px] font-bold ${
+                    isActive
+                      ? "bg-white/25 text-white"
+                      : "bg-[#eadbbd]/60 text-[#8d493a]"
+                  }`}
+                >
+                  {count}
+                </span>
               </button>
             );
           })}
@@ -84,7 +94,6 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
           return (
             <section
               key={division}
-              data-reveal-on-view
               className="relative space-y-10"
             >
               {/* Division Header with Cultural Batik & Gunungan Accents */}
@@ -118,6 +127,11 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                       className="h-full w-full object-contain"
                     />
                   </div>
+                </div>
+
+                {/* Subtitle / Member Count Badge */}
+                <div className="mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-[#eadbbd] bg-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-[#8d493a] shadow-xs">
+                  <span>{members.length} Orang</span>
                 </div>
 
                 {/* Gunungan / Motif Center Accent */}
