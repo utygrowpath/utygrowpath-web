@@ -5,6 +5,96 @@ import type { InspirationPost } from "@/types/content";
  * Setiap entri otomatis mendapat halaman di /sudut-inspirasi/<slug>.
  */
 export const inspirationPosts: InspirationPost[] = [
+  // ─── Season 4 GrowTell Series ──────────────────────────────────────────────
+  {
+    slug: "bakso-bakbar-perjalanan-sang-juragan-bakso",
+    title: "Dari Bawah Pohon Hingga Kantin UTY: Perjalanan Sang Juragan Bakso",
+    author: "utygrowpath",
+    category: "Food & Beverage",
+    date: "2026-03-05",
+    image: "/images/2026/sudut-inspirasi/s4/bakso-bakbar-cover.png",
+    productImage: "/images/2026/sudut-inspirasi/s4/bakso-bakbar-menu.png",
+    productImages: [
+      "/images/2026/sudut-inspirasi/s4/bakso-bakbar-menu.png",
+      "/images/2026/sudut-inspirasi/s4/bakso-bakbar-stand.png",
+      "/images/2026/sudut-inspirasi/s4/bakso-bakbar-journey.png",
+      "/images/2026/sudut-inspirasi/s4/bakso-bakbar-expo.png",
+    ],
+    excerpt:
+      "Kisah Muhammad Syafii, mahasiswa Psikologi UTY 2023 yang merintis Bakso Bakbar dari jualan di bawah pohon beringin Jakal hingga resmi membuka stan di Kantin UTY setelah momentum GrowPath Expo.",
+    body: [
+      "Halo Sobat UTY! Kenalin, aku Muhammad Syafii, mahasiswa aktif jurusan Psikologi angkatan 2023. Ngomongin soal jajanan kampus, siapa sih yang nggak suka bakso? Nah, lewat cerita ini, aku ingin mengenalkan kantin kecilku yang siap memanjakan lidah kalian: Bakso Bakbar!",
+    ],
+    subsections: [
+      {
+        heading: "Mengenal Bakso Bakbar",
+        content:
+          "Bakso Bakbar adalah bisnis kulinerku yang menghadirkan berbagai olahan serba bakso. Mulai dari tahu bakso, sate bakso kecap, sosis, fishroll, sampai bakso bakar. Saat ini, aku menjalankan bisnis sehari-hari di kantin UTY. Dari namanya pasti Sobat UTY bisa nebak menu andalannya. Yap... bakso bakar!",
+      },
+      {
+        heading: "Awal Mula: Dari Bawah Pohon Beringin Perempatan Jakal",
+        content:
+          "Sebelum Bakso Bakbar lahir, aku pernah berjualan berbagai jenis jajanan seperti pisang crispy dan roti bakar. Awalnya, aku menjalankan bisnis di bawah pohon beringin daerah perempatan Jakal, dengan ditemani lampu emergency pada malam harinya. Sempat berpindah-pindah lapak di depan Warmindo, sampai akhirnya semesta membawaku menemukan tempat yang layak di Kantin UTY.",
+      },
+      {
+        heading: "Tantangan: Konsistensi dan Lapak Nomaden",
+        content:
+          "Sebagai pebisnis muda di kampus tentu bukan tanpa air mata. Tantangan terbesarku adalah konsistensi. Saat mulai bisnis, nama Bakso Bakbar hanya menjangkau segelintir telinga teman saja. Lapak yang \"nomaden\" juga menyulitkan untuk memperoleh pelanggan setia. Tapi di titik lelah itu, aku selalu menyemangati diri sendiri untuk jangan cepat putus asa dan terus berjalan.",
+      },
+      {
+        heading: "Momentum Emas di GrowPath Expo #3",
+        content:
+          "Momentum pun akhirnya datang di tahun 2025. Aku berkesempatan ikut GrowPath Expo #3. Di titik inilah, Bakso Bakbar mulai dikenal luas, mendapat tempat resmi di kantin UTY, dan omzetku melesat naik dari yang dulunya ratusan ribu kini berlipat ganda. Bukti nyata bahwa kerja keras tidak pernah mengkhianati hasil.",
+      },
+      {
+        heading: "Pesan Inspirasi untuk Sobat UTY",
+        content:
+          "\"Jangan ragu untuk memulai. Setiap orang punya garis start-nya masing-masing. Jangan menunggu sempurna, mulailah dari langkah kecil, tapi nyata.\" Yuk, mampir ke kantin dan cicipi Bakso Bakbar!",
+      },
+    ],
+  },
+  {
+    slug: "kkuee-dari-scroll-tiktok-jadi-bisnis-bakery",
+    title: "Dari Scroll TikTok Jadi Bisnis Bakery: Cerita Manis Numa",
+    author: "utygrowpath",
+    category: "Food & Beverage",
+    date: "2026-03-08",
+    image: "/images/2026/sudut-inspirasi/s4/kkuee-cover.png",
+    productImage: "/images/2026/sudut-inspirasi/s4/kkuee-cookies.png",
+    productImages: [
+      "/images/2026/sudut-inspirasi/s4/kkuee-cookies.png",
+      "/images/2026/sudut-inspirasi/s4/kkuee-package.png",
+      "/images/2026/sudut-inspirasi/s4/kkuee-campus.png",
+      "/images/2026/sudut-inspirasi/s4/kkuee-garlic-bread.png",
+    ],
+    excerpt:
+      "Numaira Aurellie Firdaus (Numa), mahasiswi Psikologi UTY angkatan 2024, membuktikan bahwa hobi scrolling resep makanan di TikTok bisa melahirkan brand bakery KKUEE dengan aneka soft cookies dan garlic bread.",
+    body: [
+      "Halo Sobat UTY! Kenalin, aku Numaira Aurellie Firdaus, biasa dipanggil Numa, mahasiswi aktif jurusan Psikologi angkatan 2024. Jujur aja, awalnya aku tuh cuma remaja biasa yang hobi banget scroll video makanan di TikTok. Nggak nyangka, dari keisengan itu sekarang aku malah ngurusin brand bakery kecil-kecilanku sendiri yang aku kasih nama KKUEE!",
+    ],
+    subsections: [
+      {
+        heading: "Mengenal KKUEE: Soft Cookies & Garlic Bread",
+        content:
+          "Lewat KKUEE, aku bikin aneka soft cookies dan garlic bread buat nemenin waktu nugas kalian. Cookies-nya ada varian Original sama Choco yang lumer karena ada cream cheese. Terus, ada garlic bread juga yang rasanya gurih manis. Tenang, harganya student friendly banget kok, cuma Rp 12.000 sampai Rp 20.000-an aja!",
+      },
+      {
+        heading: "Cerita Awal: Eksperimen Iseng Saat SMA",
+        content:
+          "Cerita awalnya lumayan lucu sih. Tahun 2022 pas aku masih SMA, gara-gara sering liat resep di TikTok, aku iseng deh coba bikin soft cookies. Pas dikasihin ke orang rumah, eh ternyata mereka bilang enak! Dari satu pujian sederhana itu, aku jadi semangat ngembangin resep sampai akhirnya berani launching beneran pas libur semester kemarin.",
+      },
+      {
+        heading: "Tantangan Solo Entrepreneur: Manajemen Waktu Kuliah & Baking",
+        content:
+          "Namanya juga merintis usaha sendirian, pasti ada aja dramanya. Tantangan paling berasa buatku tuh bagi waktu. Ngatur jadwal antara baking pesenan dan ngerjain tugas kuliah ternyata lumayan bikin keteteran, apalagi karena tenaga kerjanya cuma aku sendiri.",
+      },
+      {
+        heading: "Pesan Inspirasi untuk yang Mau Mulai Bisnis",
+        content:
+          "\"Jangan takut gagal atau takut produknya nggak laku. Mulailah sesuai kapasitas modal dan tenaga kalian, nggak harus langsung berskala besar. Nggak usah pasang ekspektasi tinggi di awal, karena berhasil menjalankan prosesnya saja sudah sebuah keberhasilan.\"",
+      },
+    ],
+  },
   {
     slug: "feys-kitchen-gluten-free-healthy",
     title: "Discover Fey's Kitchen – Your Gluten-Free & Healthy",
