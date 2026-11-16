@@ -633,6 +633,255 @@ export const inspirationPosts: InspirationPost[] = [
       },
     ],
   },
+  /* ──────────────────────────────────────────────────────────────────────────
+   * S3 – Artikel Season 3 Sudut Inspirasi (Transkripsi Cerita Inspiratif S3)
+   * ────────────────────────────────────────────────────────────────────────── */
+  {
+    slug: "perjalanan-merangkai-bisnis-bunga",
+    title: "Perjalanan Merangkai Bisnis Bunga: Dari Iseng Jadi Florist Sukses",
+    author: "utygrowpath",
+    category: "Kreatif & Desain",
+    date: "2025-05-15",
+    image: "/images/2026/sudut-inspirasi/s3/bisnis-bunga.png",
+    productImage: "/images/2026/sudut-inspirasi/s3/bisnis-bunga-produk.png",
+    excerpt:
+      "Kisah Dwi Septiani (Nana), mahasiswi Manajemen UTY angkatan 2022 yang merintis bisnis florist dan buket bunga dari sekadar iseng hingga sukses berjalan selama dua tahun.",
+    body: [
+      "Hai, Namaku Dwi Septiani, tapi biasa dipanggil Nana. Aku dari Prodi Manajemen angkatan 2022. Kesibukanku sekarang fokus kuliah sambil menjalankan bisnis bouquet bunga yang aku rintis sendiri.",
+    ],
+    subsections: [
+      {
+        heading: "Bisnis Florist & Aneka Bouquet",
+        content:
+          "Bisnis yang aku jalankan sekarang bergerak di bidang florist, dengan berbagai jenis bouquet seperti fresh flower, artificial, dan handmade. Selain bouquet, aku juga menyediakan papan ucapan untuk berbagai acara dan momen spesial.",
+      },
+      {
+        heading: "Motivasi Memulai Bisnis",
+        content:
+          "Motivasi aku mendirikan bisnis ini berawal dari rasa suka terhadap bunga. Awalnya aku cuma iseng-iseng aja buat bouquet sendiri. Tapi lama-lama aku jadi menikmati prosesnya dan mulai seriusin usaha ini. Untuk promosi, aku share ke teman-teman dan minta mereka follow biar semakin banyak orang yang tahu tentang bisnis buketku.",
+      },
+      {
+        heading: "Momen Berkesan",
+        content:
+          "Pengalaman yang paling berkesan buatku adalah waktu aku coba jualan di toko temanku. Awalnya aku cuma titip beberapa bouquet, ternyata berhasil terjual habis. Dari situ aku jadi semangat buat terus coba lagi dan lagi. Sekarang bisnis ini sudah aku jalankan selama kurang lebih dua tahun.",
+      },
+      {
+        heading: "Tantangan Membagi Waktu Kuliah dan Bisnis",
+        content:
+          "Tantangan terbesarku adalah saat tugas kuliah lagi banyak tapi pesanan juga lagi ramai, rasanya cukup keteteran buat bagi waktu. Kadang aku harus benar-benar mikir mana yang harus diprioritaskan dulu. Karena tujuan utamaku memang kuliah, jadi aku selalu berusaha untuk memprioritaskan kuliah sambil tetap ngatur waktu supaya bisnis tetap jalan.",
+      },
+      {
+        heading: "Pesan untuk Mahasiswa yang Ingin Berwirausaha",
+        content:
+          "\"Kuncinya kalo mau berbisnis itu harus berani memulai karena kalo kita gaberani memulai kapan kita bisa maju.\"",
+      },
+    ],
+  },
+  {
+    slug: "driel-up-kopi-konsumsi-pribadi-jadi-bisnis",
+    title: "Dari Konsumsi Pribadi Jadi Bisnis: Perjalananku Merintis Driel Up",
+    author: "utygrowpath",
+    category: "Food & Beverage",
+    date: "2025-05-20",
+    image: "/images/2026/sudut-inspirasi/s3/driel-up.png",
+    productImage: "/images/2026/sudut-inspirasi/s3/driel-up-produk.png",
+    excerpt:
+      "Aisya Nirmala, mahasiswi Manajemen UTY 2023, mengubah kebiasaan minum kopi saat nugas menjadi brand kopi kemasan botol Driel Up lewat riset dan pengembangan mandiri.",
+    body: [
+      "Hai, perkenalkan, namaku Aisya Nirmala dari prodi Manajemen angkatan 2023. Kesibukanku saat ini berkuliah sambil menjalankan bisnis FnB yang kuberi nama Driel Up.",
+    ],
+    subsections: [
+      {
+        heading: "Fokus pada Kopi Berkualitas",
+        content:
+          "Saat ini bisnis yang sedang aku jalani bergerak di bidang FnB yaitu kopi, namun sebenarnya brand yang aku bangun tidak hanya kopi saja tapi saat ini fokusnya tentang kopi.",
+      },
+      {
+        heading: "Motivasi Berawal dari Teman Nugas",
+        content:
+          "Motivasi aku memulai bisnis ini awalnya karena aku suka kopi buat nemenin nugas, jadi coba-coba untuk konsumsi pribadi. Tapi aku mikir menarik nih kalau orang lain bisa ikut nyobain kopi buatanku. Jadi akhirnya aku melakukan research and development untuk menemukan resep kopi yang sesuai.",
+      },
+      {
+        heading: "Momen Berkesan & Feedback Pelanggan",
+        content:
+          "Momen yang paling berkesan adalah saat proses RnD dan aku mengalami kegagalan beberapa kali yang membuat aku berusaha untuk coba terus. Selain itu feedback dari orang-orang tentang produkku juga cukup buat berkesan.",
+      },
+      {
+        heading: "Tantangan Produksi dan Skala Prioritas",
+        content:
+          "Tantangan dalam menjalankan bisnis ini adalah ketika sedang open PO dan proses produksi lalu tiba-tiba ada tugas kuliah yang harus dikerjakan saat itu juga. Cara aku mengatasinya adalah membuat to do list skala prioritas mana yang harus dikerjakan terlebih dahulu.",
+      },
+      {
+        heading: "Pesan untuk Mahasiswa",
+        content:
+          "\"Pesan untuk mahasiswa: wajar kok takut memulai, tapi coba deh mulai aja dulu karena memulai lebih penting daripada cuma dipikirin aja dan nggak dilakukan. Kalian nggak akan pernah tahu seberapa tinggi kalian terbang kalau kalian nggak pernah mengepakkan sayap.\"",
+      },
+    ],
+  },
+  {
+    slug: "namoy-coffee-dari-passion-jadi-cuan",
+    title: "Dari Passion Jadi Cuan: Jalu dan Perjalanan NaMoy Coffee",
+    author: "utygrowpath",
+    category: "Food & Beverage",
+    date: "2025-05-25",
+    image: "/images/2026/sudut-inspirasi/s3/namoy-coffee.png",
+    productImage: "/images/2026/sudut-inspirasi/s3/namoy-coffee-produk.png",
+    excerpt:
+      "Jalu Galih Timur, mahasiswa Informatika UTY 2023, sukses membangun NaMoy Coffee, bisnis street coffee yang berawal dari passion belajar kopi dan berkembang pesat.",
+    body: [
+      "Halo! Aku Jalu Galih Timur, mahasiswa Informatika angkatan 2023. Selain kuliah, aku juga lagi menjalankan bisnis di bidang F&B, yaitu NaMoy Coffee, usaha street coffee yang sudah berdiri sejak November 2024. Sekarang sudah hampir satu tahun aku mendirikan NaMoy Coffee ini.",
+    ],
+    subsections: [
+      {
+        heading: "Belajar Berbisnis Lewat Kopi",
+        content:
+          "Awalnya, aku cuma ingin belajar berbisnis. Aku merasa memiliki passion di bidang ini, apalagi dunia kopi menarik banget dan bisa dipelajari dari mana saja. Lewat usaha ini, aku ingin berbagi produk dan pengalaman ke orang lain, agar mereka juga bisa merasakan hasil dari apa yang aku buat.",
+      },
+      {
+        heading: "Momen Launching Produk Pertama",
+        content:
+          "Salah satu momen paling berkesan adalah saat launching produk pertama. Prosesnya panjang, mulai dari cari tempat, bahan, alat, sampai mengatur konsep. Tapi, ketika akhirnya bisa buka dan lihat hasilnya, semua rasa capek langsung terbayar!",
+      },
+      {
+        heading: "Tantangan Manajemen Waktu",
+        content:
+          "Sebagai seorang mahasiswa, tantangan terbesarku adalah waktu. Aku harus bisa membagi fokus antara kuliah dan bisnis, kapan harus belajar dan kapan harus berbisnis.",
+      },
+      {
+        heading: "Balance: Jadwal Rapi & Dukungan Mentor",
+        content:
+          "Untuk mengatasinya, aku belajar mengatur jadwal dengan lebih rapi, agar tetap bisa memprioritaskan kuliah tanpa harus mengorbankan usahaku. Selain itu, aku juga tidak sungkan untuk meminta saran dari mentor atau teman-teman, supaya dapat dukungan dan pandangan baru.",
+      },
+      {
+        heading: "Pesan untuk Rekan Mahasiswa",
+        content:
+          "\"Pesanku, coba aja dulu! Karena dunia usaha tuh seseru itu, banyak pengalaman, belajar mengatur keuangan, dan berkembang bareng prosesnya. Yang penting berani mulai dan terus belajar.\"",
+      },
+    ],
+  },
+  {
+    slug: "nasi-jeruji-bento-chicken-katsu",
+    title: "Saat Tiga Mahasiswa Memutuskan untuk Tidak Menyerah: Perjalanan Nasi Jeruji",
+    author: "utygrowpath",
+    category: "Food & Beverage",
+    date: "2025-06-01",
+    image: "/images/2026/sudut-inspirasi/s3/nasi-jeruji.png",
+    productImage: "/images/2026/sudut-inspirasi/s3/nasi-jeruji-produk.png",
+    excerpt:
+      "Tiga mahasiswa Ilmu Komunikasi UTY angkatan 2022—Enggar, Naufal, dan Simon—merintis Nasi Jeruji, bisnis rice bento chicken katsu yang bangkit dari sepi pembeli hingga ramai pesanan lewat konsistensi.",
+    body: [
+      "Halo! Perkenalkan, kami Enggar, Naufal, dan Simon dari Prodi Ilmu Komunikasi angkatan 2022. Saat ini kami sedang menjalankan sebuah bisnis kuliner bernama Nasi Jeruji. Konsepnya mirip nasi bento dengan menu utama chicken katsu yang punya tiga pilihan saus, yaitu saus tomat, black pepper, dan chili sauce. Selain itu, kami juga menyediakan chicken katsu geprek dan chicken karage sebagai variasi menu lainnya.",
+    ],
+    subsections: [
+      {
+        heading: "Solusi Praktis untuk Mahasiswa & Pekerja",
+        content:
+          "Motivasi awal kami adalah ingin mempermudah siswa, mahasiswa, hingga pekerja kantoran untuk mendapatkan sarapan, makan siang, hingga makan malam yang praktis. Karena itu, kami memakai sistem pre-order, sehingga pelanggan bisa memesan kapan saja sesuai kebutuhan mereka.",
+      },
+      {
+        heading: "Momen Berkesan: Bangkit dari Penjualan Hari Pertama",
+        content:
+          "Momen yang paling berkesan bagi kami terjadi saat pertama kali mencoba berjualan secara offline. Di hari pertama dan kedua, tidak ada satu pun pembeli yang datang. Rasanya cukup menguras mental karena kami sudah menyiapkan semuanya dengan penuh semangat. Namun, kami tidak berhenti di situ. Kami mencoba beralih ke penjualan online, dan hasilnya justru di luar ekspektasi. Pesanan mulai masuk dan responsnya ramai. Akhirnya, kami memutuskan untuk menjalankan penjualan secara offline sekaligus online, agar bisa menjangkau lebih banyak pelanggan.",
+      },
+      {
+        heading: "Tantangan di Semester Akhir",
+        content:
+          "Tantangan terbesar kami adalah waktu. Di semester akhir ini, jadwal kuliah kami sedang padat-padatnya, apalagi banyak mata kuliah yang berbasis produksi. Kami harus benar-benar pintar membagi waktu agar bisnis tetap berjalan tanpa mengganggu perkuliahan.",
+      },
+      {
+        heading: "Solusi: Strategi Penjualan Online & Pre-Order",
+        content:
+          "Untuk mengatasi hal tersebut, kami fokuskan 60% pada penjualan online, dan produksi disesuaikan dengan menu yang paling banyak diminati pelanggan. Karena jadwal semakin padat, kami menerapkan sistem pre-order, sehingga pelanggan bisa memesan H-1 atau bahkan seminggu sebelumnya.",
+      },
+      {
+        heading: "Kunci Keberhasilan: Konsistensi",
+        content:
+          "\"Untuk teman-teman mahasiswa yang ingin memulai bisnis, kuncinya adalah konsisten. Dengan konsisten, kalian bisa membangun kepercayaan dan meningkatkan penjualan. Kami pun merasakannya, meskipun di hari-hari awal tidak ada pembeli. Namun, karena tetap konsisten akhirnya penjualan kami mulai ramai di hari-hari berikutnya.\"",
+      },
+    ],
+  },
+  {
+    slug: "depo-gorongan-hobi-kereta-jadi-usaha",
+    title: "Depo Gorongan: Dari Hobi Kereta Jadi Usaha Beneran!",
+    author: "utygrowpath",
+    category: "Kreatif & Desain",
+    date: "2025-06-05",
+    image: "/images/2026/sudut-inspirasi/s3/depo-gorongan.png",
+    productImage: "/images/2026/sudut-inspirasi/s3/depo-gorongan-produk.png",
+    excerpt:
+      "Stefven, mahasiswa Ilmu Komunikasi UTY 2022, mengubah kegemaran mengoleksi miniatur kereta menjadi Depo Gorongan—brand miniatur dan merchandise perkeretaapian yang dipercaya hingga PT KAI dan pasar internasional.",
+    body: [
+      "Halo! Aku Stefven dari Ilmu Komunikasi 2022. Aku mau kenalin usahaku yaitu Depo Gorongan, yang lahir dari hobiku ngoleksi miniatur kereta. Dari hobi, Depo Gorongan sekarang jual beli dan produksi miniatur, plus bikin merchandise kereta seperti kaos, keychain, stiker, totebag, dan enamel pin. Selain offline store, kami juga rutin ada di Sunday Morning UGM. Kami juga beberapa kali ngerjain pesanan untuk PT KAI serta diundang ke event mereka seperti JSF 2023–2024 dan Open House Balai Yasa Gubeng 2024.",
+    ],
+    subsections: [
+      {
+        heading: "Motivasi: Miniatur Detail dan Presisi",
+        content:
+          "Motivasiku ngebangun Depo Gorongan adalah aku pengen bikin miniatur kereta yang detail dan mirip banget sama aslinya. Aku bertujuan menjadikan Depo Gorongan sebagai tempat koleksi miniatur dan merchandise kereta api yang bisa dinikmati, dikoleksi, dan dipasarkan oleh semua pecinta kereta.",
+      },
+      {
+        heading: "Momen Berkesan: Tembus Pasar Eropa & Kolaborasi PT KAI",
+        content:
+          "Salah satu momen paling berkesan adalah ketika miniatur kami dibeli untuk dibawa ke Belanda dan Denmark. Kemudian, keberhasilan Depo Gorongan yang berkesempatan bekerja sama dengan PT KAI untuk memproduksi miniatur dalam skala menengah juga gak kalah berkesan.",
+      },
+      {
+        heading: "Tantangan Riset Produksi Mandiri",
+        content:
+          "Tantangan terbesar adalah ketika awal riset produksi miniatur bener-bener makan waktu yang sangat lama, berawal dari aku yang hobi beli miniatur ke kamoder (pengrajin miniatur kereta) yang lain, sampe akhirnya aku memulai gebrakan untuk riset produksi miniaturku sendiri.",
+      },
+      {
+        heading: "Kunci Sukses: Semangat & Terbuka pada Masukan",
+        content:
+          "Kuncinya adalah semangat. Kesulitan bukan alasan untuk menyerah, tapi pengingat agar tetap fokus pada tujuan. Jika itu passion kita, pasti selalu ada cara untuk melewatinya. Yang penting, tetap percaya diri, terbuka pada kritik, dan jadikan masukan sebagai peluang untuk berkembang.",
+      },
+      {
+        heading: "Pesan untuk Rekan Mahasiswa",
+        content:
+          "\"Pesanku untuk teman-teman mahasiswa yang ingin mulai bisnis: yakinlah pada usaha kalian. Proses merintis dari nol—dari riset sampai akhirnya punya branding—butuh konsisten, pantang menyerah, dan percaya pada passion. Manfaatkan juga networking dan pengalaman; bangun relasi yang sejalan dengan minat kalian.\"",
+      },
+    ],
+  },
+  {
+    slug: "go-block-pengolahan-sampah-lapas-jogja",
+    title: "Langkah Kecil untuk Perubahan Besar: Go-Block dari Dalam Lapas",
+    author: "utygrowpath",
+    category: "Eco & Green Living",
+    date: "2025-06-10",
+    image: "/images/2026/sudut-inspirasi/s3/go-block.png",
+    productImage: "/images/2026/sudut-inspirasi/s3/go-block-produk.png",
+    excerpt:
+      "Inisiatif lima mahasiswa Arsitektur UTY—Hilman, Berliana, Arya, Lala, dan Nauval—mengolah sampah plastik di Lapas Kelas IIA Yogyakarta menjadi paving block ramah lingkungan sekaligus memberdayakan warga binaan.",
+    body: [
+      "Halo! Kami Hilman, Berliana, Arya, Lala, dan Nauval dari Prodi Arsitektur. Saat ini kami sedang menjalankan kegiatan pengabdian bernama Go-Block atau Garbage to Block, sebuah inisiatif pengolahan sampah yang kami kembangkan dari kepedulian terhadap masalah sampah di Yogyakarta. Go-Block berfokus memanfaatkan sampah plastik di Lapas Kelas IIA Yogyakarta untuk dijadikan paving block daur ulang dari sampah plastik di dalam lapas itu sendiri, sekaligus memberi kesempatan pemberdayaan bagi warga binaan di dalamnya.",
+    ],
+    subsections: [
+      {
+        heading: "Motivasi: Respon Terhadap Isu Sampah di Yogyakarta",
+        content:
+          "Motivasi kami berangkat dari isu sampah di Jogja. Ternyata, bahkan lingkup kecil yang sering dianggap bersih pun punya masalah penumpukan sampah yang sama besarnya. Dari situ, kami merasa perlu terlibat, bukan hanya mengurangi sampah, tapi juga memberikan edukasi dan mendorong pemilahan sampah mandiri sebagai langkah awal perubahan.",
+      },
+      {
+        heading: "Momen Berkesan di Balik Jeruji",
+        content:
+          "Ada banyak momen berkesan. Mulai dari proses uji coba paving yang gagal belasan kali, sampai kejadian lucu di dalam lapas. Salah satunya, ketika Diki, anggota tim kami yang sempat dikira warga binaan oleh sipir karena penampilannya yang acak-acakan saat memilah sampah. Momen-momen seperti itu yang bikin proses ini terasa dekat dan penuh cerita.",
+      },
+      {
+        heading: "Tantangan: Rintangan Tak Terduga",
+        content:
+          "Tantangannya tentu banyak. Sepanjang proses, selalu ada saja rintangan yang harus kami hadapi. Salah satu yang paling menguji adalah ketika alat-alat kami hilang dicuri. Padahal, kami menyimpannya di kampus, tempat yang kami anggap paling aman untuk fasilitas mahasiswa. Tapi ya begitu, kalau ada cobaan, ya memang harus dicobain dulu.",
+      },
+      {
+        heading: "Solusi: Fokus pada Aksi Nyata",
+        content:
+          "Cara kami ngadepin tantangan sebenarnya sederhana, just do what we can do. Banyak keluhan yang nggak ada ujungnya, jadi kami terbiasa buat langsung berganti ke solusi apa pun yang bisa dikerjain saat itu. Yang penting, apa yang sudah kami mulai harus tetap diterusin sampai selesai.",
+      },
+      {
+        heading: "Pesan Inspiratif: Mulai dari Hal Kecil",
+        content:
+          "\"Pesan kami sederhana, pengabdian itu nggak harus dimulai dari hal besar. Lihat saja isu di sekitar kamu. Kalau kamu merasa resah tapi memilih diam, itu justru merugikan dirimu dan lingkunganmu. Jadi mulai aja dari hal kecil yang bisa kamu ubah.\"",
+      },
+    ],
+  },
 ];
 
 export function getInspirationPostBySlug(
