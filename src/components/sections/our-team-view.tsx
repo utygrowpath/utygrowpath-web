@@ -154,20 +154,52 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                   >
                     {/* Card container */}
                     <div className="relative aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-2xl border-2 border-[#e6d5b7] bg-gradient-to-b from-[#2b4869] to-[#122030] shadow-[0_16px_36px_-16px_rgba(43,72,105,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-[#e0b83e] hover:shadow-[0_24px_50px_-16px_rgba(224,184,62,0.4)]">
-                      {/* Member photo / placeholder */}
-                      <Image
-                        src={member.image || "/images/2026/season4/dokumentasi/docum1.jpg"}
-                        fill
-                        sizes="(max-width: 768px) 280px, 260px"
-                        alt={member.name}
-                        className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-                      />
-
-                      {/* Ambient gradient overlay */}
-                      <div
-                        aria-hidden="true"
-                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#101b28] via-[#101b28]/60 to-transparent opacity-95 transition-opacity group-hover:opacity-90"
-                      />
+                      {member.image && member.image.trim() !== "" ? (
+                        <>
+                          {/* Member photo */}
+                          <Image
+                            src={member.image}
+                            fill
+                            sizes="(max-width: 768px) 280px, 260px"
+                            alt={member.name}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                          />
+                          {/* Ambient gradient overlay */}
+                          <div
+                            aria-hidden="true"
+                            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#101b28] via-[#101b28]/60 to-transparent opacity-95 transition-opacity group-hover:opacity-90"
+                          />
+                        </>
+                      ) : (
+                        /* Empty Placeholder Avatar (saat belum ada foto) */
+                        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 pb-20">
+                          {/* Subtle motif texture */}
+                          <div
+                            aria-hidden="true"
+                            className="pointer-events-none absolute inset-0 opacity-[0.06]"
+                            style={{
+                              backgroundImage: "url('/images/2026/season4/motif/motif2.png')",
+                              backgroundSize: "140px",
+                              backgroundRepeat: "repeat",
+                            }}
+                          />
+                          {/* Avatar icon badge */}
+                          <div className="relative flex h-24 w-24 sm:h-28 sm:w-28 items-center justify-center rounded-full border-2 border-[#e0b83e]/30 bg-[#16273b]/90 shadow-inner transition-transform duration-500 group-hover:scale-105 group-hover:border-[#e0b83e]/60">
+                            <svg
+                              className="h-14 w-14 sm:h-16 sm:w-16 text-[#e0b83e]/60 transition-colors duration-500 group-hover:text-[#e0b83e]/90"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                              aria-hidden="true"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      )}
 
                       {/* Bottom Overlay Label (matching reference) */}
                       <div className="absolute inset-x-0 bottom-0 p-5 text-center">
