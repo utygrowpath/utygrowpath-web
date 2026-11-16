@@ -65,7 +65,10 @@ export default function SudutInspirasiPage() {
       </section>
 
       {/* Content Section */}
-      <section className="relative isolate overflow-hidden bg-[#fff9f0] py-14 sm:py-20">
+      <section
+        data-no-reveal
+        className="relative isolate overflow-hidden bg-[#fff9f0] py-14 sm:py-20"
+      >
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0 opacity-[0.045]"

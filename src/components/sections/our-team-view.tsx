@@ -10,25 +10,39 @@ interface OurTeamViewProps {
 }
 
 export function OurTeamView({ committee }: OurTeamViewProps) {
-  const divisions = [
-    "Semua",
-    "Chief Executive",
+  // Ambil urutan divisi dinamis dari data, pertahankan urutan kemunculan pertama
+  const divisionOrder = [
+    "Formatur",
+    "Creative Event",
+    "Equipment & Logistic Operations",
+    "Finance Administrations",
+    "Community Relations",
     "Story Hunter",
-    "Community Relation",
-    "Creative & Media",
-    "Logistics & Operational",
-    "Sponsorship & Partnership",
+    "Social Media Development",
+    "Photographer & Videographer",
+    "Website Development",
+    "Graphic Designer",
   ];
+
+  // Fallback: tangkap divisi yang ada di data tapi belum di-list di atas
+  const extraDivisions = Array.from(
+    new Set(committee.map((m) => m.division))
+  ).filter((d) => !divisionOrder.includes(d));
+
+  const allDivisions = [...divisionOrder, ...extraDivisions];
+  const divisions = ["Semua", ...allDivisions];
 
   const [activeTab, setActiveTab] = useState<string>("Semua");
 
   // Group members by division
-  const groupedCommittee = divisions
-    .filter((d) => d !== "Semua")
-    .reduce<Record<string, CommitteeMember[]>>((acc, div) => {
-      acc[div] = committee.filter((m) => m.division === div);
+  const groupedCommittee = allDivisions.reduce<Record<string, CommitteeMember[]>>(
+    (acc, div) => {
+      const members = committee.filter((m) => m.division === div);
+      if (members.length > 0) acc[div] = members;
       return acc;
-    }, {});
+    },
+    {}
+  );
 
   const displayedDivisions =
     activeTab === "Semua"
@@ -37,42 +51,34 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
 
   return (
     <div className="space-y-16 sm:space-y-24">
-      {/* Category / Division Filter Tabs - 2 Baris Simetris & Terstruktur */}
-      <div className="mx-auto flex max-w-4xl flex-col items-center justify-center gap-2.5 px-4 sm:gap-3">
-        {/* Baris 1: 4 Tabs */}
+      {/* Category / Division Filter Tabs – dinamis sesuai data dengan jumlah anggota */}
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-2.5 px-4 sm:gap-3">
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
-          {divisions.slice(0, 4).map((tab) => {
+          {divisions
+            .filter((tab) => tab === "Semua" || groupedCommittee[tab])
+            .map((tab) => {
             const isActive = activeTab === tab;
+            const count = tab === "Semua" ? committee.length : (groupedCommittee[tab]?.length || 0);
             return (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all sm:text-sm ${
+                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all sm:text-sm ${
                   isActive
                     ? "bg-[#2b4869] text-white shadow-md shadow-[#2b4869]/20"
                     : "border border-[#eadbbd] bg-white text-[#625b54] hover:border-[#2b4869]/40 hover:bg-[#fff9f0]"
                 }`}
               >
-                {tab}
-              </button>
-            );
-          })}
-        </div>
-        {/* Baris 2: 3 Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
-          {divisions.slice(4).map((tab) => {
-            const isActive = activeTab === tab;
-            return (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all sm:text-sm ${
-                  isActive
-                    ? "bg-[#2b4869] text-white shadow-md shadow-[#2b4869]/20"
-                    : "border border-[#eadbbd] bg-white text-[#625b54] hover:border-[#2b4869]/40 hover:bg-[#fff9f0]"
-                }`}
-              >
-                {tab}
+                <span>{tab}</span>
+                <span
+                  className={`inline-flex items-center justify-center rounded-full px-1.5 py-0.5 text-[10px] font-bold ${
+                    isActive
+                      ? "bg-white/25 text-white"
+                      : "bg-[#eadbbd]/60 text-[#8d493a]"
+                  }`}
+                >
+                  {count}
+                </span>
               </button>
             );
           })}
@@ -88,7 +94,6 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
           return (
             <section
               key={division}
-              data-reveal-on-view
               className="relative space-y-10"
             >
               {/* Division Header with Cultural Batik & Gunungan Accents */}
@@ -122,6 +127,11 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                       className="h-full w-full object-contain"
                     />
                   </div>
+                </div>
+
+                {/* Subtitle / Member Count Badge */}
+                <div className="mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-[#eadbbd] bg-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-[#8d493a] shadow-xs">
+                  <span>{members.length} Orang</span>
                 </div>
 
                 {/* Gunungan / Motif Center Accent */}
@@ -158,20 +168,52 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                   >
                     {/* Card container */}
                     <div className="relative aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-2xl border-2 border-[#e6d5b7] bg-gradient-to-b from-[#2b4869] to-[#122030] shadow-[0_16px_36px_-16px_rgba(43,72,105,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-[#e0b83e] hover:shadow-[0_24px_50px_-16px_rgba(224,184,62,0.4)]">
-                      {/* Member photo / placeholder */}
-                      <Image
-                        src={member.image || "/images/2026/season4/dokumentasi/docum1.png"}
-                        fill
-                        sizes="(max-width: 768px) 280px, 260px"
-                        alt={member.name}
-                        className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-                      />
-
-                      {/* Ambient gradient overlay */}
-                      <div
-                        aria-hidden="true"
-                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#101b28] via-[#101b28]/60 to-transparent opacity-95 transition-opacity group-hover:opacity-90"
-                      />
+                      {member.image && member.image.trim() !== "" ? (
+                        <>
+                          {/* Member photo */}
+                          <Image
+                            src={member.image}
+                            fill
+                            sizes="(max-width: 768px) 280px, 260px"
+                            alt={member.name}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                          />
+                          {/* Ambient gradient overlay */}
+                          <div
+                            aria-hidden="true"
+                            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#101b28] via-[#101b28]/60 to-transparent opacity-95 transition-opacity group-hover:opacity-90"
+                          />
+                        </>
+                      ) : (
+                        /* Empty Placeholder Avatar (saat belum ada foto) */
+                        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 pb-20">
+                          {/* Subtle motif texture */}
+                          <div
+                            aria-hidden="true"
+                            className="pointer-events-none absolute inset-0 opacity-[0.06]"
+                            style={{
+                              backgroundImage: "url('/images/2026/season4/motif/motif2.png')",
+                              backgroundSize: "140px",
+                              backgroundRepeat: "repeat",
+                            }}
+                          />
+                          {/* Avatar icon badge */}
+                          <div className="relative flex h-24 w-24 sm:h-28 sm:w-28 items-center justify-center rounded-full border-2 border-[#e0b83e]/30 bg-[#16273b]/90 shadow-inner transition-transform duration-500 group-hover:scale-105 group-hover:border-[#e0b83e]/60">
+                            <svg
+                              className="h-14 w-14 sm:h-16 sm:w-16 text-[#e0b83e]/60 transition-colors duration-500 group-hover:text-[#e0b83e]/90"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                              aria-hidden="true"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      )}
 
                       {/* Bottom Overlay Label (matching reference) */}
                       <div className="absolute inset-x-0 bottom-0 p-5 text-center">

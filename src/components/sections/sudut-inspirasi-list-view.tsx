@@ -105,7 +105,7 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
               }`}
             >
               <Image
-                src={post.image || "/images/2026/season4/dokumentasi/docum1.png"}
+                src={post.image || "/images/2026/season4/dokumentasi/docum1.jpg"}
                 fill
                 sizes="(max-width: 768px) 100vw, 300px"
                 unoptimized={

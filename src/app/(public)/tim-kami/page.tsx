@@ -29,7 +29,7 @@ export default function TimKamiPage() {
           height={500}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -left-32 top-1/2 z-0 w-40 -translate-y-1/2 -rotate-12 opacity-[0.14] sm:-left-12 sm:w-64 lg:left-2 lg:w-90 animate-float-slow"
+          className="pointer-events-none absolute -left-32 top-1/2 z-0 h-auto w-40 -translate-y-1/2 -rotate-12 opacity-[0.14] sm:-left-12 sm:w-64 lg:left-2 lg:w-90 animate-float-slow"
         />
         <Image
           src="/images/2026/season4/motif/motif5.svg"
@@ -37,7 +37,7 @@ export default function TimKamiPage() {
           height={500}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -right-32 top-1/2 z-0 w-52 -translate-y-1/2 rotate-12 opacity-[0.12] sm:-right-12 sm:w-80 lg:right-0 lg:w-[26rem] animate-float-reverse"
+          className="pointer-events-none absolute -right-32 top-1/2 z-0 h-auto w-52 -translate-y-1/2 rotate-12 opacity-[0.12] sm:-right-12 sm:w-80 lg:right-0 lg:w-[26rem] animate-float-reverse"
         />
 
         <Container className="relative z-10 flex min-h-[420px] items-center justify-center py-12 sm:min-h-[480px] sm:py-16">
@@ -65,7 +65,10 @@ export default function TimKamiPage() {
       </section>
 
       {/* Content Section */}
-      <section className="relative isolate overflow-hidden bg-[#fff9f0] py-16 sm:py-24">
+      <section
+        data-no-reveal
+        className="relative isolate overflow-hidden bg-[#fff9f0] py-16 sm:py-24"
+      >
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0 opacity-[0.045]"
