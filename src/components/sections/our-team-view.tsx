@@ -195,11 +195,15 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                       animation: `${dir === "right" ? "carouselSlideRight" : "carouselSlideLeft"} 0.35s ease-out both`,
                     }}
                     className={`mx-auto grid gap-6 sm:gap-8 ${
-                      pageMembers.length === 1
+                      // Kalau ada pagination, selalu pakai 4-kolom agar ukuran kartu
+                      // konsisten di semua halaman (termasuk halaman terakhir yang < 4 item)
+                      totalPages > 1
+                        ? "max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                        : members.length === 1
                         ? "max-w-xs justify-center grid-cols-1"
-                        : pageMembers.length === 2
+                        : members.length === 2
                         ? "max-w-xl grid-cols-1 sm:grid-cols-2"
-                        : pageMembers.length === 3
+                        : members.length === 3
                         ? "max-w-4xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                         : "max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
                     }`}
