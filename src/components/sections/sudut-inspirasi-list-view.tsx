@@ -16,17 +16,10 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const itemsPerPage = 5;
 
-  const orderedPosts = [...posts].sort((a, b) => {
-    if (
-      a.slug === "dari-tradisi-menjadi-usaha-keluarga" &&
-      b.slug === "kopi-seduh-selaras-rasa-nusantara"
-    ) return -1;
-    if (
-      a.slug === "kopi-seduh-selaras-rasa-nusantara" &&
-      b.slug === "dari-tradisi-menjadi-usaha-keluarga"
-    ) return 1;
-    return 0;
-  });
+  // Urutkan terbaru dulu: S4 (2026) → S3 (2025) → S2 (2024)
+  const orderedPosts = [...posts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   const categories = [
     "Semua",
@@ -96,29 +89,13 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
             className="group relative flex flex-col gap-6 overflow-hidden rounded-2xl border border-[#eadbbd] bg-white p-6 shadow-[0_16px_40px_-24px_rgba(77,55,28,0.28)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d4ad54] hover:shadow-[0_22px_45px_-20px_rgba(77,55,28,0.4)] md:flex-row md:items-center md:p-8"
           >
             {/* Story Thumbnail Poster */}
-            <div
-              className={`relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-xl border border-[#eadbbd] bg-[#f8e9c9]/30 md:w-56 ${
-                post.slug === "cerita-sekala-outdoor-perjalanan-dhea-tim" ||
-                post.slug === "hampers-handmade-kebahagiaan-setiap-genggaman"
-                  ? "max-w-[240px] md:max-w-none lg:w-60"
-                  : "lg:w-64"
-              }`}
-            >
+            <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-xl border border-[#eadbbd] bg-[#f8e9c9]/30 md:w-56 lg:w-64">
               <Image
                 src={post.image || "/images/2026/season4/dokumentasi/docum1.jpg"}
                 fill
                 sizes="(max-width: 768px) 100vw, 300px"
-                unoptimized={
-                  post.slug === "cerita-sekala-outdoor-perjalanan-dhea-tim" ||
-                  post.slug === "hampers-handmade-kebahagiaan-setiap-genggaman"
-                }
                 alt={post.title}
-                className={`object-contain ${
-                  post.slug === "cerita-sekala-outdoor-perjalanan-dhea-tim" ||
-                  post.slug === "hampers-handmade-kebahagiaan-setiap-genggaman"
-                    ? ""
-                    : "transition-transform duration-700 group-hover:scale-105"
-                }`}
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
 
