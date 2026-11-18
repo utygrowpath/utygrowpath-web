@@ -5,8 +5,10 @@ import { Poppins } from "next/font/google";
 
 import { Container } from "@/components/layout/container";
 import { ParticipantStats } from "@/components/sections/participant-stats";
+import { KilasBalikSection } from "@/components/sections/kilas-balik-section";
 import { SectionAnimationsGsap } from "@/components/sections/section-animations-gsap";
 import { MobileCardCarousel } from "@/components/sections/mobile-card-carousel";
+import { EventCardsCarousel } from "@/components/sections/event-cards-carousel";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 const season4 = "/images/2026/season4";
@@ -20,22 +22,34 @@ export const metadata: Metadata = {
 
 const eventCards = [
   {
-    title: "Pameran dan tenant",
-    description: "Temukan produk, ide, dan cerita dari tenant yang berpartisipasi.",
-    image: `${season4}/dokumentasi/docum1.jpg`,
+    title: "Gelar Produk",
+    description: "Setap tenant menghadirkan produk-produk unggulan untuk ditampilkan kepada pengunjung.",
+    image: `${season4}/dokumentasi/docum3.jpg`,
     alt: "Tenant berinteraksi dengan pengunjung",
   },
   {
     title: "Kompetisi",
-    description: "Ruang bagi peserta untuk menunjukkan gagasan dan karya terbaik.",
-    image: `${season4}/dokumentasi/docum2.jpg`,
+    description: "Ruang bagi peserta untuk menunjukkan kemampuna, gagasan dan karya terbaiknya.",
+    image: `${season4}/dokumentasi/documen7.jpg`,
     alt: "Karya peserta dalam kegiatan Growpath",
   },
   {
-    title: "Ruang kolaborasi",
-    description: "Berkenalan, berbagi pengalaman, dan membuka kemungkinan baru.",
-    image: `${season4}/dokumentasi/docum1.jpg`,
+    title: "Pemantauan Karya",
+    description: "Dosen-dosen akan berkunjung ke setiap tenant dan melihat karya atau produk yang dihasilkan.",
+    image: `${season4}/dokumentasi/docum2_1.jpg `,
+    alt: "Suasana Pemantauan Karya",
+  },
+  {
+    title: "Expert Talk",
+    description: "Sesi inspiratif untuk berbagi cerita & pengalaman bersama narasumber yang hebat.",
+    image: `${season4}/dokumentasi/docum8.jpg`,
     alt: "Suasana interaksi dalam kegiatan Growpath",
+  },
+  {
+    title: "Penampilan Band",
+    description: "Memberikan tempat bagi para musisi untuk menampilkan karya musik yang mereka miliki.",
+    image: `${season4}/dokumentasi/docum9.jpg `,
+    alt: "Suasana Penampilan Band",
   },
 ];
 
@@ -76,7 +90,7 @@ function CompetitionMark({ type }: { type: "band" | "dance" }) {
 export default function HomePage() {
   return (
     <div data-section-animations className={`${poppins.className} overflow-hidden bg-[#fff9f0] text-[#30302f]`}>
-      <SectionAnimations />
+      <SectionAnimationsGsap />
       <section className="relative bg-[#fff9f0]">
         <div
           aria-hidden="true"
@@ -179,8 +193,8 @@ export default function HomePage() {
       <section className="bg-white py-16 sm:py-20">
         <Container data-reveal-stagger className="grid items-center gap-10 md:grid-cols-2">
           <div data-reveal-item="left" className="relative mx-auto w-full max-w-[480px] md:order-2">
-            <Image src={`${season4}/motif/motif2.png`} width={160} height={160} alt="" className="pointer-events-none absolute -left-3 bottom-3 z-10 w-20 opacity-85 sm:-left-5 sm:w-24" />
-            <Image src={`${season4}/motif/motif3.png`} width={150} height={150} alt="" className="pointer-events-none absolute -right-2 top-1 z-10 w-16 opacity-90 sm:-right-4 sm:w-20" />
+            <Image src={`${season4}/motif/motif5.svg`} width={160} height={160} alt="" className="pointer-events-none absolute -left-3 bottom-3 -rotate-2 z-10 w-20 opacity-85 sm:-left-5 sm:w-24" />
+            <Image src={`${season4}/motif/motif3.png`} width={150} height={150} alt="" className="pointer-events-none absolute -right-2 top-1 rotate-2 z-10 w-16 opacity-90 sm:right-3 sm:w-20" />
             <div className="relative aspect-[5/4] w-full" style={{ clipPath: "polygon(49% 0%, 60% 5%, 66% 1%, 73% 12%, 83% 16%, 80% 25%, 93% 34%, 88% 43%, 100% 52%, 91% 63%, 96% 72%, 83% 79%, 78% 94%, 66% 89%, 56% 100%, 46% 91%, 35% 97%, 28% 86%, 17% 88%, 16% 77%, 4% 69%, 10% 58%, 0% 50%, 8% 40%, 5% 30%, 19% 25%, 24% 14%, 36% 18%)" }}>
               <Image src={`${season4}/dokumentasi/docum1.jpg`} fill sizes="(max-width: 768px) 100vw, 480px" alt="Tenant berinteraksi dengan pengunjung di Growpath" className="object-cover" />
             </div>
@@ -270,59 +284,22 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[#30302f] py-10 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden bg-[#30302f] py-12 text-white sm:py-20">
         <Image src={`${season4}/motif/motif2.png`} width={240} height={240} alt="" className="pointer-events-none absolute -left-12 top-1/2 w-40 -translate-y-1/2 opacity-[0.16] sm:left-0 sm:w-52" />
         <Image src={`${season4}/motif/motif3.png`} width={240} height={300} alt="" className="pointer-events-none absolute -right-8 top-1/2 w-36 -translate-y-1/2 opacity-[0.16] sm:right-0 sm:w-48" />
         <Container className="relative">
-          <div data-reveal-item="up" className="mb-7 text-center sm:mb-9">
+          <div data-reveal-item="up" className="mb-8 text-center sm:mb-10">
             <p className="mb-2 text-sm font-semibold text-[#f7cb4d]">Bertemu, belajar, dan berkarya</p>
             <h2 className="text-3xl font-bold sm:text-4xl">Rangkaian acara</h2>
           </div>
-          <MobileCardCarousel
-            label="Rangkaian acara"
-            items={eventCards.map((event) => (
-              <article key={event.title} className="overflow-hidden rounded-2xl bg-white text-[#30302f]">
-                <div className="relative aspect-[16/10] w-full overflow-hidden">
-                  <Image src={event.image} fill sizes="(max-width: 768px) 100vw, 456px" alt={event.alt} className="object-cover" />
-                </div>
-                <div className="p-5">
-                  <h3 className="mt-2 text-lg font-bold text-[#2b4869]">{event.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#625b54]">{event.description}</p>
-                </div>
-              </article>
-            ))}
-          />
-          <div data-reveal-stagger className="hidden gap-5 md:grid md:grid-cols-3">
-            {eventCards.map((event) => (
-              <article key={event.title} data-reveal-item="up" className="overflow-hidden rounded-xl bg-white text-[#30302f]">
-                <Image src={event.image} width={456} height={300} alt={event.alt} className="aspect-[4/3] w-full object-cover" />
-                <div className="p-5">
-                  <h3 className="text-lg font-bold">{event.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#625b54]">{event.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+
+          <EventCardsCarousel items={eventCards} />
         </Container>
       </section>
 
       <ParticipantStats />
 
-      <section className="bg-[#fff9f0] py-14 sm:py-16">
-        <Container data-reveal-stagger className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
-          <div data-reveal-item="left" className="relative mx-auto w-full max-w-[460px]">
-            <Image src={`${season4}/dokumentasi/docum2.jpg`} width={373} height={250} alt="Suasana kunjungan ke kegiatan Growpath" className="aspect-[3/2] w-full rounded-xl object-cover" />
-            <div className="absolute -bottom-4 right-4 rounded-md bg-[#e13b43] px-4 py-2 text-sm font-semibold text-white">Growpath Season 4</div>
-            <Image src={`${season4}/motif/motif1.png`} width={200} height={200} alt="" className="absolute -left-8 -top-5 -rotate-10 w-16 opacity-80" />
-          </div>
-          <div data-reveal-item="right" className="max-w-xl py-3">
-            <p className="mb-2 text-sm font-semibold text-[#ed8b36]">Jadi bagian dari Growpath Season 4</p>
-            <h2 className="text-3xl leading-tight font-bold text-[#2b4869] sm:text-4xl">Bawa karyamu bertemu dengan lebih banyak orang.</h2>
-            <p className="mt-4 leading-7 text-[#625b54]">Bergabung sebagai tenant dan hadirkan produk atau karyamu di tengah komunitas Growpath.</p>
-            <Link href="/info-tenant" className="mt-6 inline-flex min-h-12 items-center justify-center rounded-md bg-[#e0b83e] px-6 py-3 text-sm font-semibold text-[#30302f] transition-colors hover:bg-[#f7cb4d]">Gabung sebagai tenant</Link>
-          </div>
-        </Container>
-      </section>
+      <KilasBalikSection />
     </div>
   );
 }
