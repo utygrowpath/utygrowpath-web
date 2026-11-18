@@ -14,7 +14,7 @@ const seasonStories = [
     description: [
       "Mengangkat perubahan dunia bisnis akibat teknologi, globalisasi, serta dinamika sosial dan ekonomi, Season 1 mengajak wirausaha muda untuk beradaptasi dan terus berinovasi agar tetap relevan di era Society 5.0. Melalui tema ini, UTY Growpath Expo #1 menjadi ruang tumbuh bagi wirausaha mahasiswa dan inovasi bisnis yang berkelanjutan.",
     ],
-    image: "/images/2026/season4/dokumentasi/docum2.png",
+    image: "/images/2026/season4/dokumentasi/docum10.png",
     alt: "Suasana kegiatan dan interaksi pengunjung di Growpath",
   },
   {
@@ -25,17 +25,17 @@ const seasonStories = [
     description: [
       "Season 2 menjadi ruang bagi wirausaha muda UTY untuk mengenalkan produk, berkompetisi, dan membangun kolaborasi. Mengusung Ratimaya Nusantara, season ini merayakan kekayaan usaha dan budaya lokal Indonesia, memperkuat identitas nasional, serta mendorong kreativitas yang berakar pada warisan budaya.",
     ],
-    image: "/images/2026/season4/dokumentasi/docum1.png",
+    image: "/images/2026/season4/dokumentasi/docum7.png",
     alt: "Pengunjung berinteraksi dengan tenant dan produk Growpath",
   },
   {
     season: "Season 3",
     year: "2025",
-    theme: "Tumbuh lewat kolaborasi dan keberanian memulai",
+    theme: "Jagadhitta Adikarya: Semangat dan tekad untuk menciptakan karya-karya yang unggul dari kearifan lokal",
     description: [
-      "Season 3 menjadi ruang bagi mahasiswa untuk mengenalkan ide dan karya kepada masyarakat, memahami kebutuhan pengunjung, serta melihat peluang usaha. Semangatnya adalah berani memulai dan tumbuh bersama melalui kolaborasi.",
+      "Season 3 menjadi ruang bagi mahasiswa untuk mewujudkan ide dan menciptakan karya-karya yang unggul dan inovatif, memadukan inovasi masa kini dengan nilai-nilai leluhur masa lalu, melestarikan budaya melalui UMKM, serta melihat peluang usaha. Semangatnya adalah berani memulai dan tumbuh bersama melalui kolaborasi.",
     ],
-    image: "/images/2026/season4/dokumentasi/docum2.png",
+    image: "/images/2026/season4/dokumentasi/docum3.JPG",
     alt: "Pengunjung menyaksikan karya dan produk dalam kegiatan Growpath",
   },
   {
@@ -43,10 +43,11 @@ const seasonStories = [
     year: "2026",
     theme: "Vistara Navakarya: Where Ideas Take Shape",
     description: [
-      "Vistara Navakarya mengajak mahasiswa, komunitas, dan pelaku usaha merayakan keberagaman ide serta membentuknya menjadi karya. Season 4 berfokus pada pengalaman belajar, jejaring, dan kolaborasi yang inklusif.",
+      "Vistara Navakarya mengajak mahasiswa, komunitas, dan pelaku usaha merayakan keberagaman ide serta membentuknya menjadi karya. Season 4 berfokus untuk memberdayakan kekayaan lokal supaya tidak dipandang hanya sebagai warisan, tetapi sebagai sumber inspirasi untuk menciptakan peluang kewirausahaan yang relevan dengan perkembangan zaman serta berkolaborasi yang inklusif.",
     ],
-    image: "/images/2026/season4/dokumentasi/docum1.png",
+    image: "",
     alt: "Suasana pengunjung menikmati produk di acara Growpath",
+    isComingSoon: true,
   },
 ];
 
@@ -205,15 +206,29 @@ export default function TentangKamiPage() {
                     <div className="md:hidden">
                       <div className="overflow-hidden rounded-2xl border border-[#eadbbd] bg-white shadow-[0_12px_32px_-18px_rgba(77,55,28,0.25)]">
                         {/* Image Cover */}
-                        <div className="relative aspect-[16/10] w-full overflow-hidden">
-                          <Image
-                            src={story.image}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 42vw"
-                            alt={story.alt}
-                            className="object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#fbf6ed]">
+                          {story.isComingSoon ? (
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                              <span className="text-3xl sm:text-4xl">⏳</span>
+                              <p className="mt-2 text-sm sm:text-base font-bold uppercase tracking-widest text-[#2b4869]">
+                                Coming Soon!
+                              </p>
+                              <p className="mt-1 text-xs text-[#8a8580]">
+                                Dokumentasi Season 4 segera hadir
+                              </p>
+                            </div>
+                          ) : (
+                            <>
+                              <Image
+                                src={story.image}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 42vw"
+                                alt={story.alt}
+                                className="object-cover"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                            </>
+                          )}
                           <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                             <span className="inline-flex rounded-full bg-[#a95742] px-3 py-0.5 text-xs font-bold tracking-wider text-white uppercase shadow-sm">
                               {story.season}
@@ -294,13 +309,25 @@ export default function TentangKamiPage() {
                             : "col-start-1 row-start-1"
                         }`}
                       >
-                        <Image
-                          src={story.image}
-                          fill
-                          sizes="42vw"
-                          alt={story.alt}
-                          className="object-cover transition-transform duration-500 hover:scale-[1.04]"
-                        />
+                        {story.isComingSoon ? (
+                          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_center,_#fffdf8_0%,_#fff5df_60%,_#f8e9c9_100%)] p-6 text-center">
+                            <span className="text-4xl sm:text-5xl animate-bounce">⏳</span>
+                            <p className="mt-3 text-lg font-extrabold uppercase tracking-widest text-[#2b4869]">
+                              Coming Soon!
+                            </p>
+                            <p className="mt-2 text-xs text-[#736c64]">
+                              Foto kegiatan akan segera diperbarui setelah acara berlangsung.
+                            </p>
+                          </div>
+                        ) : (
+                          <Image
+                            src={story.image}
+                            fill
+                            sizes="42vw"
+                            alt={story.alt}
+                            className="object-cover transition-transform duration-500 hover:scale-[1.04]"
+                          />
+                        )}
                       </div>
                     </div>
                   </article>
