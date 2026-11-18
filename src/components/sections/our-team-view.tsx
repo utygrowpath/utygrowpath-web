@@ -154,10 +154,6 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                     </div>
                   </div>
 
-                  <div className="mt-2.5 inline-flex items-center gap-1.5 rounded-full border border-[#eadbbd] bg-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-[#8d493a] shadow-xs">
-                    <span>{members.length} Orang</span>
-                  </div>
-
                   <div className="mt-3 flex items-center justify-center">
                     <div className="h-7 w-7 opacity-70">
                       <Image
