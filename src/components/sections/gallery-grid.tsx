@@ -210,7 +210,7 @@ export function GalleryGrid({ seasons, itemsBySeason }: GalleryGridProps) {
         ) : (
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {items.map((item, index) => (
-              <li key={item.slug} data-reveal-item="up">
+              <li key={item.slug}>
                 <button
                   type="button"
                   onClick={() => setOpenIndex(index)}
