@@ -33,6 +33,9 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
   const divisions = ["Semua", ...allDivisions];
 
   const [activeTab, setActiveTab] = useState<string>("Semua");
+  // Per-division current page (0-indexed). Max 4 cards per page.
+  const [divisionPage, setDivisionPage] = useState<Record<string, number>>({});
+  const PER_PAGE = 4;
 
   // Group members by division
   const groupedCommittee = allDivisions.reduce<Record<string, CommitteeMember[]>>(
@@ -62,7 +65,10 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
             return (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => {
+                  setActiveTab(tab);
+                  setDivisionPage({});
+                }}
                 className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all sm:text-sm ${
                   isActive
                     ? "bg-[#2b4869] text-white shadow-md shadow-[#2b4869]/20"
@@ -90,6 +96,16 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
         {displayedDivisions.map((division) => {
           const members = groupedCommittee[division] || [];
           if (!members.length) return null;
+
+          const currentPage = divisionPage[division] ?? 0;
+          const totalPages = Math.ceil(members.length / PER_PAGE);
+          const pageMembers = members.slice(
+            currentPage * PER_PAGE,
+            (currentPage + 1) * PER_PAGE
+          );
+
+          const goTo = (page: number) =>
+            setDivisionPage((prev) => ({ ...prev, [division]: page }));
 
           return (
             <section
@@ -149,19 +165,19 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                 </div>
               </div>
 
-              {/* Members Grid / Carousel Display */}
+              {/* Members Grid – max 4 per page */}
               <div
                 className={`mx-auto grid gap-6 sm:gap-8 ${
-                  members.length === 1
+                  pageMembers.length === 1
                     ? "max-w-xs justify-center grid-cols-1"
-                    : members.length === 2
+                    : pageMembers.length === 2
                     ? "max-w-xl grid-cols-1 sm:grid-cols-2"
-                    : members.length === 3
+                    : pageMembers.length === 3
                     ? "max-w-4xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                     : "max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
                 }`}
               >
-                {members.map((member) => (
+                {pageMembers.map((member) => (
                   <div
                     key={`${member.division}-${member.name}`}
                     className="group relative flex flex-col items-center"
@@ -181,7 +197,7 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                           {/* Ambient gradient overlay */}
                           <div
                             aria-hidden="true"
-                            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#101b28] via-[#101b28]/60 to-transparent opacity-95 transition-opacity group-hover:opacity-90"
+                            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#101b28] via-[#101b28]/25 to-transparent opacity-70 transition-opacity group-hover:opacity-55"
                           />
                         </>
                       ) : (
@@ -229,24 +245,44 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                 ))}
               </div>
 
-              {/* Slider / Carousel Indicator Dots (like reference image) */}
-              <div
-                aria-hidden="true"
-                className="flex items-center justify-center gap-2 pt-2 opacity-50"
-              >
-                {Array.from({ length: Math.min(5, Math.max(members.length, 3)) }).map(
-                  (_, dotIdx) => (
-                    <span
-                      key={dotIdx}
-                      className={`h-2 rounded-full transition-all ${
-                        dotIdx === 0
-                          ? "w-6 bg-[#ed8b36]"
-                          : "w-2 bg-[#d4ad54]/50"
-                      }`}
-                    />
-                  )
-                )}
-              </div>
+              {/* Pagination Controls (shown only when >4 members) */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-4 pt-2">
+                  <button
+                    onClick={() => goTo(Math.max(0, currentPage - 1))}
+                    disabled={currentPage === 0}
+                    aria-label="Halaman sebelumnya"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[#eadbbd] bg-white px-4 py-2 text-xs font-semibold text-[#2b4869] transition-all hover:border-[#2b4869] hover:bg-[#2b4869] hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+                  >
+                    ← Prev
+                  </button>
+
+                  {/* Page dots */}
+                  <div className="flex items-center gap-1.5">
+                    {Array.from({ length: totalPages }).map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => goTo(idx)}
+                        aria-label={`Halaman ${idx + 1}`}
+                        className={`rounded-full transition-all ${
+                          idx === currentPage
+                            ? "h-2.5 w-7 bg-[#e0b83e]"
+                            : "h-2.5 w-2.5 bg-[#d4ad54]/40 hover:bg-[#d4ad54]/70"
+                        }`}
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() => goTo(Math.min(totalPages - 1, currentPage + 1))}
+                    disabled={currentPage === totalPages - 1}
+                    aria-label="Halaman berikutnya"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[#eadbbd] bg-white px-4 py-2 text-xs font-semibold text-[#2b4869] transition-all hover:border-[#2b4869] hover:bg-[#2b4869] hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+                  >
+                    Next →
+                  </button>
+                </div>
+              )}
             </section>
           );
         })}
