@@ -121,62 +121,78 @@ async function SudutInspirasiDetailContent({ params }: PageProps) {
         />
 
         <Container className="relative z-10 max-w-3xl space-y-8">
-          {/* Multiple Product Images (Kanan-Kiri 2 Kolom) */}
-          {post.productImages && post.productImages.length > 0 ? (
-            <div
-              className={`mx-auto grid w-full grid-cols-2 gap-3.5 sm:gap-5 ${
-                post.slug === "nawasena-kriya-kerajinan-ramah-lingkungan"
-                  ? "max-w-2xl"
-                  : ""
-              }`}
-            >
-              {post.productImages.map((imgSrc, idx) => (
-                <div
-                  key={idx}
-                  className={`relative w-full overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_16px_36px_-20px_rgba(43,72,105,0.35)] ${
-                    post.slug === "nawasena-kriya-kerajinan-ramah-lingkungan"
-                      ? "aspect-[2/3]"
-                      : "aspect-square"
-                  }`}
-                >
+          {/* Footage Media: Simple Layout (Landscape = 1 foto, Potret = Maksimal 2 foto) */}
+          {(() => {
+            const isLandscape =
+              post.slug === "bakso-bakbar-perjalanan-sang-juragan-bakso" ||
+              post.slug === "feys-kitchen-gluten-free-healthy" ||
+              post.slug === "moron-jasa-gb-dan-moron-pay-now" ||
+              post.slug === "zimotive-studio-transformasi-hobi-desain-global" ||
+              post.slug === "dari-tradisi-menjadi-usaha-keluarga" ||
+              post.slug === "cerita-sekala-outdoor-perjalanan-dhea-tim" ||
+              post.slug === "meraih-peluang-meramu-rasa-perjalanan-world-tea";
+
+            // Jika ada multiple product images, ambil maksimal 2 foto (potret)
+            if (post.productImages && post.productImages.length > 1) {
+              const displayImages = post.productImages.slice(0, 2);
+              return (
+                <div className="mx-auto grid w-full max-w-2xl grid-cols-2 gap-4 sm:gap-6">
+                  {displayImages.map((imgSrc, idx) => (
+                    <div
+                      key={idx}
+                      className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_16px_36px_-20px_rgba(43,72,105,0.35)]"
+                    >
+                      <Image
+                        src={imgSrc}
+                        fill
+                        priority={idx === 0}
+                        sizes="(max-width: 768px) 50vw, 384px"
+                        alt={`${post.title} - Footage ${idx + 1}`}
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                  ))}
+                </div>
+              );
+            }
+
+            // Single image (Landscape atau Potret 1 foto)
+            const singleImg =
+              (post.productImages && post.productImages[0]) ||
+              post.productImage ||
+              post.image;
+
+            if (!singleImg) return null;
+
+            if (isLandscape) {
+              return (
+                <div className="relative mx-auto w-full max-w-3xl aspect-[16/10] sm:aspect-[16/9] overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_16px_36px_-20px_rgba(43,72,105,0.35)]">
                   <Image
-                    src={imgSrc}
+                    src={singleImg}
                     fill
-                    priority={idx === 0}
-                    sizes="(max-width: 768px) 50vw, 384px"
-                    alt={`${post.title} - Foto Produk ${idx + 1}`}
-                    className={`object-contain ${
-                      post.slug === "nawasena-kriya-kerajinan-ramah-lingkungan"
-                        ? "p-1"
-                        : "p-2"
-                    }`}
+                    priority
+                    sizes="(max-width: 768px) 100vw, 768px"
+                    alt={post.title}
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
-              ))}
-            </div>
-          ) : (post.productImage || post.image) ? (
-            /* Single Product Image */
-            <div
-              className={`relative mx-auto w-full overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_16px_36px_-20px_rgba(43,72,105,0.35)] ${
-                post.slug === "vkeyyy-pertualangan-kreatif-naufal-visual-kreatif" ||
-                post.slug === "hampers-handmade-kebahagiaan-setiap-genggaman" ||
-                post.slug === "soto-mbro-citarasa-resep-keluarga"
-                  ? "aspect-[3/4] max-w-[380px]"
-                  : post.slug === "meraih-peluang-meramu-rasa-perjalanan-world-tea"
-                    ? "aspect-square max-w-[480px]"
-                  : "aspect-[16/10] sm:aspect-[16/9]"
-              }`}
-            >
-              <Image
-                src={post.productImage || post.image!}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 768px"
-                alt={post.title}
-                className="object-contain p-2"
-              />
-            </div>
-          ) : null}
+              );
+            }
+
+            // Default: Potret 1 foto
+            return (
+              <div className="relative mx-auto w-full max-w-[380px] aspect-[3/4] overflow-hidden rounded-2xl border-4 border-white bg-white shadow-[0_16px_36px_-20px_rgba(43,72,105,0.35)]">
+                <Image
+                  src={singleImg}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 380px"
+                  alt={post.title}
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+            );
+          })()}
 
           <div className="rounded-3xl border border-[#eadbbd] bg-white p-6 shadow-[0_16px_40px_-20px_rgba(77,55,28,0.2)] sm:p-8 md:p-12">
             {/* Body paragraphs (Welcome) */}
