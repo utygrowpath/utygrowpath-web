@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const statistics = [
-  { value: 3500, label: "Audience" },
+  { value: 2863, label: "Audience" },
   { value: 240, label: "UMKM" },
   { value: 240, label: "Produk" },
 ];
