@@ -165,122 +165,132 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                 </div>
               </div>
 
-              {/* Members Grid – max 4 per page */}
-              <div
-                className={`mx-auto grid gap-6 sm:gap-8 ${
-                  pageMembers.length === 1
-                    ? "max-w-xs justify-center grid-cols-1"
-                    : pageMembers.length === 2
-                    ? "max-w-xl grid-cols-1 sm:grid-cols-2"
-                    : pageMembers.length === 3
-                    ? "max-w-4xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-                    : "max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-                }`}
-              >
-                {pageMembers.map((member) => (
-                  <div
-                    key={`${member.division}-${member.name}`}
-                    className="group relative flex flex-col items-center"
-                  >
-                    {/* Card container */}
-                    <div className="relative aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-2xl border-2 border-[#e6d5b7] bg-gradient-to-b from-[#2b4869] to-[#122030] shadow-[0_16px_36px_-16px_rgba(43,72,105,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-[#e0b83e] hover:shadow-[0_24px_50px_-16px_rgba(224,184,62,0.4)]">
-                      {member.image && member.image.trim() !== "" ? (
-                        <>
-                          {/* Member photo */}
-                          <Image
-                            src={member.image}
-                            fill
-                            sizes="(max-width: 768px) 280px, 260px"
-                            alt={member.name}
-                            className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-                          />
-                          {/* Ambient gradient overlay */}
-                          <div
-                            aria-hidden="true"
-                            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#101b28] via-[#101b28]/25 to-transparent opacity-70 transition-opacity group-hover:opacity-55"
-                          />
-                        </>
-                      ) : (
-                        /* Empty Placeholder Avatar (saat belum ada foto) */
-                        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 pb-20">
-                          {/* Subtle motif texture */}
-                          <div
-                            aria-hidden="true"
-                            className="pointer-events-none absolute inset-0 opacity-[0.06]"
-                            style={{
-                              backgroundImage: "url('/images/2026/season4/motif/motif2.png')",
-                              backgroundSize: "140px",
-                              backgroundRepeat: "repeat",
-                            }}
-                          />
-                          {/* Avatar icon badge */}
-                          <div className="relative flex h-24 w-24 sm:h-28 sm:w-28 items-center justify-center rounded-full border-2 border-[#e0b83e]/30 bg-[#16273b]/90 shadow-inner transition-transform duration-500 group-hover:scale-105 group-hover:border-[#e0b83e]/60">
-                            <svg
-                              className="h-14 w-14 sm:h-16 sm:w-16 text-[#e0b83e]/60 transition-colors duration-500 group-hover:text-[#e0b83e]/90"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Bottom Overlay Label (matching reference) */}
-                      <div className="absolute inset-x-0 bottom-0 p-5 text-center">
-                        <p className="text-sm font-bold tracking-wider text-white uppercase drop-shadow-sm sm:text-base">
-                          {member.name}
-                        </p>
-                        <p className="mt-1 text-xs font-semibold tracking-widest text-[#f7cb4d] uppercase drop-shadow-xs">
-                          {member.role}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Pagination Controls (shown only when >4 members) */}
-              {totalPages > 1 && (
-                <div className="flex items-center justify-center gap-4 pt-2">
+              {/* Carousel wrapper – left & right arrow buttons float beside the grid */}
+              <div className="relative px-8 sm:px-10 lg:px-16">
+                {/* Left arrow */}
+                {totalPages > 1 && (
                   <button
                     onClick={() => goTo(Math.max(0, currentPage - 1))}
                     disabled={currentPage === 0}
                     aria-label="Halaman sebelumnya"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-[#eadbbd] bg-white px-4 py-2 text-xs font-semibold text-[#2b4869] transition-all hover:border-[#2b4869] hover:bg-[#2b4869] hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+                    className="absolute left-0 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#e6d5b7] bg-white/90 text-[#2b4869] shadow-lg backdrop-blur-sm transition-all hover:border-[#e0b83e] hover:bg-[#2b4869] hover:text-white hover:shadow-[0_0_20px_rgba(224,184,62,0.35)] disabled:cursor-not-allowed disabled:opacity-25"
                   >
-                    ← Prev
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
                   </button>
+                )}
 
-                  {/* Page dots */}
-                  <div className="flex items-center gap-1.5">
-                    {Array.from({ length: totalPages }).map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => goTo(idx)}
-                        aria-label={`Halaman ${idx + 1}`}
-                        className={`rounded-full transition-all ${
-                          idx === currentPage
-                            ? "h-2.5 w-7 bg-[#e0b83e]"
-                            : "h-2.5 w-2.5 bg-[#d4ad54]/40 hover:bg-[#d4ad54]/70"
-                        }`}
-                      />
-                    ))}
-                  </div>
+                {/* Members Grid – max 4 per page */}
+                <div
+                  className={`mx-auto grid gap-6 sm:gap-8 ${
+                    pageMembers.length === 1
+                      ? "max-w-xs justify-center grid-cols-1"
+                      : pageMembers.length === 2
+                      ? "max-w-xl grid-cols-1 sm:grid-cols-2"
+                      : pageMembers.length === 3
+                      ? "max-w-4xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                      : "max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                  }`}
+                >
+                  {pageMembers.map((member) => (
+                    <div
+                      key={`${member.division}-${member.name}`}
+                      className="group relative flex flex-col items-center"
+                    >
+                      {/* Card container */}
+                      <div className="relative aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-2xl border-2 border-[#e6d5b7] bg-gradient-to-b from-[#2b4869] to-[#122030] shadow-[0_16px_36px_-16px_rgba(43,72,105,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-[#e0b83e] hover:shadow-[0_24px_50px_-16px_rgba(224,184,62,0.4)]">
+                        {member.image && member.image.trim() !== "" ? (
+                          <>
+                            {/* Member photo */}
+                            <Image
+                              src={member.image}
+                              fill
+                              sizes="(max-width: 768px) 280px, 260px"
+                              alt={member.name}
+                              className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                            />
+                            {/* Ambient gradient overlay */}
+                            <div
+                              aria-hidden="true"
+                              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#101b28] via-[#101b28]/25 to-transparent opacity-70 transition-opacity group-hover:opacity-55"
+                            />
+                          </>
+                        ) : (
+                          /* Empty Placeholder Avatar (saat belum ada foto) */
+                          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 pb-20">
+                            {/* Subtle motif texture */}
+                            <div
+                              aria-hidden="true"
+                              className="pointer-events-none absolute inset-0 opacity-[0.06]"
+                              style={{
+                                backgroundImage: "url('/images/2026/season4/motif/motif2.png')",
+                                backgroundSize: "140px",
+                                backgroundRepeat: "repeat",
+                              }}
+                            />
+                            {/* Avatar icon badge */}
+                            <div className="relative flex h-24 w-24 sm:h-28 sm:w-28 items-center justify-center rounded-full border-2 border-[#e0b83e]/30 bg-[#16273b]/90 shadow-inner transition-transform duration-500 group-hover:scale-105 group-hover:border-[#e0b83e]/60">
+                              <svg
+                                className="h-14 w-14 sm:h-16 sm:w-16 text-[#e0b83e]/60 transition-colors duration-500 group-hover:text-[#e0b83e]/90"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        )}
 
+                        {/* Bottom Overlay Label (matching reference) */}
+                        <div className="absolute inset-x-0 bottom-0 p-5 text-center">
+                          <p className="text-sm font-bold tracking-wider text-white uppercase drop-shadow-sm sm:text-base">
+                            {member.name}
+                          </p>
+                          <p className="mt-1 text-xs font-semibold tracking-widest text-[#f7cb4d] uppercase drop-shadow-xs">
+                            {member.role}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Right arrow */}
+                {totalPages > 1 && (
                   <button
                     onClick={() => goTo(Math.min(totalPages - 1, currentPage + 1))}
                     disabled={currentPage === totalPages - 1}
                     aria-label="Halaman berikutnya"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-[#eadbbd] bg-white px-4 py-2 text-xs font-semibold text-[#2b4869] transition-all hover:border-[#2b4869] hover:bg-[#2b4869] hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+                    className="absolute right-0 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#e6d5b7] bg-white/90 text-[#2b4869] shadow-lg backdrop-blur-sm transition-all hover:border-[#e0b83e] hover:bg-[#2b4869] hover:text-white hover:shadow-[0_0_20px_rgba(224,184,62,0.35)] disabled:cursor-not-allowed disabled:opacity-25"
                   >
-                    Next →
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
                   </button>
+                )}
+              </div>
+
+              {/* Page dot indicators (shown only when >1 page) */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 pt-2">
+                  {Array.from({ length: totalPages }).map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => goTo(idx)}
+                      aria-label={`Halaman ${idx + 1}`}
+                      className={`rounded-full transition-all duration-300 ${
+                        idx === currentPage
+                          ? "h-2.5 w-7 bg-[#e0b83e]"
+                          : "h-2.5 w-2.5 bg-[#d4ad54]/40 hover:bg-[#d4ad54]/70"
+                      }`}
+                    />
+                  ))}
                 </div>
               )}
             </section>
