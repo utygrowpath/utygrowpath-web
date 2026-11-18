@@ -5,7 +5,7 @@ import { Poppins } from "next/font/google";
 
 import { Container } from "@/components/layout/container";
 import { ParticipantStats } from "@/components/sections/participant-stats";
-import { SectionAnimations } from "@/components/sections/section-animations";
+import { SectionAnimationsGsap } from "@/components/sections/section-animations-gsap";
 import { MobileCardCarousel } from "@/components/sections/mobile-card-carousel";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
@@ -256,7 +256,7 @@ export default function HomePage() {
               </article>
             ))}
           />
-          <div data-reveal-stagger className="mx-auto hidden max-w-4xl gap-5 md:grid md:grid-cols-2">
+          <div data-reveal-stagger data-sequence className="mx-auto hidden max-w-4xl gap-5 md:grid md:grid-cols-2">
             {competitions.map((competition) => (
               <article key={competition.title} data-reveal-item="zoom" className="relative flex min-h-72 flex-col items-center justify-center overflow-hidden rounded-md bg-white px-7 py-8 text-center shadow-md">
                 <Image src={competition.motif} width={100} height={100} alt="" className="absolute right-4 top-4 w-16 opacity-20" />
