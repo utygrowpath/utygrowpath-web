@@ -188,33 +188,25 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                     </button>
                   )}
 
-                  {/* Members Grid – animates on page change via key remount */}
+                  {/* Members Grid / Flex – konsisten ukuran & center jika < 4 kartu */}
                   <div
                     key={`${division}-${currentPage}`}
                     style={{
                       animation: `${dir === "right" ? "carouselSlideRight" : "carouselSlideLeft"} 0.35s ease-out both`,
                     }}
-                    className={`mx-auto grid gap-6 sm:gap-8 ${
-                      // Kalau ada pagination, selalu pakai 4-kolom agar ukuran kartu
-                      // konsisten di semua halaman (termasuk halaman terakhir yang < 4 item)
-                      totalPages > 1
-                        ? "max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-                        : members.length === 1
-                        ? "max-w-xs justify-center grid-cols-1"
-                        : members.length === 2
-                        ? "max-w-xl grid-cols-1 sm:grid-cols-2"
-                        : members.length === 3
-                        ? "max-w-4xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-                        : "max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                    className={`mx-auto ${
+                      pageMembers.length >= 4
+                        ? "grid max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 justify-items-center"
+                        : "flex flex-wrap justify-center gap-6 sm:gap-8 max-w-6xl"
                     }`}
                   >
                     {pageMembers.map((member) => (
                       <div
                         key={`${member.division}-${member.name}`}
-                        className="group relative flex flex-col items-center"
+                        className="group relative flex w-full max-w-[260px] flex-col items-center"
                       >
                         {/* Card container */}
-                        <div className="relative aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-2xl border-2 border-[#e6d5b7] bg-gradient-to-b from-[#2b4869] to-[#122030] shadow-[0_16px_36px_-16px_rgba(43,72,105,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-[#e0b83e] hover:shadow-[0_24px_50px_-16px_rgba(224,184,62,0.4)]">
+                        <div className="relative aspect-[3/4] w-full max-w-[260px] overflow-hidden rounded-2xl border-2 border-[#e6d5b7] bg-gradient-to-b from-[#2b4869] to-[#122030] shadow-[0_16px_36px_-16px_rgba(43,72,105,0.35)] transition-all duration-500 hover:-translate-y-2 hover:border-[#e0b83e] hover:shadow-[0_24px_50px_-16px_rgba(224,184,62,0.4)]">
                           {member.image && member.image.trim() !== "" ? (
                             <>
                               <Image
