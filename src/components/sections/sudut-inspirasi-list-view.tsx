@@ -18,12 +18,14 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
 
   // Urutkan terbaru dulu: S4 (2026) → S3 (2025) → S2 (2024)
   const orderedPosts = [...posts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
   const categories = [
     "Semua",
-    ...Array.from(new Set(orderedPosts.map((p) => p.category).filter(Boolean) as string[])),
+    ...Array.from(
+      new Set(orderedPosts.map((p) => p.category).filter(Boolean) as string[]),
+    ),
   ];
 
   const filteredPosts =
@@ -34,7 +36,7 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
   const totalPages = Math.ceil(filteredPosts.length / itemsPerPage);
   const paginatedPosts = filteredPosts.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   const handleCategoryChange = (cat: string) => {
@@ -46,8 +48,21 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
     <div className="space-y-8">
       {/* Category Filter Pills - Tampil di atas card artikel */}
       <div className="flex flex-col items-center gap-3">
-        <p className="mb-3 text-md font-bold uppercase tracking-wider text-[#8d493a]">Kategori Inspirasi</p>
-        <p className= "mb-6 text-md text-left sm:text-justify leading-relaxed"> Berisi tentang cerita-cerita inspiratif dalam membangun sebuah usaha di berbagai bidang. Mulai dari bidang Food & Bavarage, Kreatif Desain, Eco & Green Living, dan masih banyak lagi. Setiap cerita berisi pengenalan pelaku usaha, proses membangun usaha, tantangan yang dihadapi, hingga kiat keberhasilannya. Harapannya dari cerita-cerita inspiratif ini, bisa memotivasi teman-teman pembaca yang ingin membangun bisnis usaha dari nol. Jangan takut untuk gagal, karena bisnis yang baik adalah bisnis yang belajar dari kegagalan. Baca selengkapnya:</p>
+        <p className="mb-3 text-md font-bold uppercase tracking-wider text-[#8d493a]">
+          Kategori Inspirasi
+        </p>
+        <p className="mb-6 text-md text-justify sm:text-justify leading-relaxed ">
+          {" "}
+          Berisi tentang cerita-cerita inspiratif dalam membangun sebuah usaha
+          di berbagai bidang. Mulai dari bidang Food & Bavarage, Kreatif Desain,
+          Eco & Green Living, dan masih banyak lagi. Setiap cerita berisi
+          pengenalan pelaku usaha, proses membangun usaha, tantangan yang
+          dihadapi, hingga kiat keberhasilannya. Harapannya dari cerita-cerita
+          inspiratif ini, bisa memotivasi teman-teman pembaca yang ingin
+          membangun bisnis usaha dari nol. Jangan takut untuk gagal, karena
+          bisnis yang baik adalah bisnis yang belajar dari kegagalan. Baca
+          selengkapnya:
+        </p>
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
           {categories.map((category) => {
             const isActive = selectedCategory === category;
@@ -68,8 +83,10 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
               >
                 <span>{category}</span>
                 <span
-                  className={`rounded-full px-1.5 py-0.2 text-[10px] font-semibold ${
-                    isActive ? "bg-white/20 text-white" : "bg-[#f8e9c9]/60 text-[#8d493a]"
+                  className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold ${
+                    isActive
+                      ? "bg-white/20 text-white"
+                      : "bg-[#f8e9c9]/60 text-[#8d493a]"
                   }`}
                 >
                   {count}
@@ -86,25 +103,28 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
           <article
             key={post.slug}
             data-reveal-on-view
-            className="group relative flex flex-col gap-6 overflow-hidden rounded-2xl border border-[#eadbbd] bg-white p-6 shadow-[0_16px_40px_-24px_rgba(77,55,28,0.28)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d4ad54] hover:shadow-[0_22px_45px_-20px_rgba(77,55,28,0.4)] md:flex-row md:items-center md:p-8"
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#eadbbd] bg-white shadow-[0_16px_40px_-24px_rgba(77,55,28,0.28)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d4ad54] hover:shadow-[0_22px_45px_-20px_rgba(77,55,28,0.4)] md:flex-row"
           >
-            {/* Story Thumbnail Poster */}
-            <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-xl border border-[#eadbbd] bg-[#f8e9c9]/30 md:w-56 lg:w-64">
+            {/* Story Thumbnail Poster – full edge-to-edge without padding */}
+            <Link
+              href={`/sudut-inspirasi/${post.slug}`}
+              className="relative block w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:w-64 lg:w-72 md:self-stretch shrink-0 overflow-hidden bg-[#f8e9c9]/30 border-b border-[#eadbbd]/60 md:border-b-0 md:border-r"
+            >
               <Image
-                src={post.image || "/images/2026/season4/dokumentasi/docum1.jpg"}
+                src={
+                  post.image || "/images/2026/season4/dokumentasi/docum1.jpg"
+                }
                 fill
-                sizes="(max-width: 768px) 100vw, 300px"
+                sizes="(max-width: 768px) 100vw, 320px"
                 alt={post.title}
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-            </div>
+            </Link>
 
             {/* Story Details */}
-            <div className="min-w-0 flex-1 space-y-3">
+            <div className="flex min-w-0 flex-1 flex-col justify-center p-6 sm:p-8 space-y-3">
               <h2 className="text-xl font-bold leading-snug tracking-tight text-[#2b4869] transition-colors group-hover:text-[#8d493a] sm:text-2xl">
-                <Link href={`/sudut-inspirasi/${post.slug}`}>
-                  {post.title}
-                </Link>
+                <Link href={`/sudut-inspirasi/${post.slug}`}>{post.title}</Link>
               </h2>
 
               {/* Author & Date metadata */}
@@ -171,7 +191,9 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
 
         {filteredPosts.length === 0 && (
           <div className="rounded-2xl border border-dashed border-[#eadbbd] bg-white p-12 text-center text-[#625b54]">
-            <p className="text-base font-medium">Belum ada cerita inspirasi di kategori ini.</p>
+            <p className="text-base font-medium">
+              Belum ada cerita inspirasi di kategori ini.
+            </p>
           </div>
         )}
       </div>
