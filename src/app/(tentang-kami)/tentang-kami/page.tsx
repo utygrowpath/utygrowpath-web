@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
-import { SectionAnimations } from "@/components/sections/section-animations";
+import { SectionAnimationsGsap } from "@/components/sections/section-animations-gsap";
 import { siteConfig } from "@/config/site";
 
 const seasonStories = [
@@ -58,11 +58,9 @@ export const metadata: Metadata = {
 export default function TentangKamiPage() {
   return (
     <div data-section-animations className="overflow-hidden bg-[#fff9f0] text-[#30302f]">
-      <SectionAnimations />
+      <SectionAnimationsGsap />
 
-      {/* Hero section: Menggunakan data-no-reveal agar animasi entrance langsung tampil saat hard reload */}
       <section
-        data-no-reveal
         className="relative isolate overflow-hidden border-y border-[#e9dcc3] bg-[radial-gradient(ellipse_at_center,_#fffdf8_0%,_#fff5df_58%,_#f8e9c9_100%)]"
       >
         <Image
@@ -82,8 +80,8 @@ export default function TentangKamiPage() {
           className="pointer-events-none absolute -right-32 top-1/2 z-0 w-52 -translate-y-1/2 rotate-12 opacity-[0.12] sm:-right-12 sm:w-80 lg:right-0 lg:w-[26rem] animate-float-reverse"
         />
         <Container className="relative z-10 flex min-h-[420px] items-center justify-center py-12 sm:min-h-[480px] sm:py-16">
-          <div className="flex w-full max-w-3xl flex-col items-center gap-6 py-8 text-center">
-            <div className="relative flex h-40 w-40 shrink-0 items-center justify-center rounded-full border border-[#e0b83e]/70 ring-8 ring-[#e0b83e]/10 shadow-[0_16px_36px_-16px_rgba(224,184,62,0.4)] sm:h-44 sm:w-44 animate-hero-zoom">
+          <div data-reveal-stagger className="flex w-full max-w-3xl flex-col items-center gap-6 py-8 text-center">
+            <div data-reveal-item="zoom" className="relative flex h-40 w-40 shrink-0 items-center justify-center rounded-full border border-[#e0b83e]/70 ring-8 ring-[#e0b83e]/10 shadow-[0_16px_36px_-16px_rgba(224,184,62,0.4)] sm:h-44 sm:w-44">
               <Image
                 src="/images/2026/season4/logo/gowpaths4.png"
                 width={410}
@@ -93,7 +91,7 @@ export default function TentangKamiPage() {
                 className="h-32 w-28 object-contain sm:h-36 sm:w-32 transition-transform duration-500 hover:scale-105"
               />
             </div>
-            <div className="animate-hero-fade-delayed">
+            <div data-reveal-item="up">
               <h1 className="text-2xl leading-tight font-bold tracking-tight text-[#8d493a] sm:text-3xl md:text-4xl">
                 Tentang UTY Growpath Expo
               </h1>
@@ -102,7 +100,7 @@ export default function TentangKamiPage() {
         </Container>
       </section>
 
-      <section data-no-reveal className="relative isolate overflow-hidden bg-[#fff9f0] py-16 text-[#30302f] sm:py-20">
+      <section className="relative isolate overflow-hidden bg-[#fff9f0] py-16 text-[#30302f] sm:py-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0 opacity-[0.06]"
@@ -113,7 +111,7 @@ export default function TentangKamiPage() {
           }}
         />
         <Container className="relative z-10 grid gap-6 md:grid-cols-[0.7fr_1.3fr] md:gap-16">
-          <div data-reveal-on-view data-reveal="left" className="md:sticky md:top-28 md:self-start">
+          <div data-reveal-item="left" className="md:sticky md:top-28 md:self-start">
             <p className="mb-2 text-sm font-semibold tracking-[0.18em] text-[#ed8b36] uppercase sm:mb-4">
               Cerita kami
             </p>
@@ -122,11 +120,7 @@ export default function TentangKamiPage() {
             </h2>
           </div>
           <div className="relative space-y-0 border-l border-[#8d493a]/25 pl-5 sm:pl-8">
-            <article
-              data-reveal-on-view
-              data-reveal="right"
-              className="relative pb-7 sm:pb-10"
-            >
+            <article data-reveal-item="right" className="relative pb-7 sm:pb-10">
               <span aria-hidden="true" className="absolute -left-[calc(1.25rem+5px)] top-2 h-2.5 w-2.5 rounded-full bg-[#e0b83e] ring-4 ring-[#e0b83e]/20 sm:-left-[calc(2rem+5px)]" />
               <p className="text-left text-base leading-relaxed text-[#625b54] sm:text-justify sm:text-lg sm:leading-8">
                 Growpath berangkat dari semangat untuk menghadirkan pengalaman
@@ -136,11 +130,7 @@ export default function TentangKamiPage() {
                 hubungan dengan banyak orang.
               </p>
             </article>
-            <article
-              data-reveal-on-view
-              data-reveal="right"
-              className="relative border-t border-[#8d493a]/15 py-7 sm:py-10"
-            >
+            <article data-reveal-item="right" className="relative border-t border-[#8d493a]/15 py-7 sm:py-10">
               <span aria-hidden="true" className="absolute -left-[calc(1.25rem+5px)] top-9 h-2.5 w-2.5 rounded-full bg-[#ed8b36] ring-4 ring-[#ed8b36]/20 sm:-left-[calc(2rem+5px)] sm:top-12" />
               <p className="text-left text-base leading-relaxed text-[#625b54] sm:text-justify sm:text-lg sm:leading-8">
                 Setiap penyelenggaraan mempertemukan beragam potensi dalam satu
@@ -149,11 +139,7 @@ export default function TentangKamiPage() {
                 dapat berkembang jauh setelah acara selesai.
               </p>
             </article>
-            <article
-              data-reveal-on-view
-              data-reveal="right"
-              className="relative border-t border-[#8d493a]/15 pt-7 sm:pt-10"
-            >
+            <article data-reveal-item="right" className="relative border-t border-[#8d493a]/15 pt-7 sm:pt-10">
               <span aria-hidden="true" className="absolute -left-[calc(1.25rem+5px)] top-9 h-2.5 w-2.5 rounded-full bg-[#e13b43] ring-4 ring-[#e13b43]/20 sm:-left-[calc(2rem+5px)] sm:top-12" />
               <p className="text-left text-base leading-relaxed text-[#625b54] sm:text-justify sm:text-lg sm:leading-8">
                 Perjalanan dari season ke season membawa semangat yang sama
@@ -202,8 +188,9 @@ export default function TentangKamiPage() {
                 return (
                   <article
                     key={story.season}
-                    data-reveal-on-view
-                    className="season-story-reveal relative pl-9 sm:pl-12 md:pl-0"
+                    data-reveal-item="up"
+                    data-reveal-on-enter
+                    className="relative pl-9 sm:pl-12 md:pl-0"
                   >
                     {/* Timeline Node & Year Badge */}
                     {/* Mobile: Pin point on the left timeline */}
@@ -271,7 +258,6 @@ export default function TentangKamiPage() {
 
                       {/* Desktop Text Card */}
                       <div
-                        data-season-reveal={textOnLeft ? "left" : "right"}
                         className={`relative rounded-2xl border border-[#eadbbd] bg-white p-7 shadow-[0_16px_40px_-24px_rgba(77,55,28,0.35)] transition-shadow duration-300 hover:shadow-[0_22px_45px_-24px_rgba(77,55,28,0.45)] ${
                           textOnLeft
                             ? "col-start-1 row-start-1 after:absolute after:right-[-2rem] after:top-[calc(50%-1.125rem)] after:h-px after:w-8 after:bg-[#d4ad54]"
@@ -302,7 +288,6 @@ export default function TentangKamiPage() {
 
                       {/* Desktop Photo Card */}
                       <div
-                        data-season-reveal={textOnLeft ? "right" : "left"}
                         className={`relative aspect-[4/3] overflow-hidden rounded-2xl border-[6px] border-white bg-white shadow-[0_20px_45px_-24px_rgba(43,72,105,0.42)] ${
                           textOnLeft
                             ? "col-start-3 row-start-1"

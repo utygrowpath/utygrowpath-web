@@ -70,12 +70,35 @@ export function SectionAnimationsGsap() {
     }
 
     const ctx = gsap.context(() => {
+      const enterItems = [
+        ...root.querySelectorAll<HTMLElement>("[data-reveal-on-enter]"),
+      ];
+      const claimed = new Set<Element>(enterItems);
+
+      enterItems.forEach((item) => {
+        const variant = variantOf(item);
+        playWhenVisible(
+          item,
+          gsap.from(item, {
+            paused: true,
+            opacity: 0,
+            duration: 0.65,
+            ease: "power3.out",
+            x: OFFSETS[variant].x,
+            y: OFFSETS[variant].y,
+            scale: variant === "zoom" ? 0.96 : 1,
+            clearProps: "opacity,transform",
+          }),
+        );
+      });
+
       const sequenceGroups = [
         ...root.querySelectorAll<HTMLElement>("[data-sequence]"),
       ];
-      const claimed = new Set<Element>();
       sequenceGroups.forEach((group) =>
-        group.querySelectorAll("[data-reveal-item]").forEach((el) => claimed.add(el)),
+        group
+          .querySelectorAll("[data-reveal-item]:not([data-reveal-on-enter])")
+          .forEach((el) => claimed.add(el)),
       );
 
       root.querySelectorAll<HTMLElement>(":scope > section").forEach((section) => {
@@ -105,7 +128,11 @@ export function SectionAnimationsGsap() {
       });
 
       sequenceGroups.forEach((group) => {
-        const items = [...group.querySelectorAll<HTMLElement>("[data-reveal-item]")];
+        const items = [
+          ...group.querySelectorAll<HTMLElement>(
+            "[data-reveal-item]:not([data-reveal-on-enter])",
+          ),
+        ];
         if (!items.length) return;
 
         // "rise" untuk baris melebar penuh: menskala baris selebar kolom
