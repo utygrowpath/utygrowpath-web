@@ -124,6 +124,7 @@ async function SudutInspirasiDetailContent({ params }: PageProps) {
           {/* Footage Media: Simple Layout (Landscape = 1 foto, Potret = Maksimal 2 foto) */}
           {(() => {
             const isLandscape =
+              post.slug === "bakso-bakbar-perjalanan-sang-juragan-bakso" ||
               post.slug === "feys-kitchen-gluten-free-healthy" ||
               post.slug === "moron-jasa-gb-dan-moron-pay-now" ||
               post.slug === "zimotive-studio-transformasi-hobi-desain-global" ||

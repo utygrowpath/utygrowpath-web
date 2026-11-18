@@ -13,13 +13,7 @@ export const inspirationPosts: InspirationPost[] = [
     category: "Food & Beverage",
     date: "2026-03-05",
     image: "/images/2026/sudut-inspirasi/s4/bakso-bakbar-cover.png",
-    productImage: "/images/2026/sudut-inspirasi/s4/bakso-bakbar-menu.png",
-    productImages: [
-      "/images/2026/sudut-inspirasi/s4/bakso-bakbar-menu.png",
-      "/images/2026/sudut-inspirasi/s4/bakso-bakbar-stand.png",
-      "/images/2026/sudut-inspirasi/s4/bakso-bakbar-journey.png",
-      "/images/2026/sudut-inspirasi/s4/bakso-bakbar-expo.png",
-    ],
+    productImage: "/images/2026/sudut-inspirasi/s4/grow-eps1-landscape.webp",
     excerpt:
       "Kisah Muhammad Syafii, mahasiswa Psikologi UTY 2023 yang merintis Bakso Bakbar dari jualan di bawah pohon beringin Jakal hingga resmi membuka stan di Kantin UTY setelah momentum GrowPath Expo.",
     body: [
@@ -60,12 +54,10 @@ export const inspirationPosts: InspirationPost[] = [
     category: "Food & Beverage",
     date: "2026-03-08",
     image: "/images/2026/sudut-inspirasi/s4/kkuee-cover.png",
-    productImage: "/images/2026/sudut-inspirasi/s4/kkuee-cookies.png",
+    productImage: "/images/2026/sudut-inspirasi/s4/grow-eps2-potrait1.webp",
     productImages: [
-      "/images/2026/sudut-inspirasi/s4/kkuee-cookies.png",
-      "/images/2026/sudut-inspirasi/s4/kkuee-package.png",
-      "/images/2026/sudut-inspirasi/s4/kkuee-campus.png",
-      "/images/2026/sudut-inspirasi/s4/kkuee-garlic-bread.png",
+      "/images/2026/sudut-inspirasi/s4/grow-eps2-potrait1.webp",
+      "/images/2026/sudut-inspirasi/s4/grow-eps2-potrait2.webp",
     ],
     excerpt:
       "Numaira Aurellie Firdaus (Numa), mahasiswi Psikologi UTY angkatan 2024, membuktikan bahwa hobi scrolling resep makanan di TikTok bisa melahirkan brand bakery KKUEE dengan aneka soft cookies dan garlic bread.",
