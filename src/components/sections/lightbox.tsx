@@ -229,7 +229,7 @@ function LightboxDialog({
                     alt={item.alt}
                     fill
                     sizes="(max-width: 640px) 92vw, min(1100px, 92vw)"
-                    className="object-contain"
+                    className="object-contain md:object-cover"
                     priority
                   />
                 </div>

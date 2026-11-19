@@ -451,7 +451,7 @@ export function EditorialPhotobookGallery() {
                 alt={documentationPhotos[selectedImageIndex].alt}
                 fill
                 priority
-                className="object-contain"
+                className="object-contain md:object-cover"
               />
             </div>
             {/* Modal Caption Bar */}
