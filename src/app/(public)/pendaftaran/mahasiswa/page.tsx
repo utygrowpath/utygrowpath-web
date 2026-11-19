@@ -28,93 +28,67 @@ export default function PendaftaranMahasiswaPage() {
     >
       <SectionAnimationsGsap />
 
-      {/* Hero — dua kolom (halaman umum memakai satu kolom di tengah) */}
+      {/* Hero */}
       <section className="relative isolate overflow-hidden border-b border-[#e9dcc3] bg-[radial-gradient(ellipse_at_center,_#fffdf8_0%,_#fff5df_58%,_#f8e9c9_100%)]">
         <Image
-          src={`${season4}/motif/motif1.png`}
-          width={2088}
-          height={2088}
+          src={`${season4}/motif/motif2.png`}
+          width={500}
+          height={500}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -right-20 top-[6%] w-[300px] opacity-[0.12] sm:w-[420px] lg:w-[660px]"
-          data-parallax="40"
+          className="pointer-events-none absolute -left-20 top-1/2 z-0 w-64 -translate-y-1/2 opacity-[0.14] animate-float-slow sm:-left-12 sm:w-80 lg:left-0 lg:w-[26rem]"
         />
         <Image
-          src={`${season4}/motif/motif3.png`}
-          width={2900}
-          height={5300}
+          src={`${season4}/motif/motif5.svg`}
+          width={500}
+          height={500}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -left-16 bottom-0 w-[220px] opacity-[0.14] lg:w-[300px]"
-          data-parallax="26"
+          className="pointer-events-none absolute -right-20 top-1/2 z-0 w-64 -translate-y-1/2 rotate-12 opacity-[0.12] animate-float-reverse sm:-right-12 sm:w-80 lg:right-0 lg:w-[26rem]"
         />
-        <Container className="relative z-10">
-          <div className="grid items-center gap-10 py-16 lg:grid-cols-2 lg:gap-16 lg:py-20">
-            <div data-reveal-stagger className="max-w-xl">
-              <p
-                data-reveal-item="up"
-                className="mb-4 text-sm font-semibold tracking-[0.14em] text-[#a34f3c] uppercase"
-              >
-                Pendaftaran Tenant
-              </p>
-              <h1
-                data-reveal-item="up"
-                className="text-3xl leading-tight font-bold tracking-tight text-[#2b4869] sm:text-4xl md:text-5xl"
-              >
-                Pendaftaran Tenant Mahasiswa
-              </h1>
-              <p
-                data-reveal-item="up"
-                className="mt-5 text-xl leading-8 font-semibold text-[#30302f]"
-              >
-                {intro[0]}
-              </p>
-              <p data-reveal-item="up" className="mt-4 leading-7 text-[#625b54]">
-                {intro[1]}
-              </p>
-              <div data-reveal-item="up" className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href="/submission"
-                  className="inline-flex min-h-12 items-center justify-center rounded-md bg-[#c92e37] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#a8252c]"
-                >
-                  Daftar sekarang
-                </Link>
-                <a
-                  href="#syarat"
-                  className="inline-flex min-h-12 items-center justify-center rounded-md border border-[#2b4869]/25 px-8 py-3 text-sm font-semibold transition-colors hover:bg-white"
-                >
-                  Lihat syarat
-                </a>
-              </div>
+        <Container className="relative z-10 py-16 sm:py-20">
+          <div
+            data-reveal-stagger
+            className="mx-auto flex w-full max-w-3xl flex-col items-center gap-6 text-center"
+          >
+            <div
+              data-reveal-item="zoom"
+              className="relative flex h-32 w-32 shrink-0 items-center justify-center rounded-full border border-[#e0b83e]/70 ring-8 ring-[#e0b83e]/10 sm:h-36 sm:w-36"
+            >
+              <Image
+                src={`${season4}/logo/gowpaths4.png`}
+                width={410}
+                height={500}
+                alt=""
+                priority
+                className="h-24 w-20 object-contain sm:h-28 sm:w-24"
+              />
             </div>
-
-            <div data-reveal-item="right" className="relative mx-auto w-full max-w-[440px]">
-              <Image
-                src={`${season4}/motif/motif2.png`}
-                width={160}
-                height={160}
-                alt=""
-                aria-hidden="true"
-                className="pointer-events-none absolute -left-3 bottom-2 z-10 w-20 opacity-80 sm:w-24"
-              />
-              <div className="relative flex min-h-[320px] w-[92%] items-center justify-center rounded-[48%] bg-[#f6ebd5] sm:min-h-[380px]">
-                <Image
-                  src={`${season4}/logo/gowpaths4.png`}
-                  width={410}
-                  height={500}
-                  alt="Logo UTY Growpath Expo Season 4"
-                  priority
-                  className="relative z-10 w-[60%]"
-                />
-              </div>
-              <Image
-                src={`${season4}/motif/motif3.png`}
-                width={150}
-                height={150}
-                alt=""
-                aria-hidden="true"
-                className="pointer-events-none absolute -right-2 top-2 z-10 w-16 opacity-90 sm:w-20"
-              />
+            <h1
+              data-reveal-item="up"
+              className="text-3xl leading-tight font-bold tracking-tight text-[#8d493a] sm:text-4xl md:text-5xl"
+            >
+              Pendaftaran Tenant Mahasiswa
+            </h1>
+            <p
+              data-reveal-item="up"
+              className="max-w-2xl leading-7 text-[#625b54]"
+            >
+              {intro[1]}
+            </p>
+            <div data-reveal-item="up" className="mt-2 flex flex-wrap justify-center gap-3">
+              <Link
+                href="/submission"
+                className="inline-flex min-h-12 items-center justify-center rounded-md bg-[#e13b43] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c92e37]"
+              >
+                Daftar sekarang
+              </Link>
+              <a
+                href="#syarat"
+                className="inline-flex min-h-12 items-center justify-center rounded-md border border-[#30302f]/25 px-8 py-3 text-sm font-semibold transition-colors hover:bg-white"
+              >
+                Lihat syarat
+              </a>
             </div>
           </div>
         </Container>
@@ -149,7 +123,7 @@ export default function PendaftaranMahasiswaPage() {
             />
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-[#e9dfca]">
               <Image
-                src={`${season4}/dokumentasi/docum2.png`}
+                src={`${season4}/dokumentasi/docum11.jpg`}
                 fill
                 sizes="(max-width: 768px) 100vw, 460px"
                 alt="Suasana kunjungan ke stan tenant UTY Growpath Expo"
@@ -263,11 +237,10 @@ export default function PendaftaranMahasiswaPage() {
               >
                 <span
                   aria-hidden="true"
-                  className={`relative z-10 mx-auto mb-4 block h-3 w-3 rounded-full ring-4 ${
-                    index % 2 === 0
+                  className={`relative z-10 mx-auto mb-4 block h-3 w-3 rounded-full ring-4 ${index % 2 === 0
                       ? "bg-[#2b527d] ring-[#2b527d]/15"
                       : "bg-[#e0b83e] ring-[#e0b83e]/25"
-                  }`}
+                    }`}
                 />
                 <p className="text-lg leading-7 font-bold text-[#2b4869]">{item.date}</p>
                 <p className="mt-1 text-sm text-[#625b54]">{item.label}</p>
@@ -302,7 +275,7 @@ export default function PendaftaranMahasiswaPage() {
               HTM: {htm}
             </p>
             <p data-reveal-item="up" className="mt-5 leading-7 text-[#594a37]">
-              Khusus mahasiswa aktif yang sedang menempuh mata kuliah Krenovasi &amp;
+              Khusus mahasiswa aktif yang sedang menempuh mata kuliah
               Kewirausahaan. Amankan stan kelompokmu sekarang.
             </p>
             <div data-reveal-item="up" className="mt-8">
@@ -371,7 +344,7 @@ export default function PendaftaranMahasiswaPage() {
           <div data-reveal-item="right" className="relative mx-auto w-full max-w-[460px]">
             <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl">
               <Image
-                src={`${season4}/dokumentasi/docum1.png`}
+                src={`${season4}/dokumentasi/docum6.JPG`}
                 fill
                 sizes="(max-width: 768px) 100vw, 460px"
                 alt="Tenant berinteraksi dengan pengunjung di UTY Growpath Expo"

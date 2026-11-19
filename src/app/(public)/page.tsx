@@ -7,7 +7,7 @@ import { Container } from "@/components/layout/container";
 import { ParticipantStats } from "@/components/sections/participant-stats";
 import { KilasBalikSection } from "@/components/sections/kilas-balik-section";
 import { SectionAnimationsGsap } from "@/components/sections/section-animations-gsap";
-import { MobileCardCarousel } from "@/components/sections/mobile-card-carousel";
+import { CompetitionBentoSection, type CompetitionItem } from "@/components/sections/competition-bento-section";
 import { EventCardsCarousel } from "@/components/sections/event-cards-carousel";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
@@ -53,39 +53,53 @@ const eventCards = [
   },
 ];
 
-const competitions = [
+const competitionsData: CompetitionItem[] = [
   {
-    title: "Band",
-    description: "Panggung untuk menampilkan musikalitas, kekompakan, dan karya terbaik bersama band-mu.",
+    id: "band",
+    title: "Band Akustik",
+    description: "Panggung untuk menampilkan musikalitas dan karya terbaik bersama group bandmu.",
+    category: "Eksternal",
     motif: `${season4}/motif/motif2.png`,
+    mark: "band",
+    registrationUrl: "/info",
   },
   {
-    title: "Dance",
-    description: "Tunjukkan kreativitas dan energi melalui penampilan tari bersama tim pilihanmu.",
+    id: "vocal",
+    title: "Vokal Solo",
+    description: "Tunjukkan skill bernyanyimu diatas panggung Growpath Season 4, dan menangkan hadiahnya.",
+    category: "Eksternal",
     motif: `${season4}/motif/motif3.png`,
+    mark: "vocal",
+    registrationUrl: "/info",
+  },
+  {
+    id: "pitching",
+    title: "Pitching",
+    description: "Presentasikan ide dan potensi terbaik dari tenantmu.",
+    category: "Internal",
+    motif: `${season4}/motif/motif2.png`,
+    mark: "pitching",
+    registrationUrl: "/pendaftaran/mahasiswa",
+  },
+  {
+    id: "tenant",
+    title: "Best Tenant",
+    description: "Tampilkan pengalaman tenant yang menarik dan berkesan.",
+    category: "Internal",
+    motif: `${season4}/motif/motif3.png`,
+    mark: "tenant",
+    registrationUrl: "/pendaftaran/mahasiswa",
+  },
+  {
+    id: "poster",
+    title: "Poster",
+    description: "Sampaikan gagasan dan kreativitas melalui karya poster.",
+    category: "Internal",
+    motif: `${season4}/motif/motif5.svg`,
+    mark: "poster",
+    registrationUrl: "/pendaftaran/mahasiswa",
   },
 ];
-
-function CompetitionMark({ type }: { type: "band" | "dance" }) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 100 100" className="h-16 w-16 sm:h-20 sm:w-20" fill="none">
-      <circle cx="50" cy="50" r="48" fill="#30302f" />
-      {type === "band" ? (
-        <g stroke="#fff9f0" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5">
-          <path d="M39 68V39l25-9v29" />
-          <ellipse cx="34" cy="70" rx="8" ry="6" fill="#fff9f0" />
-          <ellipse cx="60" cy="62" rx="8" ry="6" fill="#fff9f0" />
-          <path d="M46 49l13-5" />
-        </g>
-      ) : (
-        <g stroke="#fff9f0" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5">
-          <circle cx="55" cy="27" r="7" fill="#fff9f0" stroke="none" />
-          <path d="M51 39 39 50l14 8 13-12M51 39l15 7M53 58l-4 17M53 58l15 13M39 50l-9-11M68 45l8-10" />
-        </g>
-      )}
-    </svg>
-  );
-}
 
 export default function HomePage() {
   return (
@@ -248,38 +262,17 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[#e0b83e] py-10 sm:py-20">
+      <section className="relative isolate overflow-hidden bg-[#e0b83e] py-12 sm:py-20">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 opacity-[0.08]" style={{ backgroundImage: `url('${season4}/motif/motif2.png')`, backgroundSize: "180px" }} />
-        <Container>
-          <div data-reveal-item="up" className="mx-auto mb-7 max-w-2xl text-center sm:mb-10">
+        <Container data-reveal-stagger>
+          <div data-reveal-item="up" className="mx-auto mb-8 max-w-2xl text-center sm:mb-10">
             <p className="mb-2 text-sm font-semibold text-[#8d493a]">Tunjukkan bakat dan karyamu</p>
             <h2 className="text-3xl font-bold text-[#30302f] sm:text-4xl">Lomba Season 4</h2>
-            <p className="mt-3 text-[#594a37]">Pilih panggungmu dan bersiap untuk tampil bersama Growpath.</p>
+            <p className="mt-3 text-sm text-[#594a37] sm:text-base">Pilih cabang lomba dan bersiap untuk berkarya bersama Growpath.</p>
           </div>
-          <MobileCardCarousel
-            label="Lomba Season 4"
-            items={competitions.map((competition) => (
-              <article key={competition.title} className="relative flex flex-col items-center justify-center overflow-hidden rounded-2xl bg-white px-6 py-8 text-center border border-[#d4ad54]/30">
-                <Image src={competition.motif} width={100} height={100} alt="" className="absolute right-3 top-3 w-16 opacity-15" />
-                <div className="mb-2">
-                  <CompetitionMark type={competition.title === "Band" ? "band" : "dance"} />
-                </div>
-                <h3 className="text-2xl font-bold tracking-wide text-[#2b527d]">{competition.title}</h3>
-                <p className="mt-3 max-w-xs text-sm leading-6 text-[#8d493a]">{competition.description}</p>
-                <Link href="/info" className="mt-5 inline-flex min-h-11 items-center justify-center rounded-xl bg-[#8d493a] px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-all active:scale-95 hover:bg-[#713a2f]">Informasi lomba</Link>
-              </article>
-            ))}
-          />
-          <div data-reveal-stagger data-sequence className="mx-auto hidden max-w-4xl gap-5 md:grid md:grid-cols-2">
-            {competitions.map((competition) => (
-              <article key={competition.title} data-reveal-item="zoom" className="relative flex min-h-72 flex-col items-center justify-center overflow-hidden rounded-md bg-white px-7 py-8 text-center shadow-md">
-                <Image src={competition.motif} width={100} height={100} alt="" className="absolute right-4 top-4 w-16 opacity-20" />
-                <CompetitionMark type={competition.title === "Band" ? "band" : "dance"} />
-                <h3 className="text-3xl font-bold tracking-wide text-[#2b527d]">{competition.title}</h3>
-                <p className="mt-4 max-w-sm text-sm leading-6 text-[#8d493a]">{competition.description}</p>
-                <Link href="/info" className="mt-6 inline-flex min-h-11 items-center justify-center rounded-md bg-[#8d493a] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#713a2f]">Informasi lomba</Link>
-              </article>
-            ))}
+
+          <div data-reveal-item="up">
+            <CompetitionBentoSection items={competitionsData} />
           </div>
         </Container>
       </section>

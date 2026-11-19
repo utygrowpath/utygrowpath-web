@@ -12,7 +12,7 @@ import type { Pendaftaran } from "@/types/content";
 export const pendaftaranUmum: Pendaftaran = {
   intro: [
     "Hai, kamu yang punya usaha keren!",
-    "Ini saatnya kamu memperkenalkan produk atau jasa milikmu ke lebih banyak orang melalui acara UTY GROWPATH EXPO. Yuk, tunjukkan kreativitas dan inovasi usahamu di event ini!",
+    "Ini saatnya kamu memperkenalkan produk atau jasa milikmu ke lebih banyak orang melalui acara Uty Growpath Expo. Yuk, tunjukkan kreativitas dan inovasi usahamu di event ini!",
   ],
   categories: [
     "Kuliner",

@@ -24,7 +24,7 @@ body:
       label: Langkah reproduksi
       description: Bagaimana cara mereproduksi masalah ini?
       placeholder: |
-        1. Buka /info-tenant
+        1. Buka /pendaftaran/umum
         2. Perkecil lebar browser ke 375px
         3. Perhatikan judul tertutup navbar
     validations:
