@@ -60,6 +60,10 @@ export type CommitteeMember = {
   image?: string;
   instagram?: string;
   linkedin?: string;
+  /** Program studi anggota. */
+  prodi?: string;
+  /** Angkatan (tahun masuk). */
+  angkatan?: string;
 };
 
 export type Pendaftaran = {
