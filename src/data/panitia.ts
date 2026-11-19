@@ -620,7 +620,7 @@ export const committee: CommitteeMember[] = [
     role: "Graphic Designer",
     division: "Graphic Designer",
     isCore: false,
-    image: "/tim/GraphicDesign/GD - 4.webp",
+    image: "/tim/GraphicDesign/GDE - 4.webp",
     prodi: "Perencanaan Wilayah dan Kota",
     angkatan: "2024",
   },
