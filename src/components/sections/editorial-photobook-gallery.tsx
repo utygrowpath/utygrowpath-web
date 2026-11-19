@@ -85,8 +85,40 @@ const documentationPhotos: EditorialDocItem[] = [
   },
 ];
 
+const editorialQuotes = [
+  {
+    quote: "Setiap tujuan mengabadikan keberanian untuk bermimpi, berkolaborasi, dan mewujudkan karya.",
+    sub: "Jejak UTY Growpath Expo",
+    category: "Semangat Berkarya",
+  },
+  {
+    quote: "Dari ide sederhana, bertumbuh menjadi kreasi yang menginspirasi ekosistem kewirausahaan.",
+    sub: "Kilas Balik Perjalanan",
+    category: "Inovasi Mahasiswa",
+  },
+  {
+    quote: "Merayakan ragam cipta rasa, inovasi teknologi, dan kolaborasi inklusif tanpa batas.",
+    sub: "Kreativitas Tanpa Batas",
+    category: "Harmoni Karya",
+  },
+];
+
 export function EditorialPhotobookGallery() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [activeQuoteIndex, setActiveQuoteIndex] = useState(0);
+  const [isQuoteFading, setIsQuoteFading] = useState(false);
+
+  // Auto-cycle editorial quotes every 3 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIsQuoteFading(true);
+      setTimeout(() => {
+        setActiveQuoteIndex((prev) => (prev + 1) % editorialQuotes.length);
+        setIsQuoteFading(false);
+      }, 250);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handlePrev = useCallback(() => {
     setSelectedImageIndex((prev) =>
@@ -177,18 +209,89 @@ export function EditorialPhotobookGallery() {
 
       {/*
         EDITORIAL SECTION 2:
-        Quote Ribbon Break (Nuansa Majalah Seni Visual)
+        Kinetic Typography & Editorial Ribbon Break (Auto-Cycle Carousel)
       */}
-      <div
-        className="relative overflow-hidden rounded-3xl border border-[#eadbbd] bg-gradient-to-r from-[#fbf6ed] via-white to-[#fff8ee] p-7 sm:p-10 shadow-sm text-center"
-      >
-        <span className="text-3xl sm:text-4xl">✨</span>
-        <blockquote className="mx-auto mt-2 max-w-2xl font-serif text-lg sm:text-2xl font-medium italic text-[#2b4869] leading-relaxed">
-          &ldquo;Setiap bidikan mengabadikan keberanian untuk bermimpi, berkolaborasi, dan mewujudkan karya.&rdquo;
-        </blockquote>
-        <p className="mt-3 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#8d493a]">
-          Jejak UTY Growpath Expo
-        </p>
+      <div className="relative overflow-hidden rounded-3xl border border-[#eadbbd]/80 bg-gradient-to-r from-[#fbf6ed] via-white to-[#fff8ee] p-7 sm:p-11 shadow-[0_12px_32px_-12px_rgba(43,72,105,0.08)] text-center">
+        {/* Soft Decorative Ambient Background */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-16 -top-16 h-48 w-48 rounded-full bg-[#f8e9c9]/50 blur-2xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-16 -bottom-16 h-48 w-48 rounded-full bg-[#faedd2]/40 blur-2xl"
+        />
+
+        {/* Large Decorative Quotation Mark in Background */}
+        <span
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute left-6 top-3 font-serif text-7xl font-bold text-[#e0b83e]/15 sm:left-10 sm:top-5 sm:text-8xl"
+        >
+          &ldquo;
+        </span>
+
+        {/* Tag Category Badge */}
+        <div className="relative z-10 flex items-center justify-center gap-2">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#e0b83e]/40 bg-[#f8e9c9]/40 px-3.5 py-1 text-xs font-bold text-[#8d493a] shadow-sm backdrop-blur-sm">
+            <span className="text-sm">✨</span>
+            {editorialQuotes[activeQuoteIndex].category}
+          </span>
+        </div>
+
+        {/* Dynamic Quote Text with Smooth Fade Transition */}
+        <div className="relative z-10 mx-auto mt-4 min-h-[96px] sm:min-h-[80px] flex flex-col justify-center max-w-3xl">
+          <blockquote
+            className={`font-serif text-lg sm:text-2xl font-medium italic text-[#2b4869] leading-relaxed transition-all duration-300 ease-out ${
+              isQuoteFading ? "opacity-0 -translate-y-2" : "opacity-100 translate-y-0"
+            }`}
+          >
+            &ldquo;{editorialQuotes[activeQuoteIndex].quote}&rdquo;
+          </blockquote>
+
+          <p
+            className={`mt-3 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#8d493a] transition-all duration-300 ease-out delay-75 ${
+              isQuoteFading ? "opacity-0 translate-y-1" : "opacity-100 translate-y-0"
+            }`}
+          >
+            {editorialQuotes[activeQuoteIndex].sub}
+          </p>
+        </div>
+
+        {/* Looping Progress Line & Interactive Dot Navigation */}
+        <div className="relative z-10 mt-6 flex flex-col items-center gap-2.5">
+          <div className="flex items-center gap-2">
+            {editorialQuotes.map((item, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => {
+                  if (idx === activeQuoteIndex) return;
+                  setIsQuoteFading(true);
+                  setTimeout(() => {
+                    setActiveQuoteIndex(idx);
+                    setIsQuoteFading(false);
+                  }, 200);
+                }}
+                aria-label={`Lihat kutipan ${idx + 1}`}
+                className={`group relative h-2 rounded-full transition-all duration-500 overflow-hidden ${
+                  activeQuoteIndex === idx
+                    ? "w-8 bg-[#eadbbd]"
+                    : "w-2.5 bg-[#e5d5b7]/50 hover:bg-[#8d493a]/40"
+                }`}
+              >
+                {activeQuoteIndex === idx && (
+                  <span
+                    key={`bar-${activeQuoteIndex}`}
+                    className="absolute inset-y-0 left-0 bg-[#e0b83e] animate-[quoteProgress_3s_linear_forwards]"
+                  />
+                )}
+              </button>
+            ))}
+          </div>
+          <span className="text-[11px] font-semibold text-[#8d493a]/60">
+            {activeQuoteIndex + 1} / {editorialQuotes.length}
+          </span>
+        </div>
       </div>
 
       {/*
