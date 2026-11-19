@@ -14,7 +14,7 @@ const seasonStories = [
     description: [
       "Mengangkat perubahan dunia bisnis akibat teknologi, globalisasi, serta dinamika sosial dan ekonomi, Season 1 mengajak wirausaha muda untuk beradaptasi dan terus berinovasi agar tetap relevan di era Society 5.0. Melalui tema ini, UTY Growpath Expo #1 menjadi ruang tumbuh bagi wirausaha mahasiswa dan inovasi bisnis yang berkelanjutan.",
     ],
-    image: "/images/2026/season4/dokumentasi/docum10.png",
+    image: "/images/2026/season4/dokumentasi/docum10.png ",
     alt: "Suasana kegiatan dan interaksi pengunjung di Growpath",
   },
   {
@@ -25,7 +25,7 @@ const seasonStories = [
     description: [
       "Season 2 menjadi ruang bagi wirausaha muda UTY untuk mengenalkan produk, berkompetisi, dan membangun kolaborasi. Mengusung Ratimaya Nusantara, season ini merayakan kekayaan usaha dan budaya lokal Indonesia, memperkuat identitas nasional, serta mendorong kreativitas yang berakar pada warisan budaya.",
     ],
-    image: "/images/2026/season4/dokumentasi/docum7.png",
+    image: "/images/2026/season4/dokumentasi/docum7.png ",
     alt: "Pengunjung berinteraksi dengan tenant dan produk Growpath",
   },
   {
