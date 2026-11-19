@@ -271,3 +271,81 @@ body {
     will-change: auto;
   }
 }
+
+/* Keyframes for Splash Screen (Pure CSS Animation - Hardware Accelerated & Reliable) */
+@keyframes splashFrameDown {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  22% {
+    transform: translate3d(0, 0%, 0);
+  }
+  78% {
+    transform: translate3d(0, 0%, 0);
+  }
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes splashFrameUp {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  22% {
+    transform: translate3d(0, 0%, 0);
+  }
+  78% {
+    transform: translate3d(0, 0%, 0);
+  }
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes splashLogo {
+  0%, 20% {
+    opacity: 0;
+    transform: scale(0.5) translate3d(0, 20px, 0);
+  }
+  28% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  76% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  86%, 100% {
+    opacity: 0;
+    transform: scale(0.75) translate3d(0, -20px, 0);
+  }
+}
+
+@keyframes splashText {
+  0%, 32% {
+    opacity: 0;
+    transform: scale(0.9) translate3d(0, 16px, 0);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  76% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  86%, 100% {
+    opacity: 0;
+    transform: scale(0.9) translate3d(0, -12px, 0);
+  }
+}
+
+@keyframes splashCurtain {
+  0%, 75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
