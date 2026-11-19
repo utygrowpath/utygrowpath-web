@@ -9,7 +9,7 @@ import { infoPosts } from "@/data/info";
 export const metadata: Metadata = {
   title: "Informasi",
   description:
-    "Halaman Informasi Tenant dan Pengumuman Resmi seputar UTY Growpath Expo Season 4.",
+    "Informasi dan pengumuman resmi seputar UTY Growpath Expo Season 4.",
 };
 
 export default function InfoPage() {

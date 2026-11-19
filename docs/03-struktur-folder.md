@@ -27,7 +27,9 @@ utygrowpath-web/
 │  │  │  ├─ sudut-inspirasi/
 │  │  │  │  ├─ page.tsx         # /sudut-inspirasi
 │  │  │  │  └─ [slug]/page.tsx  # /sudut-inspirasi/<slug>
-│  │  │  ├─ info-tenant/page.tsx
+│  │  │  ├─ pendaftaran/
+│  │  │  │  ├─ umum/page.tsx       # /pendaftaran/umum
+│  │  │  │  └─ mahasiswa/page.tsx  # /pendaftaran/mahasiswa
 │  │  │  ├─ info/
 │  │  │  │  ├─ page.tsx
 │  │  │  │  └─ [slug]/page.tsx

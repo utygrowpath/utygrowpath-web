@@ -12,7 +12,7 @@ import type { Pendaftaran } from "@/types/content";
 export const pendaftaranMahasiswa: Pendaftaran = {
   intro: [
     "Hai, wirausahawan muda! Wiranusa punya kabar seru nih buat kalian.",
-    "UTY Growpath EXPO bukan sekadar pameran biasa, ini panggungnya kamu buat bersinar dan ngenalin bisnismu ke banyak orang. Yuk, tunjukkan kreativitasmu dan jadilah bagian dari tenant kami.",
+    "Uty Growpath Expo membuka panggung buat kamu yang ingin ngenalin bisnismu ke banyak orang. Yuk, tunjukkan kreativitasmu dan jadilah bagian dari tenant kami.",
   ],
   categories: [
     "Kuliner",

@@ -36,7 +36,7 @@ export default function PendaftaranUmumPage() {
           height={500}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -left-20 top-1/2 z-0 w-64 -translate-y-1/2 opacity-[0.16] sm:-left-12 sm:w-80 lg:left-0 lg:w-[26rem]"
+          className="pointer-events-none absolute -left-20 top-1/2 z-0 w-64 -translate-y-1/2 opacity-[0.16] animate-float-slow sm:-left-12 sm:w-80 lg:left-0 lg:w-[26rem]"
         />
         <Image
           src={`${season4}/motif/motif3.png`}
@@ -44,7 +44,7 @@ export default function PendaftaranUmumPage() {
           height={500}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -right-20 top-1/2 z-0 w-64 -translate-y-1/2 rotate-12 opacity-[0.14] sm:-right-12 sm:w-80 lg:right-0 lg:w-[26rem]"
+          className="pointer-events-none absolute -right-20 top-1/2 z-0 w-64 -translate-y-1/2 rotate-12 opacity-[0.14] animate-float-reverse sm:-right-12 sm:w-80 lg:right-0 lg:w-[26rem]"
         />
         <Container className="relative z-10 py-16 sm:py-20">
           <div
@@ -64,24 +64,12 @@ export default function PendaftaranUmumPage() {
                 className="h-24 w-20 object-contain sm:h-28 sm:w-24"
               />
             </div>
-            <p
-              data-reveal-item="up"
-              className="text-sm font-semibold tracking-[0.18em] text-[#a34f3c] uppercase"
-            >
-              Pendaftaran Tenant
-            </p>
             <h1
               data-reveal-item="up"
               className="text-3xl leading-tight font-bold tracking-tight text-[#8d493a] sm:text-4xl md:text-5xl"
             >
               Pendaftaran Tenant Umum
             </h1>
-            <p
-              data-reveal-item="up"
-              className="text-xl leading-8 font-semibold text-[#30302f] sm:text-2xl"
-            >
-              {intro[0]}
-            </p>
             <p
               data-reveal-item="up"
               className="max-w-2xl leading-7 text-[#625b54]"
@@ -193,7 +181,7 @@ export default function PendaftaranUmumPage() {
             />
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[#e9dfca]">
               <Image
-                src={`${season4}/dokumentasi/docum1.png`}
+                src={`${season4}/dokumentasi/docum1.jpg`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 480px"
                 alt="Tenant berinteraksi dengan pengunjung di UTY Growpath Expo"
@@ -281,11 +269,7 @@ export default function PendaftaranUmumPage() {
               HTM: {htm}
             </p>
           </div>
-          <div data-reveal-item="right" className="flex flex-col items-center gap-3 md:items-end">
-            <p className="max-w-sm text-[#594a37]">
-              Amankan tempatmu sekarang dan mulai perkenalkan usahamu ke lebih
-              banyak orang.
-            </p>
+          <div data-reveal-item="right" className="flex flex-col text-right items-center gap-3 md:items-end">
             <Link
               href="/submission"
               className="inline-flex min-h-12 items-center justify-center rounded-md bg-[#30302f] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1f1f1e]"
