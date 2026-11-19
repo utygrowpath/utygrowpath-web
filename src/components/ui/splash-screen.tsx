@@ -29,14 +29,9 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
       }
     }
 
-    // Mark viewed for this session
-    try {
-      sessionStorage.setItem(SPLASH_SESSION_KEY, "true");
-    } catch {
-      // Ignore
-    }
-
-    setMounted(true);
+    // Defer the state update until after the effect; this also lets the splash
+    // render correctly when React replays effects in development Strict Mode.
+    const tMount = setTimeout(() => setMounted(true), 0);
     document.body.style.overflow = "hidden";
 
     // Release pre-hydration curtain lock right when frames are sliding out (at 3.1s)
@@ -47,12 +42,18 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
     // Auto finish after 3.8s -> unmount
     const timer = setTimeout(() => {
       setMounted(false);
+      try {
+        sessionStorage.setItem(SPLASH_SESSION_KEY, "true");
+      } catch {
+        // Ignore unavailable session storage.
+      }
       document.documentElement.classList.remove("splash-active");
       document.body.style.overflow = "";
       if (onComplete) onComplete();
     }, 3800);
 
     return () => {
+      clearTimeout(tMount);
       clearTimeout(tReleaseLock);
       clearTimeout(timer);
       document.documentElement.classList.remove("splash-active");
