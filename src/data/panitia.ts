@@ -18,6 +18,8 @@ export const committee: CommitteeMember[] = [
     division: "Formatur",
     isCore: true,
     image: "/tim/Formatur/FM - 2.webp",
+    prodi: "Hubungan Internasional",
+    angkatan: "2024",
   },
   {
     name: "Neyla Az-zahrine Natayukhe",
@@ -25,6 +27,8 @@ export const committee: CommitteeMember[] = [
     division: "Formatur",
     isCore: true,
     image: "/tim/Formatur/FM - 3.webp",
+    prodi: "Teknik Komputer",
+    angkatan: "2024",
   },
 
   // ─── Creative Event ────────────────────────────────────────────────────────
@@ -34,6 +38,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 2.webp",
+    prodi: "Informatika",
+    angkatan: "2023",
   },
   {
     name: "Wiji Jahayu Muliani",
@@ -41,6 +47,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 9.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
   {
     name: "Andini Angel M",
@@ -48,6 +56,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 3.webp",
+    prodi: "Sains Data",
+    angkatan: "2023",
   },
   {
     name: "Riana Intan Nekezmela",
@@ -55,6 +65,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 8.webp",
+    prodi: "Psikologi",
+    angkatan: "2024",
   },
   {
     name: "Amelia Trisia Anjelita",
@@ -62,6 +74,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 4.webp",
+    prodi: "Destinasi Pariwisata",
+    angkatan: "2024",
   },
   {
     name: "Jokin Kusuma Ningrum",
@@ -69,6 +83,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 7.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
   {
     name: "Fara Naura Kanna Junaedi",
@@ -76,6 +92,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 13.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2026",
   },
   {
     name: "Mughny Arkan Sobirin",
@@ -83,6 +101,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 11.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2025",
   },
   {
     name: "Anindya Zahra Naila Rizqi",
@@ -90,6 +110,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 5.webp",
+    prodi: "Manajemen",
+    angkatan: "2024",
   },
   {
     name: "Cantika Amelia",
@@ -97,6 +119,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 10.webp",
+    prodi: "Teknik Industri",
+    angkatan: "2025",
   },
   {
     name: "Alvin Adira Winata",
@@ -104,6 +128,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 12.webp",
+    prodi: "Teknik Industri",
+    angkatan: "2026",
   },
   {
     name: "Cindy Karima",
@@ -111,6 +137,8 @@ export const committee: CommitteeMember[] = [
     division: "Creative Event",
     isCore: false,
     image: "/tim/CreativeEvent/CE - 6.webp",
+    prodi: "Hubungan Internasional",
+    angkatan: "2024",
   },
 
   // ─── Equipment & Logistic Operations ─────────────────────────────────────
@@ -120,6 +148,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 2.webp",
+    prodi: "Sains Data",
+    angkatan: "2023",
   },
   {
     name: "Afif Tegar Saputra",
@@ -127,6 +157,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 3.webp",
+    prodi: "Informatika",
+    angkatan: "2023",
   },
   {
     name: "Muh Rangga Pratama",
@@ -134,6 +166,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 9.webp",
+    prodi: "Hubungan Internasional",
+    angkatan: "2024",
   },
   {
     name: "Muhammad Faizun Nadhir Amrulloh",
@@ -141,6 +175,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 13.webp",
+    prodi: "Teknik Sipil",
+    angkatan: "2025",
   },
   {
     name: "Fadilah Ratu Azzahra",
@@ -148,6 +184,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 4.webp",
+    prodi: "Sains Data",
+    angkatan: "2023",
   },
   {
     name: "Otniel Chresto Purwandi",
@@ -155,6 +193,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 5.webp",
+    prodi: "Sains Data",
+    angkatan: "2023",
   },
   {
     name: "Fitra Surya Pratama",
@@ -162,6 +202,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 8.webp",
+    prodi: "Sistem Informasi",
+    angkatan: "2024",
   },
   {
     name: "Nashwa Maresa Putri",
@@ -169,6 +211,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 11.webp",
+    prodi: "Informatika",
+    angkatan: "2024",
   },
   {
     name: "Muhammad Yusuf Maulana",
@@ -176,6 +220,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 10.webp",
+    prodi: "Sistem Informasi",
+    angkatan: "2024",
   },
   {
     name: "Nanda Noviana",
@@ -183,6 +229,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 15.webp",
+    prodi: "Psikologi",
+    angkatan: "2025",
   },
   {
     name: "Muhammad Fawwaz Attaqy",
@@ -190,6 +238,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 14.webp",
+    prodi: "Manajemen",
+    angkatan: "2025",
   },
   {
     name: "Roy Febrian",
@@ -197,6 +247,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 12.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
   {
     name: "Dimas Agung Ali Munandar",
@@ -204,6 +256,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 7.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
   {
     name: "Muh Fa'iz Al-Hafidz",
@@ -211,6 +265,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 16.webp",
+    prodi: "Psikologi",
+    angkatan: "2026",
   },
   {
     name: "Ahmad Nur Fathurrahman",
@@ -218,6 +274,8 @@ export const committee: CommitteeMember[] = [
     division: "Equipment & Logistic Operations",
     isCore: false,
     image: "/tim/LO/ELO - 6.webp",
+    prodi: "Teknik Komputer",
+    angkatan: "2024",
   },
 
   // ─── Finance Administrations ──────────────────────────────────────────────
@@ -227,6 +285,8 @@ export const committee: CommitteeMember[] = [
     division: "Finance Administrations",
     isCore: false,
     image: "/tim/Finance/FA - 2.webp",
+    prodi: "Akuntansi",
+    angkatan: "2024",
   },
   {
     name: "Petrina Desarni Zega",
@@ -234,6 +294,8 @@ export const committee: CommitteeMember[] = [
     division: "Finance Administrations",
     isCore: false,
     image: "/tim/Finance/FA - 4.webp",
+    prodi: "Akuntansi",
+    angkatan: "2024",
   },
   {
     name: "Silvia Halbibi Aryanto",
@@ -241,6 +303,8 @@ export const committee: CommitteeMember[] = [
     division: "Finance Administrations",
     isCore: false,
     image: "/tim/Finance/FA - 5.webp",
+    prodi: "Akuntansi",
+    angkatan: "2024",
   },
   {
     name: "Siti Ayum Sari",
@@ -248,6 +312,8 @@ export const committee: CommitteeMember[] = [
     division: "Finance Administrations",
     isCore: false,
     image: "/tim/Finance/FA - 6.webp",
+    prodi: "Psikologi",
+    angkatan: "2024",
   },
   {
     name: "Shilsylia Putri Devitasary",
@@ -255,6 +321,8 @@ export const committee: CommitteeMember[] = [
     division: "Finance Administrations",
     isCore: false,
     image: "/tim/Finance/FA - 3.webp",
+    prodi: "Sains Data",
+    angkatan: "2023",
   },
 
   // ─── Community Relations ──────────────────────────────────────────────────
@@ -264,6 +332,8 @@ export const committee: CommitteeMember[] = [
     division: "Community Relations",
     isCore: false,
     image: "/tim/CommunityRelations/CR - 2.webp",
+    prodi: "Hubungan Internasional",
+    angkatan: "2024",
   },
   {
     name: "Nazlia Madani Putri Modeong",
@@ -271,6 +341,8 @@ export const committee: CommitteeMember[] = [
     division: "Community Relations",
     isCore: false,
     image: "/tim/CommunityRelations/CR - 7.webp",
+    prodi: "Hubungan Internasional",
+    angkatan: "2024",
   },
   {
     name: "Fransiska Rosalia Poti",
@@ -278,6 +350,8 @@ export const committee: CommitteeMember[] = [
     division: "Community Relations",
     isCore: false,
     image: "/tim/CommunityRelations/CR - 4.webp",
+    prodi: "Hubungan Internasional",
+    angkatan: "2024",
   },
   {
     name: "Rahma Aisya Aulia",
@@ -285,6 +359,8 @@ export const committee: CommitteeMember[] = [
     division: "Community Relations",
     isCore: false,
     image: "/tim/CommunityRelations/CR - 5.webp",
+    prodi: "Hubungan Internasional",
+    angkatan: "2024",
   },
   {
     name: "Kristin Sintike Setiawan",
@@ -292,6 +368,8 @@ export const committee: CommitteeMember[] = [
     division: "Community Relations",
     isCore: false,
     image: "/tim/CommunityRelations/CR - 8.webp",
+    prodi: "Pendidikan Bahasa Inggris",
+    angkatan: "2025",
   },
   {
     name: "Antonia Idan Huler",
@@ -299,6 +377,8 @@ export const committee: CommitteeMember[] = [
     division: "Community Relations",
     isCore: false,
     image: "/tim/CommunityRelations/CR - 3.webp",
+    prodi: "Sains Data",
+    angkatan: "2023",
   },
   {
     name: "Reveal Damaika",
@@ -306,6 +386,8 @@ export const committee: CommitteeMember[] = [
     division: "Community Relations",
     isCore: false,
     image: "/tim/CommunityRelations/CR - 6.webp",
+    prodi: "Sistem Informasi",
+    angkatan: "2024",
   },
 
   // ─── Story Hunter ──────────────────────────────────────────────────────────
@@ -315,6 +397,8 @@ export const committee: CommitteeMember[] = [
     division: "Story Hunter",
     isCore: false,
     image: "/tim/StoryHunter/SH - 2.webp",
+    prodi: "Sistem Informasi",
+    angkatan: "2024",
   },
   {
     name: "Mohammad Luthfi Azzahidi",
@@ -322,6 +406,8 @@ export const committee: CommitteeMember[] = [
     division: "Story Hunter",
     isCore: false,
     image: "/tim/StoryHunter/SH - 6.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
   {
     name: "Naufal Zaky Ramadhan",
@@ -329,6 +415,8 @@ export const committee: CommitteeMember[] = [
     division: "Story Hunter",
     isCore: false,
     image: "/tim/StoryHunter/SH - 7.webp",
+    prodi: "Informatika",
+    angkatan: "2026",
   },
   {
     name: "Dela Safitri",
@@ -336,6 +424,8 @@ export const committee: CommitteeMember[] = [
     division: "Story Hunter",
     isCore: false,
     image: "/tim/StoryHunter/SH - 4.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
   {
     name: "Dani Ardian Syach",
@@ -343,6 +433,8 @@ export const committee: CommitteeMember[] = [
     division: "Story Hunter",
     isCore: false,
     image: "/tim/StoryHunter/SH - 3.webp",
+    prodi: "Teknik Elektro",
+    angkatan: "2023",
   },
   {
     name: "Egi Rizaldi",
@@ -350,6 +442,8 @@ export const committee: CommitteeMember[] = [
     division: "Story Hunter",
     isCore: false,
     image: "/tim/StoryHunter/SH - 5.webp",
+    prodi: "Informatika",
+    angkatan: "2024",
   },
 
   // ─── Social Media Development ──────────────────────────────────────────────
@@ -359,6 +453,8 @@ export const committee: CommitteeMember[] = [
     division: "Social Media Development",
     isCore: false,
     image: "/tim/SocialMedia/SMD - 2.webp",
+    prodi: "Teknik Komputer",
+    angkatan: "2024",
   },
   {
     name: "Nor Mila",
@@ -366,6 +462,8 @@ export const committee: CommitteeMember[] = [
     division: "Social Media Development",
     isCore: false,
     image: "/tim/SocialMedia/SMD - 7.webp",
+    prodi: "Hubungan Internasional",
+    angkatan: "2026",
   },
   {
     name: "Selvy Okta Ramadani",
@@ -373,6 +471,8 @@ export const committee: CommitteeMember[] = [
     division: "Social Media Development",
     isCore: false,
     image: "/tim/SocialMedia/SMD - 5.webp",
+    prodi: "Akuntansi",
+    angkatan: "2024",
   },
   {
     name: "Bekti Nurindah Havie",
@@ -380,6 +480,8 @@ export const committee: CommitteeMember[] = [
     division: "Social Media Development",
     isCore: false,
     image: "/tim/SocialMedia/SMD - 3.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
   {
     name: "Yusmarini Witana",
@@ -387,6 +489,8 @@ export const committee: CommitteeMember[] = [
     division: "Social Media Development",
     isCore: false,
     image: "/tim/SocialMedia/SMD - 6.webp",
+    prodi: "Akuntansi",
+    angkatan: "2024",
   },
   {
     name: "Lutfi Rahma Yulianti",
@@ -394,6 +498,8 @@ export const committee: CommitteeMember[] = [
     division: "Social Media Development",
     isCore: false,
     image: "/tim/SocialMedia/SMD - 4.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
 
   // ─── Photographer & Videographer ──────────────────────────────────────────
@@ -403,6 +509,8 @@ export const committee: CommitteeMember[] = [
     division: "Photographer & Videographer",
     isCore: false,
     image: "/tim/Photographer/Pnv - 2.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
   {
     name: "Hanif Mufadoh Putranto",
@@ -410,6 +518,8 @@ export const committee: CommitteeMember[] = [
     division: "Photographer & Videographer",
     isCore: false,
     image: "/tim/Photographer/Pnv - 3.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
   {
     name: "Siydiy Humam Nafi",
@@ -417,6 +527,8 @@ export const committee: CommitteeMember[] = [
     division: "Photographer & Videographer",
     isCore: false,
     image: "/tim/Photographer/Pnv - 5.webp",
+    prodi: "Arsitektur",
+    angkatan: "2024",
   },
   {
     name: "Syahrani Tri Azzizah",
@@ -424,6 +536,8 @@ export const committee: CommitteeMember[] = [
     division: "Photographer & Videographer",
     isCore: false,
     image: "/tim/Photographer/Pnv - 6.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
   {
     name: "Syahrul",
@@ -431,6 +545,8 @@ export const committee: CommitteeMember[] = [
     division: "Photographer & Videographer",
     isCore: false,
     image: "/tim/Photographer/Pnv - 7.webp",
+    prodi: "Destinasi Pariwisata",
+    angkatan: "2024",
   },
   {
     name: "Sisna Akbar Rahmanda",
@@ -438,6 +554,8 @@ export const committee: CommitteeMember[] = [
     division: "Photographer & Videographer",
     isCore: false,
     image: "/tim/Photographer/Pnv - 4.webp",
+    prodi: "Informatika",
+    angkatan: "2024",
   },
 
   // ─── Website Development ───────────────────────────────────────────────────
@@ -447,6 +565,8 @@ export const committee: CommitteeMember[] = [
     division: "Website Development",
     isCore: false,
     image: "/tim/web/WD - 2.webp",
+    prodi: "Informatika",
+    angkatan: "2024",
   },
   {
     name: "Muhammad Raehan Robban",
@@ -454,6 +574,8 @@ export const committee: CommitteeMember[] = [
     division: "Website Development",
     isCore: false,
     image: "/tim/web/WD - 3.webp",
+    prodi: "Informatika",
+    angkatan: "2024",
   },
   {
     name: "Yohanes",
@@ -461,6 +583,8 @@ export const committee: CommitteeMember[] = [
     division: "Website Development",
     isCore: false,
     image: "/tim/web/WD - 4.webp",
+    prodi: "Informatika",
+    angkatan: "2024",
   },
 
   // ─── Graphic Designer ─────────────────────────────────────────────────────
@@ -470,6 +594,8 @@ export const committee: CommitteeMember[] = [
     division: "Graphic Designer",
     isCore: false,
     image: "/tim/GraphicDesign/GD - 2.webp",
+    prodi: "Informatika",
+    angkatan: "2024",
   },
   {
     name: "Muhammad Soleh",
@@ -477,6 +603,8 @@ export const committee: CommitteeMember[] = [
     division: "Graphic Designer",
     isCore: false,
     image: "/tim/GraphicDesign/GD - 3.webp",
+    prodi: "Informatika",
+    angkatan: "2023",
   },
   {
     name: "Mauldhiva Nur Hasanah",
@@ -484,6 +612,8 @@ export const committee: CommitteeMember[] = [
     division: "Graphic Designer",
     isCore: false,
     image: "/tim/GraphicDesign/GD - 5.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2024",
   },
   {
     name: "Ayudya Priagus",
@@ -491,6 +621,8 @@ export const committee: CommitteeMember[] = [
     division: "Graphic Designer",
     isCore: false,
     image: "/tim/GraphicDesign/GD - 4.webp",
+    prodi: "Perencanaan Wilayah dan Kota",
+    angkatan: "2024",
   },
   {
     name: "M Nabhan Najih",
@@ -498,6 +630,8 @@ export const committee: CommitteeMember[] = [
     division: "Graphic Designer",
     isCore: false,
     image: "/tim/GraphicDesign/GD - 6.webp",
+    prodi: "Sains Data",
+    angkatan: "2024",
   },
   {
     name: "Riswar Fadli Rahmansah",
@@ -505,6 +639,8 @@ export const committee: CommitteeMember[] = [
     division: "Graphic Designer",
     isCore: false,
     image: "/tim/GraphicDesign/GD - 7.webp",
+    prodi: "Informatika",
+    angkatan: "2025",
   },
   {
     name: "Akhdzan Mizyal Rohimi",
@@ -512,6 +648,8 @@ export const committee: CommitteeMember[] = [
     division: "Graphic Designer",
     isCore: false,
     image: "/tim/GraphicDesign/GD - 8.webp",
+    prodi: "Sistem Informasi",
+    angkatan: "2026",
   },
   {
     name: "Nur Romadhoni",
@@ -519,6 +657,8 @@ export const committee: CommitteeMember[] = [
     division: "Graphic Designer",
     isCore: false,
     image: "/tim/GraphicDesign/GD - 9.webp",
+    prodi: "Ilmu Komunikasi",
+    angkatan: "2026",
   },
 ];
 
