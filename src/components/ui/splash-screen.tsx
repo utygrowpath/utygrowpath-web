@@ -73,7 +73,7 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
         Krem khas UTY Growpath (#fff9f0) yang menutup layar secara 100% sempurna
         sebelum frame meluncur, lalu memudar halus saat frame keluar.
       */}
-      <div className="absolute inset-0 bg-[#fff9f0] animate-[splashCurtain_3.8s_ease-out_forwards]" />
+      <div className="absolute inset-0 bg-[#fff9f0] splash-curtain" />
 
       {/* 
         3 FRAMES CONTAINER:
@@ -83,7 +83,7 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
       */}
       <div className="absolute inset-0 grid h-full w-full grid-cols-3 overflow-hidden">
         {/* Frame 2: Kiri (Kuning) - Turun dari Atas ke Bawah lalu terus ke Bawah */}
-        <div className="relative h-full w-full overflow-hidden animate-[splashFrameDown_3.8s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+        <div className="relative h-full w-full overflow-hidden splash-frame-down">
           <Image
             src="/images/2026/season4/motif/frame2-fit.svg"
             alt=""
@@ -95,7 +95,7 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
         </div>
 
         {/* Frame 1: Tengah (Merah) - Naik dari Bawah ke Atas lalu terus ke Atas */}
-        <div className="relative z-10 h-full w-full overflow-hidden animate-[splashFrameUp_3.8s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+        <div className="relative z-10 h-full w-full overflow-hidden splash-frame-up">
           <Image
             src="/images/2026/season4/motif/frame1-fit.svg"
             alt=""
@@ -107,7 +107,7 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
         </div>
 
         {/* Frame 3: Kanan (Biru) - Turun dari Atas ke Bawah lalu terus ke Bawah */}
-        <div className="relative h-full w-full overflow-hidden animate-[splashFrameDown_3.8s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+        <div className="relative h-full w-full overflow-hidden splash-frame-down">
           <Image
             src="/images/2026/season4/motif/frame3-fit.svg"
             alt=""
@@ -126,7 +126,7 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
       */}
       <div className="relative z-20 flex flex-col items-center justify-center px-4 text-center">
         {/* 1. Pure Floating Logo */}
-        <div className="relative flex h-36 w-36 sm:h-48 sm:w-48 items-center justify-center animate-[splashLogo_3.8s_cubic-bezier(0.175,0.885,0.32,1.25)_forwards]">
+        <div className="relative flex h-36 w-36 sm:h-48 sm:w-48 items-center justify-center splash-logo">
           {/* Subtle Warm Halo Backlight */}
           <div className="pointer-events-none absolute -inset-6 rounded-full bg-white/20 blur-2xl" />
           <div className="pointer-events-none absolute -inset-3 rounded-full bg-[#f7cb4d]/30 blur-xl" />
@@ -142,7 +142,7 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
         </div>
 
         {/* 2. Modern Editorial Typography */}
-        <div className="mt-4 flex flex-col items-center justify-center text-center animate-[splashText_3.8s_ease-out_forwards]">
+        <div className="mt-4 flex flex-col items-center justify-center text-center splash-text">
           {/* Main Title with Elegant Letter Spacing */}
           <div className="flex items-center gap-2 sm:gap-3">
             <span className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-[0.22em] text-white drop-shadow-[0_3px_10px_rgba(0,0,0,0.7)]">

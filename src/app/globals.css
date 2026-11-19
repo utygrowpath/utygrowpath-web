@@ -349,3 +349,20 @@ body {
     opacity: 0;
   }
 }
+
+/* Splash Screen Utility Classes (Direct CSS - Non-purged, reliable across dev & prod) */
+.splash-curtain {
+  animation: splashCurtain 3.8s ease-out forwards;
+}
+.splash-frame-down {
+  animation: splashFrameDown 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.splash-frame-up {
+  animation: splashFrameUp 3.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.splash-logo {
+  animation: splashLogo 3.8s cubic-bezier(0.175, 0.885, 0.32, 1.25) forwards;
+}
+.splash-text {
+  animation: splashText 3.8s ease-out forwards;
+}
