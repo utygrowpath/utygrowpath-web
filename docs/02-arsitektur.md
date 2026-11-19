@@ -41,7 +41,7 @@ sehingga situs bisa disajikan dari CDN dan cepat.
 
 | Jenis | Contoh | Cara kerja |
 |---|---|---|
-| Static | `/`, `/tentang-kami`, `/info-tenant` | Dirender sekali saat `build` |
+| Static | `/`, `/tentang-kami`, `/pendaftaran/umum`, `/pendaftaran/mahasiswa` | Dirender sekali saat `build` |
 | Static + dynamic segment | `/tenant/[slug]` | Semua slug di-`generateStaticParams` saat build |
 | Partial Prerender | route dengan `generateStaticParams` | Shell statis, konten dinamis di-stream |
 

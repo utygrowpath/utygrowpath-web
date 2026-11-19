@@ -13,7 +13,6 @@ Gunakan tabel ini saat ingin **mengubah** halaman tertentu.
 | `/tentang-kami` | `src/app/(public)/tentang-kami/page.tsx` | Static | teks di file |
 | `/sudut-inspirasi` | `src/app/(public)/sudut-inspirasi/page.tsx` | Static | `src/data/sudut-inspirasi.ts` |
 | `/sudut-inspirasi/<slug>` | `src/app/(public)/sudut-inspirasi/[slug]/page.tsx` | Static (dari `generateStaticParams`) | `src/data/sudut-inspirasi.ts` |
-| `/info-tenant` | `src/app/(public)/info-tenant/page.tsx` | Static | `src/data/tenant.ts` |
 | `/tenant/<slug>` | `src/app/(public)/tenant/[slug]/page.tsx` | Static (dari `generateStaticParams`) | `src/data/tenant.ts` |
 | `/tim-kami` | `src/app/(public)/tim-kami/page.tsx` | Static | `src/data/panitia.ts` (`isCore`) |
 | `/panitia` | `src/app/(public)/panitia/page.tsx` | Static | `src/data/panitia.ts` (semua) |

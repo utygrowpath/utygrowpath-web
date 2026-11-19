@@ -209,7 +209,7 @@ export function KilasBalikSection() {
               Bergabung sebagai tenant dan hadirkan produk atau karyamu di tengah komunitas Growpath.
             </p>
             <Link
-              href="/info-tenant"
+              href="/pendaftaran/umum"
               className="mt-6 inline-flex min-h-12 items-center justify-center rounded-md bg-[#e0b83e] px-6 py-3 text-sm font-semibold text-[#30302f] transition-all hover:bg-[#f7cb4d] hover:shadow-md"
             >
               Gabung sebagai tenant

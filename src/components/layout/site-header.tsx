@@ -75,9 +75,8 @@ export function SiteHeader() {
           <nav aria-label="Navigasi seluler" className="invisible absolute right-0 top-full z-50 mt-3 w-64 translate-y-1 rounded-md border border-[#e9dfca] bg-white p-2 opacity-0 shadow-md transition-all group-open:visible group-open:translate-y-0 group-open:opacity-100">
             <Link href="/" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Home</Link>
             <p className="px-3 pt-3 pb-1 text-[11px] font-medium text-[#8a8580]">Tenant</p>
-            <Link href="/info-tenant" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Informasi tenant</Link>
-            <Link href="/pendaftaran/umum" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Pendaftaran Tenant Umum</Link>
-            <Link href="/pendaftaran/mahasiswa" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Pendaftaran Tenant KWU/Mahasiswa</Link>
+            <Link href="/pendaftaran/umum" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Pendaftaran Umum</Link>
+            <Link href="/pendaftaran/mahasiswa" className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">Pendaftaran KWU/Mahasiswa</Link>
             {primaryLinks.map((item) => (
               <Link key={item.href} href={item.href} className="block rounded px-3 py-2.5 text-[13px] text-[#4e5660] hover:bg-[#fff9f0]">{item.label}</Link>
             ))}
