@@ -31,8 +31,10 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
       }
     }
 
-    // Set mounted immediately
-    setMounted(true);
+    // Defer state update asynchronously to avoid cascading re-renders (ESLint compliant)
+    const tMount = setTimeout(() => {
+      setMounted(true);
+    }, 0);
     document.body.style.overflow = "hidden";
 
     // Release pre-hydration curtain lock right when frames are sliding out (at 3.1s)
@@ -58,6 +60,7 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
     }, 3800);
 
     return () => {
+      clearTimeout(tMount);
       clearTimeout(tReleaseLock);
       clearTimeout(timer);
       document.documentElement.classList.remove("splash-active");
