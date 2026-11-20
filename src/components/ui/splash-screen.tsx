@@ -21,6 +21,8 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
         if (viewed === "true") {
           // Remove pre-hydration splash lock immediately if already viewed
           document.documentElement.classList.remove("splash-active");
+          const shield = document.getElementById("splash-curtain-lock");
+          if (shield) shield.style.display = "none";
           if (onComplete) onComplete();
           return;
         }
@@ -29,14 +31,15 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
       }
     }
 
-    // Defer the state update until after the effect; this also lets the splash
-    // render correctly when React replays effects in development Strict Mode.
-    const tMount = setTimeout(() => setMounted(true), 0);
+    // Set mounted immediately
+    setMounted(true);
     document.body.style.overflow = "hidden";
 
     // Release pre-hydration curtain lock right when frames are sliding out (at 3.1s)
     const tReleaseLock = setTimeout(() => {
       document.documentElement.classList.remove("splash-active");
+      const shield = document.getElementById("splash-curtain-lock");
+      if (shield) shield.style.display = "none";
     }, 3100);
 
     // Auto finish after 3.8s -> unmount
@@ -48,15 +51,18 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
         // Ignore unavailable session storage.
       }
       document.documentElement.classList.remove("splash-active");
+      const shield = document.getElementById("splash-curtain-lock");
+      if (shield) shield.style.display = "none";
       document.body.style.overflow = "";
       if (onComplete) onComplete();
     }, 3800);
 
     return () => {
-      clearTimeout(tMount);
       clearTimeout(tReleaseLock);
       clearTimeout(timer);
       document.documentElement.classList.remove("splash-active");
+      const shield = document.getElementById("splash-curtain-lock");
+      if (shield) shield.style.display = "none";
       document.body.style.overflow = "";
     };
   }, [onComplete, forceShow]);
@@ -65,6 +71,7 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
 
   return (
     <div
+      data-splash-screen
       aria-label="Loading Splash Screen"
       className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden pointer-events-none"
     >

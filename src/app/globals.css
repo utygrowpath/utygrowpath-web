@@ -16,6 +16,7 @@ html {
   background-color: #fff9f0;
   overscroll-behavior-y: none;
   scrollbar-width: none;
+  overflow-anchor: none;
 }
 
 html::-webkit-scrollbar {
@@ -27,6 +28,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   overscroll-behavior-y: none;
+  overflow-anchor: none;
 }
 
 /* Section hanya fade agar background full-width tidak bergeser. */
@@ -350,6 +352,33 @@ body {
   }
 }
 
+
+/* Splash Screen Hardware-Level Lock & Curtain Shield */
+#splash-curtain-lock {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  background-color: #fff9f0;
+  pointer-events: none;
+}
+
+html.splash-active #splash-curtain-lock {
+  display: block !important;
+}
+
+html.splash-active body {
+  overflow: hidden !important;
+}
+
+html.splash-active header,
+html.splash-active main,
+html.splash-active footer {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 /* Splash Screen Utility Classes (Direct CSS - Non-purged, reliable across dev & prod) */
 /* Splash Screen Utility Classes (Direct CSS - Hardware accelerated & guaranteed initial state) */
 .splash-curtain {
@@ -380,4 +409,29 @@ body {
   transform: scale(0.9) translate3d(0, 16px, 0);
   animation: splashText 3.8s ease-out both;
   will-change: transform, opacity;
+}
+
+/* When user already viewed: immediately hide static shield */
+
+
+
+/* Skeleton Shimmer Effect - Season 4 Warm Cream Palette */
+@keyframes shimmerWave {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-placeholder {
+  background: linear-gradient(
+    90deg,
+    #f3e9d8 0%,
+    #fbf4ea 50%,
+    #f3e9d8 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerWave 1.8s ease-in-out infinite;
 }

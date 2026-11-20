@@ -30,7 +30,7 @@ const eventCards = [
   {
     title: "Kompetisi",
     description: "Ruang bagi peserta untuk menunjukkan kemampuna, gagasan dan karya terbaiknya.",
-    image: `${season4}/dokumentasi/documen7.jpg`,
+    image: `${season4}/dokumentasi/documen7.webp`,
     alt: "Karya peserta dalam kegiatan Growpath",
   },
   {
@@ -42,7 +42,7 @@ const eventCards = [
   {
     title: "Expert Talk",
     description: "Sesi inspiratif untuk berbagi cerita & pengalaman bersama narasumber yang hebat.",
-    image: `${season4}/dokumentasi/docum8.jpg`,
+    image: `${season4}/dokumentasi/docum8.webp`,
     alt: "Suasana interaksi dalam kegiatan Growpath",
   },
   {
