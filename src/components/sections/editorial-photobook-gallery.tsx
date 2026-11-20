@@ -150,9 +150,10 @@ export function EditorialPhotobookGallery() {
         EDITORIAL SECTION 1:
         Hero Featured Spread (1 Wide Centerpiece + 2 Vertical Companions)
       */}
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-12 md:gap-6 items-stretch">
+      <div data-reveal-stagger className="grid grid-cols-1 gap-5 md:grid-cols-12 md:gap-6 items-stretch">
         {/* Large Feature Banner (Left 7 Cols) */}
         <div
+          data-reveal-item="left"
           onClick={() => setSelectedImageIndex(0)}
           className="group relative cursor-pointer overflow-hidden rounded-3xl border-4 border-white bg-[#f8e9c9]/30 shadow-[0_16px_36px_-16px_rgba(43,72,105,0.22)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(43,72,105,0.32)] md:col-span-7 min-h-[320px] sm:min-h-[420px]"
         >
@@ -211,7 +212,7 @@ export function EditorialPhotobookGallery() {
         EDITORIAL SECTION 2:
         Kinetic Typography & Editorial Ribbon Break (Auto-Cycle Carousel)
       */}
-      <div className="relative overflow-hidden rounded-3xl border border-[#eadbbd]/80 bg-gradient-to-r from-[#fbf6ed] via-white to-[#fff8ee] p-7 sm:p-11 shadow-[0_12px_32px_-12px_rgba(43,72,105,0.08)] text-center">
+      <div data-reveal-item="zoom" className="relative overflow-hidden rounded-3xl border border-[#eadbbd]/80 bg-gradient-to-r from-[#fbf6ed] via-white to-[#fff8ee] p-7 sm:p-11 shadow-[0_12px_32px_-12px_rgba(43,72,105,0.08)] text-center">
         {/* Soft Decorative Ambient Background */}
         <div
           aria-hidden="true"
@@ -298,12 +299,13 @@ export function EditorialPhotobookGallery() {
         EDITORIAL SECTION 3:
         Trio Tri-Fold Gallery (3 Kolom Seimbang)
       */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
+      <div data-reveal-stagger className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
         {[3, 4, 5].map((idx) => {
           const item = documentationPhotos[idx];
           return (
             <div
               key={idx}
+              data-reveal-item="up"
               onClick={() => setSelectedImageIndex(idx)}
               className="group relative aspect-[4/5] w-full cursor-pointer overflow-hidden rounded-2xl border-4 border-white bg-[#f8e9c9]/30 shadow-[0_12px_28px_-12px_rgba(43,72,105,0.18)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_42px_-12px_rgba(43,72,105,0.3)]"
             >
@@ -332,7 +334,7 @@ export function EditorialPhotobookGallery() {
         EDITORIAL SECTION 4:
         The Asymmetric Rhythm Spread (2 Square Cards + 1 Wide Panorama)
       */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-stretch">
+      <div data-reveal-stagger className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-stretch">
         {/* 2 Square-ish Cards (Left 5 Cols) */}
         <div className="grid grid-cols-2 gap-4 md:col-span-5">
           {[6, 7].map((idx) => {
@@ -340,6 +342,7 @@ export function EditorialPhotobookGallery() {
             return (
               <div
                 key={idx}
+                data-reveal-item="left"
                 onClick={() => setSelectedImageIndex(idx)}
                 className="group relative aspect-square w-full cursor-pointer overflow-hidden rounded-2xl border-4 border-white bg-[#f8e9c9]/30 shadow-[0_10px_24px_-10px_rgba(43,72,105,0.18)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_36px_-12px_rgba(43,72,105,0.28)]"
               >
@@ -363,6 +366,7 @@ export function EditorialPhotobookGallery() {
 
         {/* 1 Wide Panorama (Right 7 Cols) */}
         <div
+          data-reveal-item="right"
           onClick={() => setSelectedImageIndex(8)}
           className="group relative cursor-pointer overflow-hidden rounded-2xl border-4 border-white bg-[#f8e9c9]/30 shadow-[0_16px_36px_-16px_rgba(43,72,105,0.22)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(43,72,105,0.32)] md:col-span-7 min-h-[220px]"
         >
@@ -389,12 +393,13 @@ export function EditorialPhotobookGallery() {
         EDITORIAL SECTION 5:
         The Finale Quad (4 Grid di Bagian Bawah)
       */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+      <div data-reveal-stagger className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
         {[9, 10, 11].map((idx) => {
           const item = documentationPhotos[idx];
           return (
             <div
               key={idx}
+              data-reveal-item="up"
               onClick={() => setSelectedImageIndex(idx)}
               className="group relative aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-2xl border-4 border-white bg-[#f8e9c9]/30 shadow-[0_10px_24px_-10px_rgba(43,72,105,0.18)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_36px_-12px_rgba(43,72,105,0.28)]"
             >
