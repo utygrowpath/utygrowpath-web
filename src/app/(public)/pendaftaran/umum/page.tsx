@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { SectionAnimationsGsap } from "@/components/sections/section-animations-gsap";
+import { SmoothImage } from "@/components/ui/smooth-image";
 import { pendaftaranUmum } from "@/data/pendaftaran-umum";
 import { siteConfig } from "@/config/site";
 
@@ -180,11 +181,12 @@ export default function PendaftaranUmumPage() {
               data-parallax="14"
             />
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[#e9dfca]">
-              <Image
+              <SmoothImage
                 src={`${season4}/dokumentasi/docum1.webp`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 480px"
                 alt="Tenant berinteraksi dengan pengunjung di UTY Growpath Expo"
+                shellClassName="absolute inset-0"
                 className="object-cover"
               />
             </div>
