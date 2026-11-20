@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import type { ReactNode } from "react";
 
 import { siteConfig } from "@/config/site";
@@ -32,18 +33,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full bg-[#fff9f0] antialiased overscroll-y-none`}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{if(!sessionStorage.getItem('uty_growpath_splash_viewed')){document.documentElement.classList.add('splash-active');}}catch(e){}})();`,
-          }}
-        />
-      </head>
       <body suppressHydrationWarning className="flex min-h-full flex-col bg-[#fff9f0] overscroll-y-none">
-        {/* Permanent Hardware Cream Shield:
-            Rendered immediately at the root level to guarantee zero-flash of homepage.
-            Controlled by html.splash-active in CSS. */}
-        <div id="splash-curtain-lock" aria-hidden="true" />
+        <Script id="splash-pre-hydration-lock" strategy="beforeInteractive">
+          {`(function(){try{if(!sessionStorage.getItem('uty_growpath_splash_viewed')){document.documentElement.classList.add('splash-active');}}catch(e){}})();`}
+        </Script>
         {children}
       </body>
     </html>

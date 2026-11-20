@@ -2,10 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
-import Image from "next/image";
 import gsap from "gsap";
 
 import type { DocumentationItem } from "@/types/content";
+import { SmoothImage } from "@/components/ui/smooth-image";
 
 type LightboxProps = {
   /** Daftar season aktif. Urutan array = urutan navigasi prev/next. */
@@ -224,11 +224,13 @@ function LightboxDialog({
                   panorama tetap muat tanpa terpotong.
                 */
                 <div className="relative h-[min(68vh,92vw)] w-full overflow-hidden rounded-2xl bg-[#1f1f1e]">
-                  <Image
+                  <SmoothImage
+                    key={item.fullSrc ?? item.src ?? ""}
                     src={item.fullSrc ?? item.src ?? ""}
                     alt={item.alt}
                     fill
                     sizes="(max-width: 640px) 92vw, min(1100px, 92vw)"
+                    shellClassName="absolute inset-0 !bg-[#1f1f1e]"
                     className="object-contain md:object-cover"
                     priority
                   />

@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 import type { CommitteeMember } from "@/types/content";
+import { SmoothImage } from "@/components/ui/smooth-image";
 
 interface OurTeamViewProps {
   committee: CommitteeMember[];
@@ -92,11 +92,13 @@ function MemberModal({
         {/* Photo */}
         <div className="relative aspect-[4/5] w-full overflow-hidden">
           {member.image && member.image.trim() !== "" ? (
-            <Image
+            <SmoothImage
+              key={member.image}
               src={member.image}
               fill
               sizes="340px"
               alt={member.name}
+              shellClassName="absolute inset-0"
               className="object-cover object-top"
             />
           ) : (
@@ -325,12 +327,13 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                 <div className="flex flex-col items-center text-center">
                   <div className="flex items-center justify-center gap-3 sm:gap-6">
                     <div className="hidden h-5 w-16 opacity-35 sm:block lg:w-28">
-                      <Image
+                      <SmoothImage
                         src="/images/2026/season4/motif/motif5.svg"
                         width={100}
                         height={20}
                         alt=""
                         aria-hidden="true"
+                        shellClassName="h-full w-full"
                         className="h-full w-full object-contain"
                       />
                     </div>
@@ -338,12 +341,13 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                       {division}
                     </h2>
                     <div className="hidden h-5 w-16 opacity-35 sm:block lg:w-28">
-                      <Image
+                      <SmoothImage
                         src="/images/2026/season4/motif/motif6.svg"
                         width={100}
                         height={20}
                         alt=""
                         aria-hidden="true"
+                        shellClassName="h-full w-full"
                         className="h-full w-full object-contain"
                       />
                     </div>
@@ -351,12 +355,13 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
 
                   <div className="mt-3 flex items-center justify-center">
                     <div className="h-7 w-7 opacity-70">
-                      <Image
+                      <SmoothImage
                         src="/images/2026/season4/motif/motif4.svg"
                         width={30}
                         height={30}
                         alt=""
                         aria-hidden="true"
+                        shellClassName="h-full w-full"
                         className="h-full w-full object-contain"
                       />
                     </div>
@@ -408,12 +413,13 @@ export function OurTeamView({ committee }: OurTeamViewProps) {
                           >
                             {member.image && member.image.trim() !== "" ? (
                               <>
-                                <Image
+                                <SmoothImage
                                   src={member.image}
                                   fill
                                   sizes="(max-width: 768px) 280px, 260px"
                                   alt={member.name}
-                                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                  shellClassName="absolute inset-0"
+                                  className="object-cover"
                                 />
                                 <div
                                   aria-hidden="true"
