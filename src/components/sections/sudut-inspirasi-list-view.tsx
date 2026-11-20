@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import { SmoothImage } from "@/components/ui/smooth-image";
 import type { InspirationPost } from "@/types/content";
 import { formatDate } from "@/lib/format-date";
 
@@ -97,14 +97,15 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
               href={`/sudut-inspirasi/${post.slug}`}
               className="relative block w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-auto md:w-64 lg:w-72 md:self-stretch shrink-0 overflow-hidden bg-[#f8e9c9]/30 border-b border-[#eadbbd]/60 md:border-b-0 md:border-r"
             >
-              <Image
+              <SmoothImage
                 src={
                   post.image || "/images/2026/season4/dokumentasi/docum1.webp"
                 }
                 fill
                 sizes="(max-width: 768px) 100vw, 320px"
                 alt={post.title}
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                shellClassName="absolute inset-0"
+                className="object-cover"
               />
             </Link>
 

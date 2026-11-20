@@ -65,13 +65,13 @@ export function InfoListView({ posts }: InfoListViewProps) {
           >
             {/* Left Circular Badge Logo */}
             <div className="flex shrink-0 items-center justify-center self-start sm:self-center">
-              <div className="relative flex h-24 w-24 items-center justify-center rounded-2xl border border-[#eadbbd] bg-gradient-to-br from-[#fffdf8] to-[#fff5df] p-3 shadow-inner sm:h-28 sm:w-28 transition-transform duration-500 group-hover:scale-105">
-                <Image
+                <div className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-2xl border border-[#eadbbd] bg-gradient-to-br from-[#fffdf8] to-[#fff5df] p-3 shadow-inner sm:h-28 sm:w-28">
+                  <Image
                   src={post.image || "/images/2026/season4/logo/gowpaths4.png"}
                   width={140}
                   height={140}
                   alt="Logo emblem"
-                  className="h-16 w-16 object-contain sm:h-20 sm:w-20"
+                  className="h-16 w-16 object-contain transition-transform duration-500 ease-in-out group-hover:scale-105 sm:h-20 sm:w-20"
                 />
               </div>
             </div>

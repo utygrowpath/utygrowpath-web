@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
+import { SmoothImage } from "@/components/ui/smooth-image";
 
 export interface EditorialDocItem {
   src: string;
@@ -108,6 +108,36 @@ export function EditorialPhotobookGallery() {
   const [activeQuoteIndex, setActiveQuoteIndex] = useState(0);
   const [isQuoteFading, setIsQuoteFading] = useState(false);
 
+  useEffect(() => {
+    if (selectedImageIndex === null) return;
+
+    const scrollY = window.scrollY;
+    const body = document.body;
+    const html = document.documentElement;
+    const previousBodyStyles = {
+      position: body.style.position,
+      top: body.style.top,
+      width: body.style.width,
+      overflow: body.style.overflow,
+    };
+    const previousHtmlOverflow = html.style.overflow;
+
+    html.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
+    body.style.overflow = "hidden";
+
+    return () => {
+      body.style.position = previousBodyStyles.position;
+      body.style.top = previousBodyStyles.top;
+      body.style.width = previousBodyStyles.width;
+      body.style.overflow = previousBodyStyles.overflow;
+      html.style.overflow = previousHtmlOverflow;
+      window.scrollTo(0, scrollY);
+    };
+  }, [selectedImageIndex]);
+
   // Auto-cycle editorial quotes every 3 seconds
   useEffect(() => {
     const timer = setInterval(() => {
@@ -157,14 +187,16 @@ export function EditorialPhotobookGallery() {
           onClick={() => setSelectedImageIndex(0)}
           className="group relative cursor-pointer overflow-hidden rounded-3xl border-4 border-white bg-[#f8e9c9]/30 shadow-[0_16px_36px_-16px_rgba(43,72,105,0.22)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(43,72,105,0.32)] md:col-span-7 min-h-[320px] sm:min-h-[420px]"
         >
-          <Image
-            src={documentationPhotos[0].src}
-            alt={documentationPhotos[0].alt}
-            fill
-            sizes="(max-width: 768px) 100vw, 60vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            priority
-          />
+              <SmoothImage
+                src={documentationPhotos[0].src}
+                alt={documentationPhotos[0].alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 60vw"
+                shellClassName="absolute inset-0 !bg-black"
+                placeholderClassName="smooth-image-shimmer-black"
+                className="object-cover"
+                priority
+              />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
           <div className="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 text-white">
             <span className="inline-block rounded-full bg-[#f7cb4d] px-3 py-0.5 text-xs font-bold text-[#30302f] shadow-sm">
@@ -186,12 +218,14 @@ export function EditorialPhotobookGallery() {
                 onClick={() => setSelectedImageIndex(idx)}
                 className="group relative aspect-[16/10] sm:aspect-[4/3] md:aspect-[16/10] w-full cursor-pointer overflow-hidden rounded-2xl border-4 border-white bg-[#f8e9c9]/30 shadow-[0_12px_28px_-12px_rgba(43,72,105,0.18)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_-14px_rgba(43,72,105,0.28)]"
               >
-                <Image
+                <SmoothImage
                   src={item.src}
                   alt={item.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  shellClassName="absolute inset-0 !bg-black"
+                  placeholderClassName="smooth-image-shimmer-black"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -309,12 +343,14 @@ export function EditorialPhotobookGallery() {
               onClick={() => setSelectedImageIndex(idx)}
               className="group relative aspect-[4/5] w-full cursor-pointer overflow-hidden rounded-2xl border-4 border-white bg-[#f8e9c9]/30 shadow-[0_12px_28px_-12px_rgba(43,72,105,0.18)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_42px_-12px_rgba(43,72,105,0.3)]"
             >
-              <Image
+              <SmoothImage
                 src={item.src}
                 alt={item.alt}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                shellClassName="absolute inset-0 !bg-black"
+                placeholderClassName="smooth-image-shimmer-black"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-85 group-hover:opacity-100 transition-opacity" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
@@ -346,12 +382,14 @@ export function EditorialPhotobookGallery() {
                 onClick={() => setSelectedImageIndex(idx)}
                 className="group relative aspect-square w-full cursor-pointer overflow-hidden rounded-2xl border-4 border-white bg-[#f8e9c9]/30 shadow-[0_10px_24px_-10px_rgba(43,72,105,0.18)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_36px_-12px_rgba(43,72,105,0.28)]"
               >
-                <Image
+                <SmoothImage
                   src={item.src}
                   alt={item.alt}
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  shellClassName="absolute inset-0 !bg-black"
+                  placeholderClassName="smooth-image-shimmer-black"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <div className="absolute bottom-3 left-3 right-3 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -370,12 +408,14 @@ export function EditorialPhotobookGallery() {
           onClick={() => setSelectedImageIndex(8)}
           className="group relative cursor-pointer overflow-hidden rounded-2xl border-4 border-white bg-[#f8e9c9]/30 shadow-[0_16px_36px_-16px_rgba(43,72,105,0.22)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_48px_-16px_rgba(43,72,105,0.32)] md:col-span-7 min-h-[220px]"
         >
-          <Image
+          <SmoothImage
             src={documentationPhotos[8].src}
             alt={documentationPhotos[8].alt}
             fill
             sizes="(max-width: 768px) 100vw, 60vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            shellClassName="absolute inset-0 !bg-black"
+            placeholderClassName="smooth-image-shimmer-black"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 text-white">
@@ -403,12 +443,14 @@ export function EditorialPhotobookGallery() {
               onClick={() => setSelectedImageIndex(idx)}
               className="group relative aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-2xl border-4 border-white bg-[#f8e9c9]/30 shadow-[0_10px_24px_-10px_rgba(43,72,105,0.18)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_36px_-12px_rgba(43,72,105,0.28)]"
             >
-              <Image
+              <SmoothImage
                 src={item.src}
                 alt={item.alt}
                 fill
                 sizes="(max-width: 640px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                shellClassName="absolute inset-0 !bg-black"
+                placeholderClassName="smooth-image-shimmer-black"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               <div className="absolute bottom-3 left-3 right-3 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -451,11 +493,14 @@ export function EditorialPhotobookGallery() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative h-[65vh] w-[90vw] max-w-4xl sm:h-[75vh]">
-              <Image
+              <SmoothImage
+                key={documentationPhotos[selectedImageIndex].src}
                 src={documentationPhotos[selectedImageIndex].src}
                 alt={documentationPhotos[selectedImageIndex].alt}
                 fill
                 priority
+                shellClassName="absolute inset-0 !bg-black"
+                placeholderClassName="smooth-image-shimmer-black"
                 className="object-contain md:object-cover"
               />
             </div>

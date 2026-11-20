@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import Image from "next/image";
+import { SmoothImage } from "@/components/ui/smooth-image";
 import { usePathname, useSearchParams } from "next/navigation";
 import gsap from "gsap";
 
@@ -219,12 +219,14 @@ export function GalleryGrid({ seasons, itemsBySeason }: GalleryGridProps) {
                 >
                   <div className="relative aspect-video w-full overflow-hidden bg-[#f6ebd5]">
                     {thumbnailOf(item) ? (
-                      <Image
+                      <SmoothImage
                         src={thumbnailOf(item)!}
                         alt=""
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        shellClassName="absolute inset-0 !bg-black"
+                        placeholderClassName="smooth-image-shimmer-black"
+                        className="object-cover"
                       />
                     ) : null}
                     {item.kind === "video" ? (
