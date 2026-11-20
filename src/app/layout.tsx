@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <body suppressHydrationWarning className="flex min-h-full flex-col bg-[#fff9f0] overscroll-y-none">
         <Script id="splash-pre-hydration-lock" strategy="beforeInteractive">
-          {`(function(){try{if(!sessionStorage.getItem('uty_growpath_splash_viewed')){document.documentElement.classList.add('splash-active');}}catch(e){}})();`}
+          {`(function(){var path=location.pathname;if(path==='/peserta'||path==='/tentang-kami'||path==='/_not-found'){return;}try{if(sessionStorage.getItem('uty_growpath_splash_viewed')){return;}}catch(e){}document.documentElement.classList.add('splash-active');})();`}
         </Script>
         {children}
       </body>

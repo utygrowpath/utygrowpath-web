@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { SectionAnimationsGsap } from "@/components/sections/section-animations-gsap";
+import { SmoothImage } from "@/components/ui/smooth-image";
 import { pendaftaranMahasiswa } from "@/data/pendaftaran-mahasiswa";
 import { siteConfig } from "@/config/site";
 
@@ -122,11 +123,12 @@ export default function PendaftaranMahasiswaPage() {
               className="pointer-events-none absolute -left-4 -top-6 z-10 w-24 opacity-80"
             />
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-[#e9dfca]">
-              <Image
+              <SmoothImage
                 src={`${season4}/dokumentasi/docum11.webp`}
                 fill
                 sizes="(max-width: 768px) 100vw, 460px"
                 alt="Suasana kunjungan ke stan tenant UTY Growpath Expo"
+                shellClassName="absolute inset-0"
                 className="object-cover object-center"
               />
             </div>
@@ -343,11 +345,12 @@ export default function PendaftaranMahasiswaPage() {
 
           <div data-reveal-item="right" className="relative mx-auto w-full max-w-[460px]">
             <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl">
-              <Image
-                src={`${season4}/dokumentasi/docum6.JPG`}
+              <SmoothImage
+                src={`${season4}/dokumentasi/docum6.webp`}
                 fill
                 sizes="(max-width: 768px) 100vw, 460px"
                 alt="Tenant berinteraksi dengan pengunjung di UTY Growpath Expo"
+                shellClassName="absolute inset-0"
                 className="object-cover"
               />
             </div>

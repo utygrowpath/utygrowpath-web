@@ -23,6 +23,20 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+html.splash-active,
+html.splash-active body {
+  overflow: hidden;
+}
+
+html.splash-active::before {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: #fff9f0;
+  content: "";
+  pointer-events: none;
+}
+
 .smooth-image-shell {
   overflow: hidden;
   background-color: #f5ede0;

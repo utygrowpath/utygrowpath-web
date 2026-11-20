@@ -35,10 +35,9 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
     }, 0);
     document.body.style.overflow = "hidden";
 
-    // Release pre-hydration curtain lock right when frames are sliding out (at 3.1s)
     const tReleaseLock = setTimeout(() => {
       document.documentElement.classList.remove("splash-active");
-    }, 3100);
+    }, 3000);
 
     // Auto finish after 3.8s -> unmount
     const timer = setTimeout(() => {
@@ -138,7 +137,7 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
             width={260}
             height={260}
             priority
-            className="relative z-10 h-full w-full object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.45)] filter"
+            className="relative z-10 h-full w-full object-contain"
           />
         </div>
 

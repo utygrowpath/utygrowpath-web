@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { SmoothImage } from "@/components/ui/smooth-image";
 
 export interface EditorialDocItem {
@@ -107,9 +108,10 @@ export function EditorialPhotobookGallery() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   const [activeQuoteIndex, setActiveQuoteIndex] = useState(0);
   const [isQuoteFading, setIsQuoteFading] = useState(false);
+  const isLightboxOpen = selectedImageIndex !== null;
 
   useEffect(() => {
-    if (selectedImageIndex === null) return;
+    if (!isLightboxOpen) return;
 
     const scrollY = window.scrollY;
     const body = document.body;
@@ -136,7 +138,7 @@ export function EditorialPhotobookGallery() {
       html.style.overflow = previousHtmlOverflow;
       window.scrollTo(0, scrollY);
     };
-  }, [selectedImageIndex]);
+  }, [isLightboxOpen]);
 
   // Auto-cycle editorial quotes every 3 seconds
   useEffect(() => {
@@ -470,11 +472,11 @@ export function EditorialPhotobookGallery() {
         LIGHTBOX MODAL VIEWER:
         Membuka foto resolusi penuh saat diklik dengan kontrol keyboard & panah
       */}
-      {selectedImageIndex !== null && (
+      {selectedImageIndex !== null && createPortal(
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-md transition-opacity duration-300"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-md transition-opacity duration-300"
           onClick={() => setSelectedImageIndex(null)}
         >
           {/* Close button */}
@@ -514,7 +516,8 @@ export function EditorialPhotobookGallery() {
               </p>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </div>
   );
