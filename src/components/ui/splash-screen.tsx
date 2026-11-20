@@ -35,6 +35,10 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
     }, 0);
     document.body.style.overflow = "hidden";
 
+    const tReleaseLock = setTimeout(() => {
+      document.documentElement.classList.remove("splash-active");
+    }, 3000);
+
     // Auto finish after 3.8s -> unmount
     const timer = setTimeout(() => {
       setMounted(false);
@@ -50,6 +54,7 @@ export function SplashScreen({ onComplete, forceShow = false }: SplashScreenProp
 
     return () => {
       clearTimeout(tMount);
+      clearTimeout(tReleaseLock);
       clearTimeout(timer);
       document.documentElement.classList.remove("splash-active");
       document.body.style.overflow = "";
