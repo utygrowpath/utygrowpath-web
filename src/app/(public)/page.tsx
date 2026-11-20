@@ -24,7 +24,7 @@ const eventCards = [
   {
     title: "Gelar Produk",
     description: "Setap tenant menghadirkan produk-produk unggulan untuk ditampilkan kepada pengunjung.",
-    image: `${season4}/dokumentasi/docum3.jpg`,
+    image: `${season4}/dokumentasi/docum3.webp`,
     alt: "Tenant berinteraksi dengan pengunjung",
   },
   {
@@ -36,7 +36,7 @@ const eventCards = [
   {
     title: "Pemantauan Karya",
     description: "Dosen-dosen akan berkunjung ke setiap tenant dan melihat karya atau produk yang dihasilkan.",
-    image: `${season4}/dokumentasi/docum2_1.jpg `,
+    image: `${season4}/dokumentasi/docum2_1.webp`,
     alt: "Suasana Pemantauan Karya",
   },
   {
@@ -48,7 +48,7 @@ const eventCards = [
   {
     title: "Penampilan Band",
     description: "Memberikan tempat bagi para musisi untuk menampilkan karya musik yang mereka miliki.",
-    image: `${season4}/dokumentasi/docum9.jpg `,
+    image: `${season4}/dokumentasi/docum9.webp`,
     alt: "Suasana Penampilan Band",
   },
 ];
@@ -172,7 +172,7 @@ export default function HomePage() {
               <div className="relative flex h-full w-full items-center justify-center">
                 {/* Gambar backdrop dokumentasi */}
                 <Image
-                  src={`${season4}/dokumentasi/docum2.jpg`}
+                  src={`${season4}/dokumentasi/docum2.webp`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 1024px"
                   alt="Dokumentasi kegiatan Growpath"
@@ -210,7 +210,7 @@ export default function HomePage() {
             <Image src={`${season4}/motif/motif5.svg`} width={160} height={160} alt="" className="pointer-events-none absolute -left-3 bottom-3 -rotate-2 z-10 w-20 opacity-85 sm:-left-5 sm:w-24" />
             <Image src={`${season4}/motif/motif3.png`} width={150} height={150} alt="" className="pointer-events-none absolute -right-2 top-1 rotate-2 z-10 w-16 opacity-90 sm:right-3 sm:w-20" />
             <div className="relative aspect-[5/4] w-full" style={{ clipPath: "polygon(49% 0%, 60% 5%, 66% 1%, 73% 12%, 83% 16%, 80% 25%, 93% 34%, 88% 43%, 100% 52%, 91% 63%, 96% 72%, 83% 79%, 78% 94%, 66% 89%, 56% 100%, 46% 91%, 35% 97%, 28% 86%, 17% 88%, 16% 77%, 4% 69%, 10% 58%, 0% 50%, 8% 40%, 5% 30%, 19% 25%, 24% 14%, 36% 18%)" }}>
-              <Image src={`${season4}/dokumentasi/docum1.jpg`} fill sizes="(max-width: 768px) 100vw, 480px" alt="Tenant berinteraksi dengan pengunjung di Growpath" className="object-cover" />
+              <Image src={`${season4}/dokumentasi/docum1.webp`} fill sizes="(max-width: 768px) 100vw, 480px" alt="Tenant berinteraksi dengan pengunjung di Growpath" className="object-cover" />
             </div>
           </div>
           <div data-reveal-item="right" className="max-w-xl md:order-1">

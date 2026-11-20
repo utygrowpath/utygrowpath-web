@@ -12,7 +12,7 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Food & Beverage",
     date: "2026-03-05",
-    image: "/images/2026/sudut-inspirasi/s4/bakso-bakbar-cover.png",
+    image: "/images/2026/sudut-inspirasi/s4/bakso-bakbar-cover.webp",
     productImage: "/images/2026/sudut-inspirasi/s4/grow-eps1-landscape.webp",
     excerpt:
       "Kisah Muhammad Syafii, mahasiswa Psikologi UTY 2023 yang merintis Bakso Bakbar dari jualan di bawah pohon beringin Jakal hingga resmi membuka stan di Kantin UTY setelah momentum GrowPath Expo.",
@@ -93,8 +93,8 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Food & Beverage",
     date: "2024-12-07",
-    image: "/images/2026/tenant/tenant10.png",
-    productImage: "/images/2026/tenant/product1.jpg",
+    image: "/images/2026/tenant/tenant10.webp",
+    productImage: "/images/2026/tenant/product1.webp",
     excerpt:
       "Fey's Kitchen adalah UMKM binaan dosen UTY yang berfokus menyajikan aneka olahan brownies dan lasagna bebas gluten yang lezat, bernutrisi, serta bersertifikasi halal untuk mendukung gaya hidup sehat keluarga dan komunitas.",
     body: [
@@ -142,9 +142,9 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Eco & Green Living",
     date: "2024-11-30",
-    image: "/images/2026/tenant/tenant9.png",
+    image: "/images/2026/tenant/tenant9.webp",
     productImages: [
-      "/images/2026/tenant/product2_a.png",
+      "/images/2026/tenant/product2_a.webp",
       "/images/2026/tenant/product2_b.png",
     ],
     excerpt:
@@ -201,7 +201,7 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Digital & Gaming",
     date: "2024-11-23",
-    image: "/images/2026/tenant/tenant4.png",
+    image: "/images/2026/tenant/tenant4.webp",
     productImage: "/images/2026/tenant/product3.png",
     excerpt:
       "Kisah Abdurrasyid, mahasiswa Informatika UTY 2023 yang bangkit dari kegagalan bisnis crypto dan sukses membangun Moron Jasa GB serta platform Moron Pay Now sebagai solusi joki dan top up terpercaya bagi gamers.",
@@ -242,7 +242,7 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Kreatif & Desain",
     date: "2024-11-16",
-    image: "/images/2026/tenant/profile/tenant3.png",
+    image: "/images/2026/tenant/profile/tenant3.webp",
     productImage: "/images/2026/tenant/product/product4.png",
     excerpt:
       "Kisah Alie Pratama, mahasiswa Informatika UTY yang mengubah hobi desain menjadi Zimotive Studio. Berawal dari mengikuti kontes internasional, ia membangun brand kreatif yang menembus pasar global dan kini mengembangkan layanan desain untuk klien lokal.",
@@ -289,9 +289,9 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Food & Beverage",
     date: "2024-11-02",
-    image: "/images/2026/tenant/profile/tenant7.png",
+    image: "/images/2026/tenant/profile/tenant7.webp",
     productImages: [
-      "/images/2026/tenant/product/product6_a.png",
+      "/images/2026/tenant/product/product6_a.webp",
       "/images/2026/tenant/product/product6_b.png",
     ],
     excerpt:
@@ -344,8 +344,8 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Food & Beverage",
     date: "2024-11-09",
-    image: "/images/2026/tenant/profile/tenant8.png",
-    productImage: "/images/2026/tenant/product/product5.png",
+    image: "/images/2026/tenant/profile/tenant8.webp",
+    productImage: "/images/2026/tenant/product/product5.webp",
     excerpt:
       "Berawal dari ide mengolah ayam goreng hajatan, Salva Savitri dan kakak iparnya merintis usaha camilan keluarga. Cireng mereka laris setelah dipromosikan lewat WhatsApp, dengan 200 pcs terjual pada hari pertama. Kini tersedia juga pangsit, wonton, dan risol aneka rasa.",
     body: [
@@ -395,7 +395,7 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Kreatif & Desain",
     date: "2024-10-26",
-    image: "/images/2026/tenant/profile/tenant6.png",
+    image: "/images/2026/tenant/profile/tenant6.webp",
     productImage: "/images/2026/tenant/product/product7.png",
     excerpt:
       "Naufal dan tim Visual Kreatif merintis jasa branding dari tugas kuliah, lalu membantu UMKM memahami pentingnya identitas visual. Perjalanan mereka mengajarkan bahwa dampak dan manfaat bagi klien lebih utama daripada sekadar mengejar keuntungan.",
@@ -442,7 +442,7 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Food & Beverage",
     date: "2024-10-20",
-    image: "/images/2026/tenant/profile/tenant5.png",
+    image: "/images/2026/tenant/profile/tenant5.webp",
     productImages: [
       "/images/2026/tenant/product/product8_a.png",
       "/images/2026/tenant/product/product8_b.png",
@@ -483,7 +483,7 @@ export const inspirationPosts: InspirationPost[] = [
     category: "Fashion & Outdoor",
     date: "2024-10-12",
     image: "/images/2026/tenant/profile/tenant12.png",
-    productImage: "/images/2026/tenant/product/product9.png",
+    productImage: "/images/2026/tenant/product/product9.webp",
     excerpt:
       "Dhea Giri dan teman-temannya membangun Sekala Outdoor dari hobi hiking, menyediakan persewaan alat untuk camping dan berpetualang. Mereka belajar mengatasi keterbatasan alat, menjaga komunikasi, serta membagi peran sambil kuliah.",
     body: [
@@ -586,7 +586,7 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Food & Beverage",
     date: "2024-09-28",
-    image: "/images/2026/tenant/profile/tenant2.png",
+    image: "/images/2026/tenant/profile/tenant2.webp",
     productImage: "/images/2026/tenant/product/product11.png",
     excerpt:
       "Fawwaz Fico Mahardika membangun Soto Mbro dari keresahan akan rutinitas kuliah dan keinginan membuka ruang untuk berkumpul. Resep keluarga, mangkok gerabah, dan konsep industrial membuat kedainya tampil berbeda.",
@@ -613,7 +613,7 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Food & Beverage",
     date: "2024-09-21",
-    image: "/images/2026/tenant/profile/tenant1.jpg",
+    image: "/images/2026/tenant/profile/tenant1.webp",
     productImage: "/images/2026/tenant/product/product12.png",
     excerpt:
       "Ryan Yuda Tama merintis World Tea bersama Vera dan Rohim saat masih kuliah. Dari gerobak sederhana dan eksperimen rasa unik, bisnis es teh ini tumbuh hingga memiliki tiga cabang.",
@@ -670,8 +670,7 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Food & Beverage",
     date: "2024-09-13",
-    // TODO: ganti dengan gambar Pinarak yang sebenarnya
-    image: "/images/2026/sudut-inspirasi/s2/pinarak.jpg",
+    image: "/images/2026/tenant/profile/tenant14.webp",
     excerpt:
       "Adi Roadi dan Erick Kurniawan, mahasiswa Psikologi UTY angkatan 2022, merintis Pinarak – kedai kopi dan bakaran unik di atas motor klasik yang hadir sebagai wadah nongkrong, berdiskusi, dan menyalurkan hobi.",
     body: [
@@ -724,8 +723,8 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Kreatif & Desain",
     date: "2025-05-15",
-    image: "/images/2026/sudut-inspirasi/s3/bisnis-bunga.png",
-    productImage: "/images/2026/sudut-inspirasi/s3/bisnis-bunga-produk.png",
+    image: "/images/2026/sudut-inspirasi/s3/bisnis-bunga.webp",
+    productImage: "/images/2026/sudut-inspirasi/s3/bisnis-bunga-produk.webp",
     excerpt:
       "Kisah Dwi Septiani (Nana), mahasiswi Manajemen UTY angkatan 2022 yang merintis bisnis florist dan buket bunga dari sekadar iseng hingga sukses berjalan selama dua tahun.",
     body: [
@@ -765,8 +764,8 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Food & Beverage",
     date: "2025-05-20",
-    image: "/images/2026/sudut-inspirasi/s3/driel-up.png",
-    productImage: "/images/2026/sudut-inspirasi/s3/driel-up-produk.png",
+    image: "/images/2026/sudut-inspirasi/s3/driel-up.webp",
+    productImage: "/images/2026/sudut-inspirasi/s3/driel-up-produk.webp",
     excerpt:
       "Aisya Nirmala, mahasiswi Manajemen UTY 2023, mengubah kebiasaan minum kopi saat nugas menjadi brand kopi kemasan botol Driel Up lewat riset dan pengembangan mandiri.",
     body: [
@@ -806,8 +805,8 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Food & Beverage",
     date: "2025-05-25",
-    image: "/images/2026/sudut-inspirasi/s3/namoy-coffee.png",
-    productImage: "/images/2026/sudut-inspirasi/s3/namoy-coffee-produk.png",
+    image: "/images/2026/sudut-inspirasi/s3/namoy-coffee.webp",
+    productImage: "/images/2026/sudut-inspirasi/s3/namoy-coffee-produk.webp",
     excerpt:
       "Jalu Galih Timur, mahasiswa Informatika UTY 2023, sukses membangun NaMoy Coffee, bisnis street coffee yang berawal dari passion belajar kopi dan berkembang pesat.",
     body: [
@@ -847,8 +846,8 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Food & Beverage",
     date: "2025-06-01",
-    image: "/images/2026/sudut-inspirasi/s3/nasi-jeruji.png",
-    productImage: "/images/2026/sudut-inspirasi/s3/nasi-jeruji-produk.png",
+    image: "/images/2026/sudut-inspirasi/s3/nasi-jeruji.webp",
+    productImage: "/images/2026/sudut-inspirasi/s3/nasi-jeruji-produk.webp",
     excerpt:
       "Tiga mahasiswa Ilmu Komunikasi UTY angkatan 2022—Enggar, Naufal, dan Simon—merintis Nasi Jeruji, bisnis rice bento chicken katsu yang bangkit dari sepi pembeli hingga ramai pesanan lewat konsistensi.",
     body: [
@@ -888,8 +887,8 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Kreatif & Desain",
     date: "2025-06-05",
-    image: "/images/2026/sudut-inspirasi/s3/depo-gorongan.png",
-    productImage: "/images/2026/sudut-inspirasi/s3/depo-gorongan-produk.png",
+    image: "/images/2026/sudut-inspirasi/s3/depo-gorongan.webp",
+    productImage: "/images/2026/sudut-inspirasi/s3/depo-gorongan-produk.webp",
     excerpt:
       "Stefven, mahasiswa Ilmu Komunikasi UTY 2022, mengubah kegemaran mengoleksi miniatur kereta menjadi Depo Gorongan—brand miniatur dan merchandise perkeretaapian yang dipercaya hingga PT KAI dan pasar internasional.",
     body: [
@@ -929,8 +928,8 @@ export const inspirationPosts: InspirationPost[] = [
     author: "utygrowpath",
     category: "Eco & Green Living",
     date: "2025-06-10",
-    image: "/images/2026/sudut-inspirasi/s3/go-block.png",
-    productImage: "/images/2026/sudut-inspirasi/s3/go-block-produk.png",
+    image: "/images/2026/sudut-inspirasi/s3/go-block.webp",
+    productImage: "/images/2026/sudut-inspirasi/s3/go-block-produk.webp",
     excerpt:
       "Inisiatif lima mahasiswa Arsitektur UTY—Hilman, Berliana, Arya, Lala, dan Nauval—mengolah sampah plastik di Lapas Kelas IIA Yogyakarta menjadi paving block ramah lingkungan sekaligus memberdayakan warga binaan.",
     body: [
