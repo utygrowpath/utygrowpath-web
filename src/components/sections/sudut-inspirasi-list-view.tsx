@@ -66,10 +66,6 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
           {categories.map((category) => {
             const isActive = selectedCategory === category;
-            const count =
-              category === "Semua"
-                ? orderedPosts.length
-                : orderedPosts.filter((p) => p.category === category).length;
 
             return (
               <button
@@ -82,15 +78,6 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
                 }`}
               >
                 <span>{category}</span>
-                <span
-                  className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold ${
-                    isActive
-                      ? "bg-white/20 text-white"
-                      : "bg-[#f8e9c9]/60 text-[#8d493a]"
-                  }`}
-                >
-                  {count}
-                </span>
               </button>
             );
           })}
@@ -112,7 +99,7 @@ export function SudutInspirasiListView({ posts }: SudutInspirasiListViewProps) {
             >
               <Image
                 src={
-                  post.image || "/images/2026/season4/dokumentasi/docum1.jpg"
+                  post.image || "/images/2026/season4/dokumentasi/docum1.webp"
                 }
                 fill
                 sizes="(max-width: 768px) 100vw, 320px"

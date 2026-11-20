@@ -294,7 +294,7 @@ async function SudutInspirasiDetailContent({ params }: PageProps) {
                 {/* Image Container with native poster aspect ratio */}
                 <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#fbf6ed]">
                   <Image
-                    src={relatedPost.image || "/images/2026/season4/dokumentasi/docum1.png"}
+                    src={relatedPost.image || "/images/2026/season4/dokumentasi/docum1.webp"}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
                     alt={relatedPost.title}

@@ -10,27 +10,27 @@ interface FlashbackItem {
 
 const topRowPhotos: FlashbackItem[] = [
   {
-    src: "/images/2026/season4/dokumentasi/docum1.jpg",
+    src: "/images/2026/season4/dokumentasi/docum1.webp",
     alt: "Kilas balik pameran dan tenant Growpath",
     tilt: "-rotate-2 hover:rotate-0",
   },
   {
-    src: "/images/2026/season4/dokumentasi/docum6.jpg",
+    src: "/images/2026/season4/dokumentasi/docum6.webp",
     alt: "Penyerahan penghargaan tenant",
     tilt: "-rotate-2 hover:rotate-0",
   },
   {
-    src: "/images/2026/season4/dokumentasi/docum3.JPG",
+    src: "/images/2026/season4/dokumentasi/docum3.webp",
     alt: "Kilas balik tenant dan pameran Growpath",
     tilt: "rotate-2 hover:rotate-0",
   },
   {
-    src: "/images/2026/season4/dokumentasi/docum2.jpg",
+    src: "/images/2026/season4/dokumentasi/docum2.webp",
     alt: "Kilas balik gelar produk UMKM",
     tilt: "-rotate-1 hover:rotate-0",
   },
   {
-    src: "/images/2026/season4/dokumentasi/docum4.JPG",
+    src: "/images/2026/season4/dokumentasi/docum4.webp",
     alt: "Kilas balik pengunjung dan suasana expo",
     tilt: "rotate-2 hover:rotate-0",
   },
@@ -38,27 +38,27 @@ const topRowPhotos: FlashbackItem[] = [
 
 const bottomRowPhotos: FlashbackItem[] = [
   {
-    src: "/images/2026/season4/dokumentasi/docum2_1.jpg",
+    src: "/images/2026/season4/dokumentasi/docum2_1.webp",
     alt: "Kilas balik karya peserta expo",
     tilt: "-rotate-3 hover:rotate-0",
   },
   {
-    src: "/images/2026/season4/dokumentasi/docum8.JPG",
+    src: "/images/2026/season4/dokumentasi/docum8.webp",
     alt: "Kilas balik panggung acara Growpath",
     tilt: "rotate-1 hover:rotate-0",
   },
   {
-    src: "/images/2026/season4/dokumentasi/docum5.jpg",
+    src: "/images/2026/season4/dokumentasi/docum5.webp",
     alt: "Panitia Growpath S2",
     tilt: "rotate-2 hover:rotate-0",
   },
   {
-    src: "/images/2026/season4/dokumentasi/documen7.JPG",
+    src: "/images/2026/season4/dokumentasi/documen7.webp",
     alt: "Kilas balik kompetisi dan kebersamaan",
     tilt: "-rotate-2 hover:rotate-0",
   },
   {
-    src: "/images/2026/season4/dokumentasi/docum9.jpg",
+    src: "/images/2026/season4/dokumentasi/docum9.webp",
     alt: "Kilas balik penampilan seni dan band",
     tilt: "rotate-2 hover:rotate-0",
   },
@@ -181,7 +181,7 @@ export function KilasBalikSection() {
         <Container data-reveal-stagger className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
           <div data-reveal-item="left" className="relative mx-auto w-full max-w-[460px]">
             <Image
-              src="/images/2026/season4/dokumentasi/docum2.jpg"
+              src="/images/2026/season4/dokumentasi/docum2.webp"
               width={373}
               height={250}
               alt="Suasana kunjungan ke kegiatan Growpath"

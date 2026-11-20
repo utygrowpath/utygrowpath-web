@@ -181,7 +181,7 @@ export default function PendaftaranUmumPage() {
             />
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[#e9dfca]">
               <Image
-                src={`${season4}/dokumentasi/docum1.jpg`}
+                src={`${season4}/dokumentasi/docum1.webp`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 480px"
                 alt="Tenant berinteraksi dengan pengunjung di UTY Growpath Expo"

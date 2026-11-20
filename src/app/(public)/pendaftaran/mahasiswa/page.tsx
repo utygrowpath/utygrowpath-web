@@ -123,7 +123,7 @@ export default function PendaftaranMahasiswaPage() {
             />
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-[#e9dfca]">
               <Image
-                src={`${season4}/dokumentasi/docum11.jpg`}
+                src={`${season4}/dokumentasi/docum11.webp`}
                 fill
                 sizes="(max-width: 768px) 100vw, 460px"
                 alt="Suasana kunjungan ke stan tenant UTY Growpath Expo"

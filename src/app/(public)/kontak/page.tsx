@@ -103,7 +103,7 @@ export default function KontakPage() {
             {/* Kartu foto dokumentasi utama */}
             <div className="group relative z-10 mx-auto aspect-[4/3] w-[92%] rotate-2 overflow-hidden rounded-[2rem] border-4 border-white shadow-[0_24px_60px_-28px_rgba(43,72,105,0.45)] transition-all duration-500 hover:rotate-0 hover:scale-[1.02] hover:shadow-[0_28px_70px_-24px_rgba(43,72,105,0.55)]">
               <Image
-                src="/images/2026/season4/dokumentasi/docum1.jpg"
+                src="/images/2026/season4/dokumentasi/docum1.webp"
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -116,7 +116,7 @@ export default function KontakPage() {
             <div className="group absolute bottom-0 left-[3%] z-20 w-[32%] -rotate-2 overflow-hidden rounded-2xl border-4 border-[#fffdf8] shadow-[0_18px_40px_-20px_rgba(43,72,105,0.5)] transition-all duration-500 hover:rotate-0 hover:scale-105 hover:shadow-[0_22px_50px_-16px_rgba(43,72,105,0.6)]">
               <div className="relative aspect-[4/3]">
                 <Image
-                  src="/images/2026/season4/dokumentasi/docum2.jpg"
+                  src="/images/2026/season4/dokumentasi/docum2.webp"
                   fill
                   sizes="(max-width: 768px) 38vw, 190px"
                   alt="Panitia dan pengunjung dalam kegiatan Growpath"
