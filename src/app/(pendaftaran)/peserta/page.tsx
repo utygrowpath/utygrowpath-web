@@ -1,17 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import { useState, useSyncExternalStore } from "react";
+import {
+  getParticipantSessionSnapshot,
+  readParticipantSession,
+  saveParticipantSession,
+  subscribeToParticipantSession,
+} from "@/lib/participant-session";
 
 export default function PendaftaranPesertaPage() {
   const [namaLengkap, setNamaLengkap] = useState("");
   const [status, setStatus] = useState<"mahasiswa" | "umum">("mahasiswa");
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const storedSession = useSyncExternalStore(
+    subscribeToParticipantSession,
+    getParticipantSessionSnapshot,
+    () => null
+  );
+  const savedSession = storedSession ? readParticipantSession() : null;
+  const isSubmitted = savedSession !== null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!namaLengkap.trim()) return;
-    setIsSubmitted(true);
+    saveParticipantSession({ name: namaLengkap.trim(), status });
+    setNamaLengkap(namaLengkap.trim());
   };
 
   return (
@@ -194,12 +208,14 @@ export default function PendaftaranPesertaPage() {
                     Nama Peserta
                   </p>
                   <p className="mt-0.5 text-xl font-extrabold text-[#2b4869] break-words">
-                    {namaLengkap}
+                    {savedSession?.name ?? namaLengkap}
                   </p>
 
                   <div className="mt-4 flex items-center justify-center gap-2 border-t border-[#eadbbd]/60 pt-3.5">
                     <span className="inline-flex items-center gap-1 rounded-full bg-[#2b4869] px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-white shadow-xs">
-                      {status === "mahasiswa" ? "Mahasiswa" : "Umum"}
+                      {(savedSession?.status ?? status) === "mahasiswa"
+                        ? "Mahasiswa"
+                        : "Umum"}
                     </span>
                   </div>
                 </div>
@@ -210,16 +226,12 @@ export default function PendaftaranPesertaPage() {
 
                 {/* Action Button: Eksplor Venue */}
                 <div className="mt-6 flex flex-col items-center gap-3 w-full">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      // Placeholder aksi untuk navigasi ke denah/venue
-                      alert("Fitur Eksplorasi Venue segera hadir!");
-                    }}
+                  <Link
+                    href="/eksplor-venue"
                     className="group relative flex h-12 w-full items-center justify-center gap-2 overflow-hidden rounded-2xl bg-[#d98a1c] px-6 text-sm font-bold tracking-wide text-white shadow-md shadow-[#2b4869]/20 transition-all duration-300 hover:bg-[#d98a1c]/80 hover:shadow-lg active:scale-[0.98]"
                   >
                     <span>Eksplor Venue</span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             )}
