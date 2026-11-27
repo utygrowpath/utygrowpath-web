@@ -240,8 +240,8 @@ export default function PendaftaranMahasiswaPage() {
                 <span
                   aria-hidden="true"
                   className={`relative z-10 mx-auto mb-4 block h-3 w-3 rounded-full ring-4 ${index % 2 === 0
-                      ? "bg-[#2b527d] ring-[#2b527d]/15"
-                      : "bg-[#e0b83e] ring-[#e0b83e]/25"
+                    ? "bg-[#2b527d] ring-[#2b527d]/15"
+                    : "bg-[#e0b83e] ring-[#e0b83e]/25"
                     }`}
                 />
                 <p className="text-lg leading-7 font-bold text-[#2b4869]">{item.date}</p>
