@@ -11,7 +11,7 @@ export const inspirationPosts: InspirationPost[] = [
     title: "Dari Bawah Pohon Hingga Kantin UTY: Perjalanan Sang Juragan Bakso",
     author: "utygrowpath",
     category: "Food & Beverage",
-    date: "2026-03-05",
+    date: "2026-11-07",
     image: "/images/2026/sudut-inspirasi/s4/bakso-bakbar-cover.webp",
     productImage: "/images/2026/sudut-inspirasi/s4/grow-eps1-landscape.webp",
     excerpt:
@@ -52,7 +52,7 @@ export const inspirationPosts: InspirationPost[] = [
     title: "Dari Scroll TikTok Jadi Bisnis Bakery: Cerita Manis Numa",
     author: "utygrowpath",
     category: "Food & Beverage",
-    date: "2026-03-08",
+    date: "2026-11-12",
     image: "/images/2026/sudut-inspirasi/s4/kkuee-cover.png",
     productImage: "/images/2026/sudut-inspirasi/s4/grow-eps2-potrait1.webp",
     productImages: [
@@ -84,6 +84,102 @@ export const inspirationPosts: InspirationPost[] = [
         heading: "Pesan Inspirasi untuk yang Mau Mulai Bisnis",
         content:
           "\"Jangan takut gagal atau takut produknya nggak laku. Mulailah sesuai kapasitas modal dan tenaga kalian, nggak harus langsung berskala besar. Nggak usah pasang ekspektasi tinggi di awal, karena berhasil menjalankan prosesnya saja sudah sebuah keberhasilan.\"",
+      },
+    ],
+  },
+  {
+    slug: "growtell-s4-episode-3-sentuhan-kenangan-raja-fahd",
+    title: "Sentuhan Kenangan: Dari Sisa Bahan Skripsi Jadi Inovasi Digital",
+    author: "utygrowpath",
+    category: "Teknologi & Kreatif",
+    date: "2026-11-19",
+    image: "/images/2026/sudut-inspirasi/s4/grow-eps3-cover.webp",
+    productImage: "/images/2026/sudut-inspirasi/s4/isi-eps3-1.webp",
+    productImages: [
+      "/images/2026/sudut-inspirasi/s4/isi-eps3-1.webp",
+      "/images/2026/sudut-inspirasi/s4/isi-eps3-2.webp",
+    ],
+    excerpt:
+      "Raja Fahd Saefudin, mahasiswa Informatika UTY angkatan 2023 yang menyulap sisa chip NFC penelitian skripsinya menjadi Sentuhan Kenangan inovasi kado digital berbentuk keychain estetis. Memadukan produk fisik dengan perkembangan teknologi, baca kisah lengkapnya.",
+    body: [
+      "Halo Sobat UTY! Kenalin, aku Raja Fahd Saefudin, biasa dipanggil Raja, mahasiswa aktif jurusan Informatika angkatan 2023. Pernah nggak sih kepikiran, skripsi yang bikin kepala \"mendidih\" ternyata bisa disulap jadi ide bisnis yang mindblowing? Nah, di sini aku bakal sharing perjalanan seru di balik terciptanya bisnis pertamaku: Sentuhan Kenangan!",
+    ],
+    subsections: [
+      {
+        heading: "Mengenal Sentuhan Kenangan: Kado Digital Bernyawa",
+        content:
+          "Sentuhan Kenangan bukan sekadar kado atau bingkisan fisik biasa yang mudah usang dimakan waktu. Ini adalah inovasi NFC Gift kado digital bernyawa yang digabungkan dalam bentuk keychain (gantungan kunci) estetis.\n\nMelalui teknologi NFC dan web, siapa pun bisa menyimpan kumpulan foto, video kenangan, playlist lagu favorit, hingga ucapan selamat, dan semuanya bisa diakses hanya dengan satu tap menggunakan smartphone. Cocok banget buat mengabadikan momen spesial seperti wisuda, ulang tahun, hingga pernikahan.",
+      },
+      {
+        heading: "Awal Mula: Sisa Chip NFC dari Skripsi yang Menumpuk",
+        content:
+          "Sebelum Sentuhan Kenangan lahir, aku masih bergulat dengan skripsiku tentang Verifikasi Produk Fashion dengan NFC dan Blockchain. Di sinilah masalah muncul: aku cuma butuh 3 buah chip NFC, tapi penjualnya mewajibkan pembelian grosir selusin. Alhasil, sisa chip menumpuk dan bikin puyeng. \"Kira-kira, barang sisa ini mau dibikin apa ya supaya nggak mubazir dan mendatangkan cuan?\"",
+      },
+      {
+        heading: "Menyalakan \"Mode CEO\" dari Kamar Kos",
+        content:
+          "Aku pun mulai menyalakan \"mode CEO\". Hari-hari berikutnya kuhabiskan untuk meriset ide bisnis mulai dari googling mencari inspirasi, brainstorming bareng AI, hingga merancang fondasi bisnis pertamaku dari kamar kos. Singkat cerita, tercetuslah konsep menjadikan NFC sebagai kado yang memorable, hingga akhirnya lahirlah Sentuhan Kenangan.",
+      },
+      {
+        heading: "Mengalahkan Rasa Insecure dan Overthinking",
+        content:
+          "Jujur, di awal aku sempat insecure parah. Takut ide ini dibilang cringe atau biasa aja sama anak-anak IT UTY yang skill-nya udah jago-jago. Overthinking sempat menguras energiku waktu itu. Tapi ketakutan itu langsung sirna pas teman-temanku nyobain sendiri dan bilang: \"Wah, gila sih, kukira NFC buat pembayaran doang, ternyata bisa jadi kado sekeren ini!\"",
+      },
+      {
+        heading: "Dari Sisa Skripsi Jadi Wadah Rezeki",
+        content:
+          "Semenjak saat itu, pintu kesempatan terbuka lebar. Orderan mulai berdatangan silih berganti dari berbagai event penting—mulai dari momen wisuda teman-teman kampus, perayaan anniversary, pesta pernikahan, hingga hari ulang tahun. Bisnis yang awalnya dari sisa chip skripsi, kini resmi menjadi wadah rezeki dan berkarya.",
+      },
+      {
+        heading: "Pesan Inspirasi untuk Sobat UTY",
+        content:
+          "\"Kalian semua masih muda. Jangan pernah takut untuk gagal. Karena jatuh dalam sebuah perjuangan bukanlah sebuah kegagalan, melainkan bagian dari pembelajaran yang menguatkan mental. Kegagalan yang sesungguhnya adalah ketika kamu menyerah sebelum benar-benar memulai.\"",
+      },
+    ],
+  },
+  {
+    slug: "growtell-s4-episode-4-keisha-alma-perlengkapan-jenazah",
+    title:
+      "Anti-Mainstream! Mahasiswi Informatika Ini Sukses Rintis Bisnis Perlengkapan Jenazah yang \"Sat-Set\"",
+    author: "utygrowpath",
+    category: "Sosial & Bisnis",
+    date: "2026-11-26",
+    image: "/images/2026/sudut-inspirasi/s4/grow-eps4-cover.webp",
+    productImage: "/images/2026/sudut-inspirasi/s4/isi-eps4-1.jpeg",
+    productImages: [
+      "/images/2026/sudut-inspirasi/s4/isi-eps4-1.jpeg",
+      "/images/2026/sudut-inspirasi/s4/isi-eps4-2.jpeg",
+    ],
+    excerpt:
+      "Kisah Keisha Alma, mahasiswi Informatika UTY 2024 yang berani mengambil jalur antimainstream dengan merintis bisnis penyedia kain kafan dan perlengkapan jenazah lengkap sebagai solusi praktis di momen paling krusial.",
+    body: [
+      "Halo Sobat UTY! Kenalin, aku Keisha Alma, mahasiswi jurusan Informatika angkatan 2024. Di saat kebanyakan mahasiswa memilih terjun ke bisnis kuliner atau fashion, aku justru memilih jalur yang cukup antimainstream: merintis bisnis penyedia kain kafan dan perlengkapan jenazah lengkap!",
+    ],
+    subsections: [
+      {
+        heading: "Solusi Praktis & \"Sat-Set\" di Momen Krusial",
+        content:
+          "Kedengarannya memang nggak biasa untuk ukuran anak muda, tapi bisnis yang sudah berjalan sekitar satu tahun ini hadir sebagai solusi nyata di momen paling genting. Aku menyediakan perlengkapan jenazah muslim yang bisa dibeli secara eceran (mulai Rp5.000 – Rp200.000) maupun paketan lengkap (mulai Rp450.000 – Rp2.000.000) dengan empat pilihan kategori: Basic, Standard, Premium, hingga VVIP.\n\nNggak cuma kain kafan (mori) dan kapas medis, setiap paketnya sudah dirancang super lengkap. Mulai dari perlengkapan memandikan (sabun, sampo, daun bidara, celemek/apron, handscoon), perlengkapan mengkafani (tikar, gunting, alat jahit, peniti, kapur barus, parfum, gunting kuku), hingga buku panduan, surat wasiat, dan bendera kuning. Semuanya siap pakai dalam satu tempat!",
+      },
+      {
+        heading: "Berawal dari Keresahan di Tengah Suasana Duka",
+        content:
+          "Ide bisnis ini lahir dari pengalaman pribadi saat ada anggota keluargaku yang meninggal dunia. Di tengah suasana duka, aku melihat sendiri betapa repotnya keluarga membagi tugas ada yang mengurus administrasi rumah sakit, menyiapkan rumah, dan ada yang harus keliling mencari perlengkapan jenazah di tempat yang terpencar-pencar. Dari situ terlintas pikiran: \"Kenapa nggak ada satu toko yang menyediakan semuanya dalam satu paket biar keluarga yang berduka nggak makin kerepotan?\"",
+      },
+      {
+        heading: "Riset Mendalam hingga Konsultasi ke Para Ustaz",
+        content:
+          "Berangkat dari keresahan itu, aku mulai melakukan riset mendalam sebelum mengeksekusinya. Proses R&D (Research and Development) aku lakukan sampai berkonsultasi langsung dengan para ustaz. Tujuannya agar bahan kain kafan yang kupilih benar-benar sesuai syariat dan mudah terurai di dalam tanah bukan asal kain campuran poliester yang susah hancur. Setelah semuanya matang, lahirlah bisnis ini dan mulai dipasarkan secara offline maupun melalui marketplace seperti Shopee.",
+      },
+      {
+        heading: "Tantangan: Pemasok, Kualitas Kain, & Hitungan HPP",
+        content:
+          "Jujur, tantangan terbesar di awal merintis adalah mencari pemasok bahan yang tepat dan menghitung struktur harga. Apalagi berjualan di Shopee punya potongan pajak dan biaya admin yang cukup besar, jadi aku harus putar otak mengatur HPP supaya harga tetap ramah di kantong tapi margin tetap aman. Belum lagi harus bolak-balik trial and error mengecek kualitas kain ke ustaz sampai akhirnya menemukan pemasok yang paling pas.",
+      },
+      {
+        heading: "Pesan Inspirasi untuk Sobat UTY",
+        content:
+          "\"Kalau kalian udah yakin sama ide yang mau dijalanin, gas aja dulu! Lakukan riset yang matang. Soal modal jangan dijadikan penghalang utama selama kita paham betul apa yang kita kerjakan, tahu hitung-hitungan modal dan profitnya, peluang buat dapat investor atau pemodal pasti selalu terbuka!\"",
       },
     ],
   },
@@ -480,7 +576,7 @@ export const inspirationPosts: InspirationPost[] = [
     slug: "cerita-sekala-outdoor-perjalanan-dhea-tim",
     title: "Cerita Sekala Outdoor: Perjalanan Dhea dan Tim",
     author: "utygrowpath",
-    category: "Fashion & Outdoor",
+    category: "Kreatif & Desain",
     date: "2024-10-12",
     image: "/images/2026/tenant/profile/tenant12.png",
     productImage: "/images/2026/tenant/product/product9.webp",
